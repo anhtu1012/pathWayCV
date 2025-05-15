@@ -1,0 +1,161 @@
+@use "@/styles/variables" as vars;
+
+.blog-page {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .blog-content {
+    padding: 60px 0;
+  }
+
+  .blog-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .search-container {
+      flex: 1;
+      max-width: 400px;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+    }
+
+    .filter-container {
+      display: flex;
+      gap: 15px;
+    }
+  }
+
+  .blog-grid {
+    margin-bottom: 40px;
+  }
+
+  .blog-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+
+  .blog-card {
+    height: 100%;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+      .blog-image {
+        transform: scale(1.05);
+      }
+    }
+
+    .blog-image-container {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-image {
+      transition: transform 0.5s ease;
+    }
+
+    .blog-meta {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    .blog-title {
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: #333;
+    }
+
+    .blog-excerpt {
+      margin-bottom: 20px;
+      color: #666;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+
+  .blog-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .subscribe-section {
+    background-color: #f0f7ff;
+    padding: 60px 0;
+
+    .subscribe-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .subscribe-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        @media (max-width: 576px) {
+          flex-direction: column;
+
+          .ant-input {
+            width: 100% !important;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Add Button styles from antd */
+.blog-page {
+  .ant-btn {
+    &-primary {
+      background-color: vars.$primary-color;
+
+      &:hover,
+      &:focus {
+        background-color: darken(vars.$primary-color, 10%);
+      }
+    }
+  }
+}
