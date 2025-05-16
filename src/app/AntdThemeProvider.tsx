@@ -2,27 +2,25 @@
 
 import { ConfigProvider, theme } from "antd";
 import { useEffect, useState } from "react";
+import {
+  initializeTheme,
+  isDarkMode as checkDarkMode,
+} from "@/utils/theme-utils";
 
 export default function AntdThemeProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Initialize state variables with default values that match server-side rendering
+  // Initialize state variables with light mode by default
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check for dark mode preference saved in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    // Initialize theme to light mode by default
+    initializeTheme();
 
-    // Update dark mode based on saved preference or system preference
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    }
+    // Initial check of current mode
+    setIsDarkMode(checkDarkMode());
 
     const htmlElement = document.documentElement;
 

@@ -9,6 +9,7 @@ import LocaleSwitcher from "../changeLanguage";
 import "./index.scss";
 import { useRouter } from "next/navigation";
 import { useBroadcastChannel } from "@/hook/useBroadcastChannel";
+import { toggleDarkMode } from "@/utils/theme-utils";
 
 const { Header } = Layout;
 
@@ -45,7 +46,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
         <Button
           type="link"
           onClick={() => {
-            document.documentElement.classList.toggle("dark");
+            toggleDarkMode();
             sendMessage({ action: "toggle-theme" });
           }}
         >

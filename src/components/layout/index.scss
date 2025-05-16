@@ -141,23 +141,30 @@ html.dark {
       top: 80px;
       left: 0;
       right: 0;
-      background: $background-white;
+      background: $primary-color; // Blue background
       border-top: 1px solid #f0f0f0;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       z-index: 1000;
 
+      .ant-menu {
+        background: $primary-color; // Ensure menu background is blue
+      }
+
       .ant-menu-item {
         font-weight: 600;
         text-align: center;
+        color: white;
 
         a {
-          color: $dark-text;
+          color: white !important; // White text color
         }
 
         &:hover,
         &.ant-menu-item-active {
+          background-color: darken($primary-color, 5%);
+
           a {
-            color: $primary-color;
+            color: $accent-color !important; // Yellow hover color
           }
         }
       }

@@ -24,7 +24,7 @@ export const setDarkMode = (isDark: boolean): void => {
   }
 };
 
-// Initialize theme based on user preference
+// Initialize theme based on user preference - now always defaulting to light mode
 export const initializeTheme = (): void => {
   if (typeof window === "undefined") return;
 
@@ -33,13 +33,8 @@ export const initializeTheme = (): void => {
 
   if (storedTheme === "dark") {
     setDarkMode(true);
-  } else if (storedTheme === "light") {
-    setDarkMode(false);
   } else {
-    // If no preference is set, use system preference
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    setDarkMode(prefersDark);
+    // Always default to light mode, ignoring system preference
+    setDarkMode(false);
   }
 };

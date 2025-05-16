@@ -19,7 +19,11 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className="light" suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#ffffff" />
+        {/* ...other head elements... */}
+      </head>
       <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
