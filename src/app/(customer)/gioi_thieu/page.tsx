@@ -577,10 +577,10 @@ function AboutPage() {
               hỗ trợ bạn.
             </Paragraph>
             <div className="cta-buttons">
-              <Button type="primary" size="large">
+              <Button type="primary" size="large" className="cta-primary-btn">
                 Đặt lịch tư vấn
               </Button>
-              <Button size="large">Liên hệ chúng tôi</Button>
+              <Button size="large" className="cta-secondary-btn">Liên hệ chúng tôi</Button>
             </div>
           </div>
         </div>

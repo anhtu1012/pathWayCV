@@ -274,7 +274,7 @@
 
   .cta-section {
     padding: 80px 0;
-    background-color: #001529;
+    background-color: $primary-color;
     color: white;
 
     .cta-content {
@@ -292,6 +292,35 @@
         color: #ccc;
         margin-bottom: 30px;
       }
+      .cta-primary-btn {
+        background-color: $primary-color-dark;
+        border-color: $primary-color-dark;
+        color: white;
+
+        &:hover {
+          background-color: darken($primary-color-dark, 10%);
+          border-color: darken($primary-color-dark, 10%);
+        }
+      }
+
+      .cta-secondary-btn {
+        color: $primary-color-dark;
+        border-color: $primary-color-dark;
+
+        &:hover {
+          color: darken($primary-color-dark, 10%);
+          border-color: darken($primary-color-dark, 10%);
+        }
+      }
+      .cta-paragraph {
+        color: white;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+  
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
     }
   }
 }
@@ -300,7 +329,7 @@
 .projects-page {
   .ant-btn {
     &-primary {
-      background-color: vars.$primary-color;
+      background-color: vars.$primary-color-light;
 
       &:hover,
       &:focus {

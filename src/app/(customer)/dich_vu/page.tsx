@@ -553,10 +553,10 @@ function ServicePage() {
               bạn.
             </Paragraph>
             <div className="cta-buttons">
-              <Button type="primary" size="large">
+              <Button type="primary" size="large" className="cta-primary-btn">
                 Đặt lịch ngay
               </Button>
-              <Button size="large">Tìm hiểu thêm</Button>
+              <Button size="large" className="cta-psecondary-btn">Tìm hiểu thêm</Button>
             </div>
           </div>
         </div>
