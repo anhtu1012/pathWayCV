@@ -39,6 +39,9 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    @media (max-width: 768px) {
+      padding: 0 15px;
+    }
   }
 
   section {
@@ -47,6 +50,13 @@
 
     &:nth-of-type(even) {
       background-color: #f8f9fa;
+    }
+    @media (max-width: 768px) {
+      padding: 3rem 0;
+    }
+
+    @media (max-width: 576px) {
+      padding: 2rem 0;
     }
   }
 
@@ -59,17 +69,36 @@
         margin-bottom: 1rem;
         font-size: 16px;
         line-height: 1.6;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 576px) {
+          font-size: 13px;
+        }
       }
 
       .story-cta {
         margin-top: 2rem;
+        @media (max-width: 576px) {
+          text-align: center;
+        }
       }
     }
 
     .story-image {
+      text-align: center;
       .rounded-image {
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-width: 768px) {
+      .story-content {
+        padding-right: 0;
+        text-align: center;
       }
     }
   }
@@ -105,6 +134,13 @@
         p {
           margin-bottom: 1.5rem;
           font-size: 16px;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
+
+          @media (max-width: 576px) {
+            font-size: 13px;
+          }
         }
 
         ul {
@@ -126,6 +162,13 @@
         }
       }
     }
+    @media (max-width: 768px) {
+      .mission-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
   }
 
   // Values Section
@@ -135,7 +178,9 @@
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
-
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
       .value-card {
         border-radius: 10px;
         padding: 2rem;
@@ -200,6 +245,11 @@
           font-weight: bold;
           color: #333;
         }
+      }
+    }
+    @media (max-width: 576px) {
+      .timeline-container {
+        overflow-x: auto; 
       }
     }
   }
@@ -435,6 +485,7 @@
       }
 
       p {
+        color: white;
         margin-bottom: 2rem;
         font-size: 1.1rem;
       }
@@ -445,10 +496,51 @@
         justify-content: center;
         flex-wrap: wrap;
       }
+      .custom-paragraph {
+        color: white !important;
+      }
     }
   }
 
   // Responsive
+  @media (max-width: 992px) {
+    .story-section .story-content {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+
+    .values-section .values-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .values-section .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mission-section .mission-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .section-title {
+      font-size: 18px;
+    }
+
+    .section-description {
+      font-size: 14px;
+    }
+
+    .story-section .story-content p {
+      font-size: 13px;
+    }
+
+    .mission-section .mission-card p {
+      font-size: 13px;
+    }
+  }
   @media (max-width: 992px) {
     .story-section .story-content {
       padding-right: 0;
