@@ -394,19 +394,19 @@ function FeaturedProjectsPage() {
         </div>
       </section>
 
-      <section className="cta-section">
+      <section className="cta-section" data-aos="fade-up">
         <div className="container">
           <div className="cta-content" data-aos="zoom-in">
             <Title level={2}>Hãy cho chúng tôi biết về dự án của bạn</Title>
-            <Paragraph>
+            <Paragraph className="cta-paragraph">
               Chúng tôi sẵn sàng lắng nghe và đề xuất giải pháp phù hợp với nhu
               cầu cụ thể của doanh nghiệp hoặc cá nhân
             </Paragraph>
             <Space size={20}>
-              <Button type="primary" size="large">
+              <Button type="primary" size="large" className="cta-primary-btn">
                 Liên hệ ngay
               </Button>
-              <Button size="large">Xem thêm dịch vụ</Button>
+              <Button size="large" className="cta-secondary-btn">Xem thêm dịch vụ</Button>
             </Space>
           </div>
         </div>

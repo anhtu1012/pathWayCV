@@ -218,11 +218,11 @@ function PricingPage() {
         <div className="container">
           <div className="cta-content" data-aos="zoom-in">
             <Title level={2}>Bạn cần tư vấn thêm?</Title>
-            <Paragraph>
+            <Paragraph className="cta-paragraph">
               Liên hệ với chuyên viên tư vấn của PATHWAY để được hỗ trợ lựa chọn
               gói dịch vụ phù hợp nhất
             </Paragraph>
-            <Button type="primary" size="large">
+            <Button type="primary" size="large" className="cta-primary-btn">
               Liên hệ ngay
             </Button>
           </div>

@@ -165,8 +165,8 @@ function AboutPage() {
 
       <section className="story-section">
         <div className="container">
-          <Row gutter={[48, 48]} align="middle">
-            <Col xs={24} lg={12} data-aos="fade-right">
+          <Row gutter={[32, 32]} align="middle">
+            <Col xs={24} md={12} data-aos="fade-right">
               <div className="story-content">
                 <Title level={2} className="section-title">
                   Câu chuyện của chúng tôi
@@ -194,7 +194,7 @@ function AboutPage() {
                 </div>
               </div>
             </Col>
-            <Col xs={24} lg={12} data-aos="fade-left">
+            <Col xs={24} md={12} data-aos="fade-left">
               <div className="story-image">
                 <Image
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
@@ -571,16 +571,16 @@ function AboutPage() {
         <div className="container">
           <div className="cta-content">
             <Title level={2}>Tham gia cùng PATHWAY</Title>
-            <Paragraph>
+            <Paragraph className="custom-paragraph">
               Cho dù bạn đang tìm kiếm hướng đi mới cho sự nghiệp hay muốn nâng
               cao vị thế chuyên môn, đội ngũ PATHWAY luôn sẵn sàng đồng hành và
               hỗ trợ bạn.
             </Paragraph>
             <div className="cta-buttons">
-              <Button type="primary" size="large">
+              <Button type="primary" size="large" className="cta-primary-btn">
                 Đặt lịch tư vấn
               </Button>
-              <Button size="large">Liên hệ chúng tôi</Button>
+              <Button size="large" className="cta-secondary-btn">Liên hệ chúng tôi</Button>
             </div>
           </div>
         </div>

@@ -239,9 +239,14 @@ function ServicePage() {
                     </div>
                   ))}
                 </div>
-                <Button type="primary" className="service-btn">
+                {/* <Button type="primary" className="service-btn">
                   Tìm hiểu thêm
-                </Button>
+                </Button> */}
+                <div className="service-btn-container">
+                  <Button type="primary" className="service-btn">
+                    Tìm hiểu thêm
+                  </Button>
+                </div>
               </Card>
             ))}
           </div>
@@ -425,9 +430,11 @@ function ServicePage() {
                         <span>Tư vấn 1-1 với chuyên gia</span>
                       </div>
                     </div>
-                    <Button type="primary" block className="pricing-button">
-                      Đăng ký ngay
-                    </Button>
+                    <div className="pricing-btn-container">
+                      <Button type="primary" block className="pricing-button">
+                        Đăng ký ngay
+                      </Button>
+                    </div>
                   </Card>
                 </Col>
                 <Col xs={24} md={8}>
@@ -462,9 +469,11 @@ function ServicePage() {
                         <span>Tư vấn 1-1 với chuyên gia</span>
                       </div>
                     </div>
-                    <Button type="primary" block className="pricing-button">
-                      Đăng ký ngay
-                    </Button>
+                    <div className="pricing-btn-container">
+                      <Button type="primary" block className="pricing-button">
+                        Đăng ký ngay
+                      </Button>
+                    </div>
                   </Card>
                 </Col>
                 <Col xs={24} md={8}>
@@ -499,9 +508,11 @@ function ServicePage() {
                         <span>Tư vấn 1-1 với chuyên gia (60 phút)</span>
                       </div>
                     </div>
-                    <Button type="primary" block className="pricing-button">
-                      Đăng ký ngay
-                    </Button>
+                    <div className="pricing-btn-container">
+                      <Button type="primary" block className="pricing-button">
+                        Đăng ký ngay
+                      </Button>
+                    </div>
                   </Card>
                 </Col>
               </Row>
@@ -536,16 +547,16 @@ function ServicePage() {
         <div className="container">
           <div className="cta-content">
             <Title level={2}>Sẵn sàng nâng cao sự nghiệp của bạn?</Title>
-            <Paragraph>
+            <Paragraph style={{ color: "white" }}>
               Đặt lịch tư vấn miễn phí 15 phút với chuyên gia PATHWAY ngay hôm
               nay để nhận giải pháp phù hợp nhất cho mục tiêu nghề nghiệp của
               bạn.
             </Paragraph>
             <div className="cta-buttons">
-              <Button type="primary" size="large">
+              <Button type="primary" size="large" className="cta-primary-btn">
                 Đặt lịch ngay
               </Button>
-              <Button size="large">Tìm hiểu thêm</Button>
+              <Button size="large" className="cta-psecondary-btn">Tìm hiểu thêm</Button>
             </div>
           </div>
         </div>

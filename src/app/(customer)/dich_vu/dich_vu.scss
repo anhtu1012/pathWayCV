@@ -13,7 +13,7 @@
       display: block;
       width: 60px;
       height: 3px;
-      background: #1890ff;
+      background: $primary-color;
       margin: 0.5rem 0 0;
     }
 
@@ -33,12 +33,22 @@
       margin-right: auto;
       text-align: center;
     }
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 13px;
+    }
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    @media (max-width: 768px) {
+      padding: 0 15px;
+    }
   }
 
   section {
@@ -47,6 +57,13 @@
 
     &:nth-of-type(even) {
       background-color: #f8f9fa;
+    }
+    @media (max-width: 768px) {
+      padding: 3rem 0;
+    }
+
+    @media (max-width: 576px) {
+      padding: 2rem 0;
     }
   }
 
@@ -63,7 +80,7 @@
 
         .stat-item {
           h2 {
-            color: #1890ff;
+            color: $primary-color;
             margin-bottom: 0;
           }
 
@@ -76,13 +93,26 @@
 
       .learn-more-btn {
         margin-top: 1rem;
+        color: white;
+      }
+      @media (max-width: 768px) {
+        padding-right: 0;
+        text-align: center;
+
+        .stats-container {
+          justify-content: center;
+        }
       }
     }
 
     .overview-image {
+      text-align: center;
+
       .rounded-image {
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
       }
     }
   }
@@ -94,7 +124,9 @@
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
-
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
       .service-card {
         border-radius: 10px;
         overflow: hidden;
@@ -102,7 +134,9 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-
+        justify-content: center;
+        padding: 1.5rem;
+        align-items: center;
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -115,6 +149,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 10px;
           }
         }
 
@@ -124,25 +159,27 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #1890ff;
+          background: $primary-color;
           color: white;
           font-size: 24px;
           border-radius: 50%;
-          margin-bottom: 1rem;
+          margin: 0 auto 1rem;
         }
 
         .service-title {
+          text-align: center;
           margin-bottom: 1rem;
         }
 
         .service-description {
+          text-align: center;
           margin-bottom: 1.5rem;
           flex-grow: 1;
         }
 
         .service-features {
           margin-bottom: 1.5rem;
-
+          width: 100%;
           .feature-item {
             display: flex;
             align-items: center;
@@ -153,6 +190,17 @@
               margin-right: 0.5rem;
             }
           }
+        }
+        .service-btn-container {
+          margin-top: auto; // Push the button container to the bottom of the card
+          display: flex;
+          justify-content: center; // Center the button horizontally
+          width: 100%; // Optional: Ensure the container spans the full width
+        }
+        .service-btn {
+          color: white;
+          margin-top: auto; // Push the button to the bottom of the card
+          align-self: center; // Center the button horizontally
         }
       }
     }
@@ -165,15 +213,18 @@
       margin-top: 3rem;
       padding: 2rem 0;
 
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 30px;
-        height: 100%;
-        width: 2px;
-        background: #1890ff;
-      }
+      // &:before {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 30px;
+      //   height: 100%;
+      //   width: 2px;
+      //   background: #1890ff;
+      //   @media (max-width: 768px) {
+      //     left: 15px;
+      //   }
+      // }
 
       .timeline-step {
         position: relative;
@@ -190,7 +241,7 @@
           top: 0;
           width: 60px;
           height: 60px;
-          background: #1890ff;
+          background: $primary-color;
           color: white;
           border-radius: 50%;
           display: flex;
@@ -198,6 +249,12 @@
           justify-content: center;
           font-size: 24px;
           font-weight: bold;
+
+          @media (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+          }
         }
 
         .step-content {
@@ -220,7 +277,9 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
-
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
       .testimonial-card {
         border-radius: 10px;
         overflow: hidden;
@@ -281,8 +340,15 @@
 
       .pricing-cards {
         padding: 2rem 0;
-
+        @media (max-width: 768px) {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
         .pricing-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           height: 100%;
           border-radius: 10px;
           overflow: hidden;
@@ -294,7 +360,7 @@
           }
 
           &.highlighted {
-            border-color: #1890ff;
+            border-color: $primary-color;
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 
@@ -318,7 +384,7 @@
               .price {
                 font-size: 2rem;
                 font-weight: bold;
-                color: #1890ff;
+                color: $primary-color;
               }
 
               .currency {
@@ -331,7 +397,7 @@
 
           .pricing-features {
             padding: 1.5rem;
-
+            flex-grow: 1;
             .feature-item {
               display: flex;
               align-items: center;
@@ -347,9 +413,23 @@
               }
             }
           }
-
+          .pricing-btn-container {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
           .pricing-button {
-            margin: 0 1.5rem 1.5rem;
+            align-self: center;
+            width: 80%;
+            background-color: $primary-color; // Set button background to primary color
+            border-color: $primary-color;
+            color: white;
+
+            &:hover {
+              background-color: darken($primary-color, 10%);
+              border-color: darken($primary-color, 10%);
+            }
           }
         }
       }
@@ -362,7 +442,11 @@
 
   // CTA Section
   .cta-section {
-    background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+    background: linear-gradient(
+      135deg,
+      $primary-color 0%,
+      $primary-color-dark 100%
+    );
     color: white;
     padding: 4rem 0;
 
@@ -379,6 +463,9 @@
       p {
         margin-bottom: 2rem;
         font-size: 1.1rem;
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
 
       .cta-buttons {
@@ -386,6 +473,27 @@
         gap: 1rem;
         justify-content: center;
         flex-wrap: wrap;
+        
+        .cta-primary-btn {
+          background-color: $primary-color-dark;
+          border-color: $primary-color-dark;
+          color: white;
+  
+          &:hover {
+            background-color: darken($primary-color-dark, 10%);
+            border-color: darken($primary-color-dark, 10%);
+          }
+        }
+  
+        .cta-secondary-btn {
+          color: $primary-color-dark;
+          border-color: $primary-color-dark;
+  
+          &:hover {
+            color: darken($primary-color-dark, 10%);
+            border-color: darken($primary-color-dark, 10%);
+          }
+        }
       }
     }
   }
@@ -397,7 +505,7 @@
 
       .faq-item {
         h4 {
-          color: #1890ff;
+          color: $primary-color;
           margin-bottom: 1rem;
         }
       }
@@ -428,6 +536,30 @@
 
     .pricing-section .pricing-cards .pricing-card.highlighted {
       transform: translateY(0);
+    }
+  }
+  button {
+    &.ant-btn-primary {
+      background-color: $primary-color; // Change button background to primary color
+      border-color: $primary-color;
+
+      &:hover {
+        background-color: darken(
+          $primary-color,
+          10%
+        ); // Slightly darken on hover
+        border-color: darken($primary-color, 10%);
+      }
+    }
+
+    &.ant-btn {
+      color: $primary-color; // Change text color for secondary buttons
+      border-color: $primary-color;
+
+      &:hover {
+        color: darken($primary-color, 10%);
+        border-color: darken($primary-color, 10%);
+      }
     }
   }
 }
