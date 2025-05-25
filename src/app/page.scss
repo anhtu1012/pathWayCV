@@ -61,6 +61,13 @@
         margin-bottom: 20px;
         font-weight: 700;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        @media (max-width: 768px) {
+          font-size: 40px; // Smaller size for tablets
+        }
+  
+        @media (max-width: 576px) {
+          font-size: 32px; // Even smaller size for phones
+        }
       }
 
       h2.ant-typography {
@@ -68,12 +75,26 @@
         font-size: 32px;
         margin-bottom: 30px;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        @media (max-width: 768px) {
+          font-size: 24px; // Smaller size for tablets
+        }
+  
+        @media (max-width: 576px) {
+          font-size: 20px; // Even smaller size for phones
+        }
       }
 
       .hero-subtitle {
         color: #fff;
         font-size: 24px;
         margin-bottom: 40px;
+        @media (max-width: 768px) {
+          font-size: 18px; // Smaller size for tablets
+        }
+  
+        @media (max-width: 576px) {
+          font-size: 16px; // Even smaller size for phones
+        }
       }
 
       .hero-buttons {
@@ -105,8 +126,16 @@
               border-color: vars.$primary-color-dark;
             }
           }
+          @media (max-width: 768px) {
+            height: 45px; 
+            padding: 0 30px; 
+            font-size: 16px; 
+          }
           @media (max-width: 576px) {
-            width: 90%;
+            height: 40px; 
+            padding: 0 20px; 
+            font-size: 14px; 
+            width: 90%; 
           }
         }
       }
