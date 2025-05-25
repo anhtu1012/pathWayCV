@@ -14,7 +14,7 @@ interface PageBannerProps {
 const PageBanner: React.FC<PageBannerProps> = ({
   title,
   subtitle,
-  backgroundImage = "/assets/image/banner.jpeg",
+  backgroundImage = "/assets/image/banner3.jpg",
   height = "400px",
 }) => {
   return (

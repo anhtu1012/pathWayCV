@@ -125,7 +125,9 @@ const HomePage = () => {
           className="hero-background"
           style={{
             background:
-              "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat",
+              // "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat",
+              "url('/assets/image/banner3.jpg') center/cover no-repeat",
+            height: "100vh",
           }}
         ></div>
         <div className="particles-container"></div>
@@ -340,7 +342,7 @@ const HomePage = () => {
           <Title level={2} className="section-title" data-aos="fade-up">
             Tại sao chọn chúng tôi?
           </Title>
-          <Row gutter={[48, 48]} align="middle">
+          <Row gutter={[24, 24]} align="middle">
             <Col xs={24} md={12} data-aos="fade-right">
               <div className="about-image">
                 <Image
