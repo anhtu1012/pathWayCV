@@ -1,17 +1,15 @@
 "use client";
 
-import { Layout, Menu } from "antd";
-import { useEffect, useState } from "react";
 import {
-  HomeOutlined,
-  PlaySquareOutlined,
-  ClockCircleOutlined,
-  VideoCameraOutlined,
-  HistoryOutlined,
-  FlagOutlined,
-  PlusOutlined,
+  BellOutlined,
+  DashboardOutlined,
+  FileTextOutlined,
+  SettingOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
+import { Layout, Menu } from "antd";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import "./index.scss";
 
 const { Sider } = Layout;
@@ -28,8 +26,24 @@ const SiderComponent: React.FC<SiderProps> = ({ collapsed }) => {
 
   // Get current selected menu item based on path
   useEffect(() => {
-    const path = pathname?.split("/")[1] || "/";
-    setSelectedKeys([`/${path}`]);
+    if (pathname) {
+      // For the home page
+      if (pathname === "/admin") {
+        setSelectedKeys(["/admin"]);
+      }
+      // For specific admin pages, match with the second path segment
+      else if (pathname.startsWith("/admin/")) {
+        const pathSegments = pathname.split("/");
+        if (pathSegments.length >= 3) {
+          // Handle danh-muc sub-items
+          if (pathSegments[2] === "danh-muc" && pathSegments.length >= 4) {
+            setSelectedKeys([`/admin/danh-muc/${pathSegments[3]}`]);
+          } else {
+            setSelectedKeys([`/admin/${pathSegments[2]}`]);
+          }
+        }
+      }
+    }
     setMounted(true);
   }, [pathname]);
 
@@ -54,6 +68,44 @@ const SiderComponent: React.FC<SiderProps> = ({ collapsed }) => {
     );
   }
 
+  // Main navigation items with modern icons
+  const mainNavItems = [
+    {
+      key: "/admin",
+      icon: <DashboardOutlined />,
+      label: "Trang chủ",
+      "data-index": 0,
+    },
+    {
+      key: "/admin/quan-li-nguoi-dung",
+      icon: <UserOutlined />,
+      label: "Quản lý người dùng",
+      "data-index": 1,
+    },
+  ];
+
+  // Tools navigation items
+  const toolsNavItems = [
+    {
+      key: "/admin/thong-bao",
+      icon: <BellOutlined />,
+      label: "Thông báo",
+      "data-index": 0,
+    },
+    {
+      key: "/admin/bao-cao",
+      icon: <FileTextOutlined />,
+      label: "Báo cáo",
+      "data-index": 1,
+    },
+    {
+      key: "/admin/cai-dat",
+      icon: <SettingOutlined />,
+      label: "Cài đặt hệ thống",
+      "data-index": 2,
+    },
+  ];
+
   return (
     <Sider
       trigger={null}
@@ -71,137 +123,53 @@ const SiderComponent: React.FC<SiderProps> = ({ collapsed }) => {
       }}
     >
       <div className="sidebar-menu-container">
-        {/* New Post Button */}
-        {!collapsed && (
-          <button
-            className="sidebar-new-post-btn"
-            onClick={() => router.push("/new-post")}
-          >
-            + New post
-          </button>
-        )}
-
-        {/* Main Feed */}
+        {/* Main Navigation */}
         <Menu
           theme="light"
           mode="inline"
           selectedKeys={selectedKeys}
           onClick={({ key }) => router.push(key)}
           className="sidebar-menu"
-          items={[
-            {
-              key: "/",
-              icon: <HomeOutlined />,
-              label: "My feed",
-            },
-            {
-              key: "/following",
-              icon: <VideoCameraOutlined />,
-              label: "Following",
-            },
-            {
-              key: "/explore",
-              icon: <PlaySquareOutlined />,
-              label: "Explore",
-            },
-            {
-              key: "/history",
-              icon: <HistoryOutlined />,
-              label: "History",
-            },
-          ]}
+          items={mainNavItems.map((item) => ({
+            ...item,
+            style: {
+              "--item-index": item["data-index"],
+            } as React.CSSProperties,
+          }))}
         />
 
-        {/* Custom feeds */}
+        {/* Tools Section */}
         {!collapsed && (
           <>
             <div className="menu-divider" />
-            <div className="sidebar-section-title">Custom feeds</div>
+            <div className="sidebar-section-title">Công cụ</div>
             <Menu
               theme="light"
               mode="inline"
+              selectedKeys={selectedKeys}
               className="sidebar-menu"
-              items={[
-                {
-                  key: "/custom-feed",
-                  icon: <PlaySquareOutlined />,
-                  label: "Custom feed",
-                },
-              ]}
+              items={toolsNavItems.map((item) => ({
+                ...item,
+                style: {
+                  "--item-index": item["data-index"],
+                } as React.CSSProperties,
+              }))}
               onClick={({ key }) => router.push(key)}
             />
           </>
         )}
 
-        {/* Network */}
-        {!collapsed && (
-          <>
-            <div className="menu-divider" />
-            <div className="sidebar-section-title">Network</div>
-            <Menu
-              theme="light"
-              mode="inline"
-              className="sidebar-menu"
-              items={[
-                {
-                  key: "/find-squads",
-                  icon: <FlagOutlined />,
-                  label: "Find Squads",
-                },
-                {
-                  key: "/new-squad",
-                  icon: <PlusOutlined />,
-                  label: "New Squad",
-                },
-              ]}
-              onClick={({ key }) => router.push(key)}
-            />
-          </>
-        )}
-
-        {/* Bookmarks */}
-        {!collapsed && (
-          <>
-            <div className="menu-divider" />
-            <div className="sidebar-section-title">Bookmarks</div>
-            <Menu
-              theme="light"
-              mode="inline"
-              className="sidebar-menu"
-              items={[
-                {
-                  key: "/quick-saves",
-                  icon: <ClockCircleOutlined />,
-                  label: "Quick saves",
-                },
-                {
-                  key: "/read-it-later",
-                  icon: <HistoryOutlined />,
-                  label: "Read it later",
-                },
-                {
-                  key: "/new-folder",
-                  icon: <PlusOutlined />,
-                  label: "New folder",
-                },
-              ]}
-              onClick={({ key }) => router.push(key)}
-            />
-          </>
-        )}
-
-        {/* Footer giữ nguyên */}
+        {/* Footer Section */}
         {!collapsed && (
           <>
             <div className="menu-divider" />
             <div className="sidebar-footer">
-              <div className="footer-link">About</div>
-              <div className="footer-link">Press</div>
-              <div className="footer-link">Copyright</div>
-              <div className="footer-link">Contact</div>
-              <div className="footer-link">Terms</div>
-              <div className="footer-link">Privacy</div>
-              <div className="footer-copyright">© 2024 Social Network CV</div>
+              <div className="footer-link">Trợ giúp</div>
+              <div className="footer-link">Hỗ trợ</div>
+              <div className="footer-link">Liên hệ</div>
+              <div className="footer-link">Điều khoản</div>
+              <div className="footer-link">Chính sách</div>
+              <div className="footer-copyright">© 2024 Hệ thống chấm công</div>
             </div>
           </>
         )}

@@ -1,9 +1,5 @@
 import { z } from "zod";
-import {
-  PermisionLoginSchema,
-  PermisionSchema,
-  UserInforSchema,
-} from "./auth.dto";
+import { UserInforSchema } from "./auth.dto";
 
 /**
  * Schema and type for response auth login
@@ -11,7 +7,6 @@ import {
 export const UserResponseLoginSchema = z.object({
   message: z.string(),
   ok: z.boolean(),
-  permission: PermisionLoginSchema,
   user_info: UserInforSchema,
 });
 
@@ -36,18 +31,4 @@ export const UserResponseRegisterSchema = z.object({
 
 export type UserResponseRegisterItem = z.infer<
   typeof UserResponseRegisterSchema
->;
-
-/**
- * Schema and type for response auth get permision
- */
-
-export const PermisionResponseGetSchema = z.object({
-  message: z.string(),
-  ok: z.boolean(),
-  payload: z.array(PermisionSchema),
-});
-
-export type PermisionResponseGetItem = z.infer<
-  typeof PermisionResponseGetSchema
 >;

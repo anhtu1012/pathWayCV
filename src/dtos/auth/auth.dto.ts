@@ -3,74 +3,28 @@ import { z } from "zod";
 /**
  * Schema and type for permision auth keycloack
  */
-export const UserInforSchema = z.object({
+export enum Role {
+  ADMIN = "admin",
+  Customer = "user",
+}
+
+export const AccountSchema = z.object({
   id: z.string(),
-  username: z.string(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
   firstName: z.string(),
   lastName: z.string(),
   email: z.string(),
-  emailVerified: z.boolean(),
-  createdTimestamp: z.number(),
-  enabled: z.boolean(),
-  totp: z.boolean(),
-  fullname: z.string(),
+  role: z.enum([Role.ADMIN, Role.Customer]),
 });
 
-export const GroupSchema = z.object({
+export type Account = z.infer<typeof AccountSchema>;
+
+export const UserInforSchema = z.object({
   id: z.string(),
-  required: z.boolean(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
+  account: AccountSchema,
+  balance: z.number(),
 });
-
-export const ScopeSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-});
-
-export const PolicySchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  description: z.string(),
-  type: z.string(),
-  resources: z.array(z.string()),
-  scopes: z.array(z.string()),
-  logic: z.string(),
-  decisionStrategy: z.string(),
-  config: z.object({}),
-});
-
-export const allowedScopesSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-});
-
-export const PermisionLoginSchema = z.array(
-  z.object({
-    scopes: z.array(ScopeSchema),
-    policies: z.array(
-      z.object({
-        policy: PolicySchema,
-      })
-    ),
-    allowedScopes: z.array(allowedScopesSchema),
-  })
-);
-
-export type PermisionLoginItem = z.infer<typeof PermisionLoginSchema>;
-
-export const PermisionSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  description: z.string(),
-  type: z.string(),
-  logic: z.string(),
-  decisionStrategy: z.string(),
-  scope: z.array(ScopeSchema),
-  menu: z.object({
-    name: z.string(),
-    _id: z.string(),
-    parent: z.string(),
-  }),
-  group: z.array(GroupSchema),
-});
-
-export type PermisionItem = z.infer<typeof PermisionSchema>;
+export type UserInfor = z.infer<typeof UserInforSchema>;

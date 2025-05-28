@@ -1,13 +1,23 @@
 "use client";
 
-import { Layout, Menu, Button } from "antd";
+import "@/styles/clerk-buttons.scss";
 import { MenuOutlined } from "@ant-design/icons";
+import {
+  SignedIn,
+  SignedOut,
+  useAuth,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
+import { Button, Layout, Menu } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import LocaleSwitcher from "../changeLanguage";
+import AuthButtons from "../auth/AuthButtons";
 import "./index.scss";
+import { Role } from "@/dtos/auth/auth.dto";
 
 const { Header } = Layout;
 
@@ -20,6 +30,8 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const { isSignedIn } = useAuth();
 
   const menuItems = [
     { key: "home", label: <Link href="/">Trang chủ</Link> },
@@ -63,6 +75,26 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
   const toggleMobileMenu = () => {
     setMobileMenuVisible(!mobileMenuVisible);
   };
+  const { user } = useUser();
+  const { getToken } = useAuth();
+
+  const fetchUserData = async () => {
+    try {
+      // Get the token from Clerk with all claims including custom ones
+      const clerkToken = await getToken({ template: "default" });
+
+      console.log("Clerk Token:", clerkToken);
+      console.log("User ID:", user?.unsafeMetadata);
+    } catch (error) {
+      console.error("Error fetching token and claims:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (isSignedIn) {
+      fetchUserData();
+    }
+  }, [isSignedIn, router]);
 
   return (
     <Header className={`site-header main-header${scrolled ? " scrolled" : ""}`}>
@@ -92,6 +124,14 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
 
         <div className="header-right">
           <LocaleSwitcher />
+
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+
+          <SignedOut>
+            <AuthButtons signUpRole={Role.Customer} />
+          </SignedOut>
         </div>
       </div>
 
