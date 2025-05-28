@@ -8,7 +8,24 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AntdThemeProvider from "./AntdThemeProvider";
 import MainLayout from "@/components/layout";
+import { ClerkProvider } from "@clerk/nextjs";
 // import BubbleCursor from "@/components/BubbleCursor";
+import { Geist, Geist_Mono } from "next/font/google";
+import { type Metadata } from "next";
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Path Way",
+  description: "Path Way - Your Path to Success",
+};
 
 export default async function RootLayout({
   children,
@@ -19,26 +36,30 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="light" suppressHydrationWarning>
-      <head>
-        <meta name="theme-color" content="#ffffff" />
-        {/* ...other head elements... */}
-      </head>
-      <body suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <ReduxProvider>
-              <AntdThemeProvider>
-                <AntdRegistry>
-                  {" "}
-                  <MainLayout>{children}</MainLayout>
-                </AntdRegistry>
-              </AntdThemeProvider>
-              <ToastContainer />
-            </ReduxProvider>
-          </ThemeProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang={locale} className="light" suppressHydrationWarning>
+        <head>
+          <meta name="theme-color" content="#ffffff" />
+          {/* ...other head elements... */}
+        </head>
+        <body
+          suppressHydrationWarning
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider>
+              <ReduxProvider>
+                <AntdThemeProvider>
+                  <AntdRegistry>
+                    <MainLayout>{children}</MainLayout>
+                  </AntdRegistry>
+                </AntdThemeProvider>
+                <ToastContainer />
+              </ReduxProvider>
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

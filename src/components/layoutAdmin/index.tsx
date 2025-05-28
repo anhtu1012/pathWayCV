@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Layout } from "antd";
-import HeaderComponent from "./header";
-import SiderComponent from "./sider";
-import FooterComponent from "./footer";
-import ClientOnly from "../ClientOnly";
-import "./index.scss";
 import { initializeTheme } from "@/utils/theme-utils";
+import { Layout } from "antd";
+import React, { useEffect, useState } from "react";
+import ClientOnly from "../ClientOnly";
+import HeaderComponent from "./header";
+import "./index.scss";
+import SiderComponent from "./sider";
 
 const { Content } = Layout;
 
@@ -16,10 +15,7 @@ interface AdminLayoutProps {
   showFooter?: boolean;
 }
 
-const AdminLayout: React.FC<AdminLayoutProps> = ({
-  children,
-  showFooter = true,
-}) => {
+const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
@@ -60,12 +56,6 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({
           <Content style={{ margin: "24px 16px", overflow: "initial" }}>
             <div className="content-container">{children}</div>
           </Content>
-
-          {showFooter && (
-            <ClientOnly>
-              <FooterComponent />
-            </ClientOnly>
-          )}
         </Layout>
       </Layout>
     </Layout>
