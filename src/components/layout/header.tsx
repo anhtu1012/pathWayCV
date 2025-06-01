@@ -1,23 +1,18 @@
 "use client";
 
+import { Role } from "@/dtos/auth/auth.dto";
 import "@/styles/clerk-buttons.scss";
+import { setCookie } from "@/utils/client/getCookie";
 import { MenuOutlined } from "@ant-design/icons";
-import {
-  SignedIn,
-  SignedOut,
-  useAuth,
-  UserButton,
-  useUser,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, useAuth, UserButton } from "@clerk/nextjs";
 import { Button, Layout, Menu } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import LocaleSwitcher from "../changeLanguage";
 import AuthButtons from "../auth/AuthButtons";
+import LocaleSwitcher from "../changeLanguage";
 import "./index.scss";
-import { Role } from "@/dtos/auth/auth.dto";
 
 const { Header } = Layout;
 
@@ -30,7 +25,6 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   const { isSignedIn } = useAuth();
 
   const menuItems = [
@@ -75,16 +69,12 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
   const toggleMobileMenu = () => {
     setMobileMenuVisible(!mobileMenuVisible);
   };
-  const { user } = useUser();
   const { getToken } = useAuth();
 
   const fetchUserData = async () => {
     try {
-      // Get the token from Clerk with all claims including custom ones
       const clerkToken = await getToken({ template: "default" });
-
-      console.log("Clerk Token:", clerkToken);
-      console.log("User ID:", user?.unsafeMetadata);
+      setCookie("token", clerkToken, 9999);
     } catch (error) {
       console.error("Error fetching token and claims:", error);
     }
@@ -94,7 +84,7 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
     if (isSignedIn) {
       fetchUserData();
     }
-  }, [isSignedIn, router]);
+  }, [isSignedIn]);
 
   return (
     <Header className={`site-header main-header${scrolled ? " scrolled" : ""}`}>
@@ -126,7 +116,18 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
           <LocaleSwitcher />
 
           <SignedIn>
-            <UserButton />
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: "h-10 w-10",
+                  userButtonTrigger: "cursor-pointer focus:shadow-none",
+                },
+              }}
+              userProfileUrl="/profile"
+              userProfileMode="navigation"
+              showName={false}
+            />
           </SignedIn>
 
           <SignedOut>

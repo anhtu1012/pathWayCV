@@ -1,5 +1,12 @@
 {
   "Profile": {
     "changepass": "Thay đổi mật khẩu"
+  },
+  "Gioi_thieu": {
+    "PATHWAY_Story": "Câu chuyện của chúng tôi",
+    "PATHWAY_Story_Description": "PATHWAY được thành lập vào năm 2018 bởi những chuyên gia nhân sự hàng đầu với sứ mệnh giúp người lao động Việt Nam định hình và phát triển sự nghiệp bền vững trong thời đại số.",
+    "PATHWAY_Story_Detail": "Từ những buổi tư vấn đầu tiên, chúng tôi nhận thấy rằng nhiều người tài năng đang gặp khó khăn trong việc thể hiện giá trị bản thân với nhà tuyển dụng và phát triển lộ trình nghề nghiệp rõ ràng.",
+    "PATHWAY_Story_Mission": "Trong 5 năm qua, PATHWAY đã đồng hành cùng hơn 5000 khách hàng từ sinh viên mới ra trường đến quản lý cấp cao, giúp họ đạt được mục tiêu nghề nghiệp và xây dựng sự nghiệp bền vững.",
+    "PATHWAY_Story_Button": "Khám phá dịch vụ"
   }
 }
