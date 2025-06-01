@@ -1,5 +1,12 @@
 {
   "Profile": {
     "changepass": "Change password"
+  },
+  "Gioi_thieu": {
+    "PATHWAY_Story": "Our Story",
+    "PATHWAY_Story_Description": "PATHWAY was founded in 2018 by leading HR professionals with the mission of helping Vietnamese workers shape and develop sustainable careers in the digital age.",
+    "PATHWAY_Story_Detail": "From the first consultations, we realized that many talented people were having difficulty expressing their value to employers and developing a clear career path.",
+    "PATHWAY_Story_Mission": "Over the past 5 years, PATHWAY has accompanied more than 5,000 clients from fresh graduates to senior managers, helping them achieve their career goals and build sustainable careers.",
+    "PATHWAY_Story_Button": "Explore services"
   }
 }

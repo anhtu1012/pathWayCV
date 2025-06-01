@@ -60,7 +60,7 @@ export class AxiosService extends Authorization implements RepositoryPort {
       } as AxiosRequestHeaders;
 
       if (isValidToken(this.token)) {
-        header.Authorization = this.token;
+        header.Authorization = `Bearer ${this.token}`;
       }
 
       config.headers = header;

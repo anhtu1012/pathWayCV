@@ -13,10 +13,12 @@ import AOS from "aos";
 import Image from "next/image";
 import { useEffect } from "react";
 import "./gioi_thieu.scss";
+import { useTranslations } from "next-intl";
 
 const { Title, Paragraph } = Typography;
 
 function AboutPage() {
+  const t = useTranslations("Gioi_thieu");
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -169,27 +171,16 @@ function AboutPage() {
             <Col xs={24} md={12} data-aos="fade-right">
               <div className="story-content">
                 <Title level={2} className="section-title">
-                  Câu chuyện của chúng tôi
+                  {t("PATHWAY_Story")}
                 </Title>
                 <Paragraph className="section-description">
-                  PATHWAY được thành lập vào năm 2018 bởi những chuyên gia nhân
-                  sự hàng đầu với sứ mệnh giúp người lao động Việt Nam định hình
-                  và phát triển sự nghiệp bền vững trong thời đại số.
+                  {t("PATHWAY_Story_Description")}
                 </Paragraph>
-                <Paragraph>
-                  Từ những buổi tư vấn đầu tiên, chúng tôi nhận thấy rằng nhiều
-                  người tài năng đang gặp khó khăn trong việc thể hiện giá trị
-                  bản thân với nhà tuyển dụng và phát triển lộ trình nghề nghiệp
-                  rõ ràng.
-                </Paragraph>
-                <Paragraph>
-                  Trong 5 năm qua, PATHWAY đã đồng hành cùng hơn 5000 khách hàng
-                  từ sinh viên mới ra trường đến quản lý cấp cao, giúp họ đạt
-                  được mục tiêu nghề nghiệp và xây dựng sự nghiệp bền vững.
-                </Paragraph>
+                <Paragraph>{t("PATHWAY_Story_Detail")}</Paragraph>
+                <Paragraph>{t("PATHWAY_Story_Mission")}</Paragraph>
                 <div className="story-cta">
                   <Button type="primary" size="large">
-                    Khám phá dịch vụ
+                    {t("PATHWAY_Story_Button")}
                   </Button>
                 </div>
               </div>
@@ -580,7 +571,9 @@ function AboutPage() {
               <Button type="primary" size="large" className="cta-primary-btn">
                 Đặt lịch tư vấn
               </Button>
-              <Button size="large" className="cta-secondary-btn">Liên hệ chúng tôi</Button>
+              <Button size="large" className="cta-secondary-btn">
+                Liên hệ chúng tôi
+              </Button>
             </div>
           </div>
         </div>
