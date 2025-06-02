@@ -166,5 +166,88 @@
       "primaryButton": "Schedule a Consultation",
       "secondaryButton": "Contact Us"
     }
+  },
+
+  "HomePage": {
+    "hero": {
+      "mainTitle": "PATHWAY",
+      "subTitle": "CV Review, Job Search Strategy, Career Consulting",
+      "tagline": "Over 1000+ Professionals have advanced their careers with our support",
+      "button1_text": "Schedule a Consultation",
+      "button2_text": "Watch Success Stories"
+    },
+    "introduction": {
+      "title": "Your Career Journey Starts Here",
+      "paragraph": "<strong>PATHWAY</strong> is a leading provider of <strong>CV optimization and job search strategy services</strong>. We pride ourselves on offering comprehensive support to professionals at <strong>all career stages</strong>. Our team includes career consultants, HR specialists, and industry insiders who combine deep expertise in <strong>resume writing</strong> with creative thinking in <strong>personal branding</strong>.",
+      "card1_alt": "Pathway Mission",
+      "card1_title": "Mission",
+      "card1_description": "Empowering professionals with the tools, strategies, and confidence needed to stand out in a competitive job market and achieve their career goals.",
+      "card2_alt": "Pathway Vision",
+      "card2_title": "Vision",
+      "card2_description": "To be the leading career services provider, transforming how people approach job searching, creating a world where everyone can reach their full career potential.",
+      "card3_alt": "Pathway Methodology",
+      "card3_title": "Methodology",
+      "card3_description": "We believe in customized solutions that emphasize each individual's unique value. Data-driven strategies and personalized consultations create meaningful career breakthroughs."
+    },
+    "ourDistinctMissionSection": {
+      "title": "OUR MISSION",
+      "item1_alt": "Spread brand value",
+      "item1_text": "Spreading the brand values of organizations and businesses to the community.",
+      "item2_alt": "Increase awareness",
+      "item2_text": "Increasing customer awareness, trust, and preference for Products/Services.",
+      "item3_alt": "Market orientation",
+      "item3_text": "Orienting the market with advertising trends according to international standards."
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "image_alt": "PATHWAY career consulting team",
+      "paragraph1": "<strong>PATHWAY</strong> combines expertise in <strong>CV writing, interview coaching, and career strategy</strong>. We are committed to providing personalized support to professionals at all levels.",
+      "paragraph2": "With over 15 years of experience, our team has helped professionals secure positions at top companies such as Google, Microsoft, Amazon, Meta, Goldman Sachs, McKinsey, Deloitte, and many other Fortune 500 organizations across all industries and roles.",
+      "stat1_value": "15+",
+      "stat1_label": "Years of Experience",
+      "stat2_value": "1000+",
+      "stat2_label": "Success Stories",
+      "stat3_value": "93%",
+      "stat3_label": "Interview Rate"
+    },
+    "servicesSection": {
+      "title": "Our Services",
+      "service1_title": "CV Review",
+      "service1_description": "Receive detailed feedback and editing suggestions to make your CV stand out.",
+      "service2_title": "LinkedIn Optimization",
+      "service2_description": "Improve your LinkedIn profile to attract recruiters and job opportunities.",
+      "service3_title": "Mock Interview",
+      "service3_description": "Practice interviewing with experts to confidently apply for your dream position.",
+      "learnMoreButton": "Learn More"
+    },
+    "projectsSection": {
+      "title": "Featured Projects",
+      "video_tvc_quang_cao": "Advertising TVC",
+      "video_phim_doanh_nghiep": "Corporate Film",
+      "video_phim_viral": "Viral Film",
+      "video_phim_thuong_hieu": "Brand Film",
+      "video_tvc_san_pham": "Product TVC",
+      "video_phim_du_an": "Project Film"
+    },
+    "testimonialSection": {
+      "title": "WHAT OUR CLIENTS SAY ABOUT PATHWAY?",
+      "arrow_left": "<<",
+      "arrow_right": ">>",
+      "card1_avatar_alt": "Client Avatar",
+      "card1_quote": "“With PATHWAY's professional support, my CV was significantly improved. The experts helped me identify my strengths and present information effectively. As a result, I received more interview invitations and ultimately landed my dream position at a top company.”",
+      "card1_author": "Mr. Nguyen Minh Tuan",
+      "card1_role": "Senior Developer - TechVision Corporation"
+    },
+    "clientLogosSection": {
+      "title": "Our Clients",
+      "logo_google_alt": "Google Logo",
+      "logo_apple_alt": "Apple Logo",
+      "logo_microsoft_alt": "Microsoft Logo",
+      "logo_amazon_alt": "Amazon Logo",
+      "logo_netflix_alt": "Netflix Logo",
+      "logo_linkedin_alt": "LinkedIn Logo",
+      "logo_tcs_alt": "TCS Logo",
+      "logo_accenture_alt": "Accenture Logo"
+    }
   }
 }
