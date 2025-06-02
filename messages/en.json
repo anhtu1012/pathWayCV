@@ -3,10 +3,168 @@
     "changepass": "Change password"
   },
   "Gioi_thieu": {
+    "pageBanner": {
+      "title": "About Us",
+      "subtitle": "Accompanying you on your career journey"
+    },
     "PATHWAY_Story": "Our Story",
     "PATHWAY_Story_Description": "PATHWAY was founded in 2018 by leading HR professionals with the mission of helping Vietnamese workers shape and develop sustainable careers in the digital age.",
     "PATHWAY_Story_Detail": "From the first consultations, we realized that many talented people were having difficulty expressing their value to employers and developing a clear career path.",
     "PATHWAY_Story_Mission": "Over the past 5 years, PATHWAY has accompanied more than 5,000 clients from fresh graduates to senior managers, helping them achieve their career goals and build sustainable careers.",
-    "PATHWAY_Story_Button": "Explore services"
+    "PATHWAY_Story_Button": "Learn more about our Services",
+    "storySection": {
+      "imageAlt": "Illustrative image of PATHWAY's story"
+    },
+    "missionVisionSection": {
+      "title": "Mission and Vision",
+      "description": "",
+      "missionCard": {
+        "title": "Mission",
+        "description": "“Pathway CV supports users to create, manage, and upgrade personal profiles to serve career orientation.”",
+        "listItem1": "“Create, manage and upgrade profiles”: Not only stopping at providing CV templates, the project aims at a long-term personal profile management ecosystem, allowing users to update and adjust according to each career stage.",
+        "listItem2": "“Career Orientation Service”: This is not simply writing a CV to apply for a job, but supporting users to clearly see themselves, shape their career path, and thereby express it strategically.",
+        "listItem3": "Not simply a CV creation tool, but a strategic partner that helps users reflect their personal development journey through their profile, with an educational and liberating goal."
+      },
+      "visionCard": {
+        "title": "Vision",
+        "description": "“To become the leading career profile personalization platform in Vietnam for young people and working people.”",
+        "listItem1": "“Career profile personalization platform”: Not a mass product, but focusing on customization according to the journey, goals, and profession of each user.",
+        "listItem2": "“Leading in Vietnam”: Ambition to take the leading position in this niche market – requiring not only good technology, but also a deep understanding of Vietnamese users.",
+        "listItem3": "“Young people and working people”: Clearly define the target group: from students to experienced people – who have very different needs but all need specialized support, suitable for personal development trends."
+      }
+    },
+    "coreValuesSection": {
+      "title": "Core values",
+      "description": ""
+    },
+    "coreValues": {
+      "expertise": {
+        "title": "Expertise",
+        "description": "A team of experienced experts in recruitment and career development, providing practical perspectives and clear direction to clients."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Committed to providing high-quality, personalized, and optimized services according to each user's career goals."
+      },
+      "empathy": {
+        "title": "Empathy",
+        "description": "Understand the difficulties in the career journey and accompany customers through practical, sincere advice."
+      },
+      "results": {
+        "title": "Results",
+        "description": "With results at the center, Pathway focuses on specific goals, helping clients achieve clear and sustainable achievements in their careers."
+      }
+    },
+    "milestonesSection": {
+      "title": "Development journey",
+      "description": ""
+    },
+    "timelineItems": {
+      "stage1": {
+        "label": "2018–2019",
+        "title": "Building the foundation & developing core services",
+        "description": ""
+      },
+      "stage2": {
+        "label": "2020–2021",
+        "title": "Digital transformation & expanding geographical markets",
+        "description": ""
+      },
+      "stage3": {
+        "label": "2022–2023",
+        "title": "Affirming position through scale & enhancing value through training",
+        "description": ""
+      }
+    },
+    "statsSection": {
+      "clients": { "title": "Clients" },
+      "experts": { "title": "Experts" },
+      "satisfaction": { "title": "Satisfaction Rate" },
+      "partners": { "title": "Business Partners" }
+    },
+    "teamSection": {
+      "title": "Team of experts – The foundation of difference at PATHWAY",
+      "description": "The PATHWAY team gathers experienced experts with deep expertise and understanding of the recruitment market as well as the career development journey of Vietnamese people. Each individual plays a strategic role in PATHWAY's comprehensive service ecosystem.",
+      "social": {
+        "linkedInAria": "LinkedIn Profile",
+        "emailAria": "Send Email"
+      }
+    },
+    "teamMembers": {
+      "member1": {
+        "name": "Nguyen Thi Minh",
+        "position": "Founder & CEO",
+        "bio": "With more than 15 years of experience in the field of recruitment and human resource training, Ms. Minh is the founder and main operator, the one who inspires, builds a humane, practical, and results-oriented corporate culture, guaranteeing the long-term vision and consistent service quality."
+      },
+      "member2": {
+        "name": "Tran Duc Anh",
+        "position": "Head of Career Consulting Team",
+        "bio": "Formerly a consultant at multinational companies, Mr. Duc Anh brings a modern and logical perspective to career building, applying coaching methods to help clients understand themselves deeply and become more self-motivated in the long-term orientation."
+      },
+      "member3": {
+        "name": "La Hoang Mai",
+        "position": "CV and LinkedIn Expert",
+        "bio": "Ms. Hoang Mai directly helps clients upgrade their personal profiles to conquer employers. Her sharp content editing skills have helped double the client's interview response rate."
+      },
+      "member4": {
+        "name": "Pham Van Tuan",
+        "position": "Interview Coach",
+        "bio": "Having held the position of recruiting manager at Fortune 500 corporations, Mr. Tuan coaches clients in a direct and practical way from an employer's perspective, helping them overcome difficult selection rounds with solid preparation and confidence."
+      }
+    },
+    "ourPartnersSection": {
+      "title": "Our Partners",
+      "description": "One of the clearest pieces of evidence of PATHWAY's reputation and capacity is the system of partners that this organization cooperates with, including global technology \"giants\".",
+      "partnerLogos": [
+        { "alt": "Google Logo" },
+        { "alt": "Apple Logo" },
+        { "alt": "Microsoft Logo" },
+        { "alt": "Amazon Logo" },
+        { "alt": "Netflix Logo" },
+        { "alt": "Facebook Logo" },
+        { "alt": "LinkedIn Logo" }
+      ]
+    },
+    "achievementsSection": {
+      "title": "Achievements",
+      "description": "",
+      "achievement1": {
+        "title": "Top 10 Career Consulting Units 2022",
+        "description": "Voted by the Ho Chi Minh City Business Association, this title is a testament to the quality of service, market reputation, and practical effectiveness of PATHWAY in supporting career orientation for young people."
+      },
+      "achievement2": {
+        "title": "Outstanding Startup 2021 – Vietnam Startup Award",
+        "description": "The award from VnExpress affirms that PATHWAY is not only good at expertise, but also possesses innovative startup thinking, with a business model with social value and potential for expansion."
+      },
+      "achievement3": {
+        "title": "Community Enterprise 2023",
+        "description": "This title emphasizes PATHWAY's social responsibility through organizing free training activities for students, demonstrating a vision of sustainable development."
+      }
+    },
+    "communityProgramsSection": {
+      "title": "Community Programs",
+      "description": "",
+      "program1": {
+        "imageAlt": "Image of a workshop for students",
+        "title": "Workshops for students",
+        "description": "Organizing more than 50 free workshops at universities nationwide, popularizing career knowledge, and preparing necessary soft skills and career thinking for students before entering the labor market."
+      },
+      "program2": {
+        "imageAlt": "Image of the PATHWAY Scholarship program",
+        "title": "PATHWAY Scholarship",
+        "description": "Offering 20 scholarships per year for students in difficult circumstances, including training courses and internship opportunities at partner units, opening career doors."
+      },
+      "program3": {
+        "imageAlt": "Image of career guidance program in remote areas",
+        "title": "Career guidance in remote areas",
+        "description": "Providing free career counseling for students in remote areas, demonstrating the spirit of enlightenment and equal opportunity, ensuring no one is left behind in the journey of discovering and building the future."
+      }
+    },
+    "ctaSection": {
+      "title": "Join PATHWAY",
+      "description": "Whether you are looking for a new career direction or want to enhance your professional standing, the PATHWAY team is always ready to accompany and support you.",
+      "primaryButton": "Schedule a Consultation",
+      "secondaryButton": "Contact Us"
+    }
   }
 }

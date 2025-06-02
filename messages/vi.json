@@ -3,10 +3,168 @@
     "changepass": "Thay đổi mật khẩu"
   },
   "Gioi_thieu": {
+    "pageBanner": {
+      "title": "Giới thiệu",
+      "subtitle": "Đồng hành cùng bạn trên hành trình sự nghiệp"
+    },
     "PATHWAY_Story": "Câu chuyện của chúng tôi",
     "PATHWAY_Story_Description": "PATHWAY được thành lập vào năm 2018 bởi những chuyên gia nhân sự hàng đầu với sứ mệnh giúp người lao động Việt Nam định hình và phát triển sự nghiệp bền vững trong thời đại số.",
     "PATHWAY_Story_Detail": "Từ những buổi tư vấn đầu tiên, chúng tôi nhận thấy rằng nhiều người tài năng đang gặp khó khăn trong việc thể hiện giá trị bản thân với nhà tuyển dụng và phát triển lộ trình nghề nghiệp rõ ràng.",
     "PATHWAY_Story_Mission": "Trong 5 năm qua, PATHWAY đã đồng hành cùng hơn 5000 khách hàng từ sinh viên mới ra trường đến quản lý cấp cao, giúp họ đạt được mục tiêu nghề nghiệp và xây dựng sự nghiệp bền vững.",
-    "PATHWAY_Story_Button": "Khám phá dịch vụ"
+    "PATHWAY_Story_Button": "Tìm hiểu thêm về Dịch vụ",
+    "storySection": {
+      "imageAlt": "Hình ảnh minh họa câu chuyện PATHWAY"
+    },
+    "missionVisionSection": {
+      "title": "Sứ mệnh và tầm nhìn",
+      "description": "",
+      "missionCard": {
+        "title": "Sứ mệnh",
+        "description": "“Pathway CV hỗ trợ người dùng tạo, quản lý và nâng cấp hồ sơ cá nhân phục vụ định hướng nghề nghiệp.”",
+        "listItem1": "“Tạo, quản lý và nâng cấp hồ sơ” : Không chỉ dừng lại ở việc cung cấp mẫu CV, dự án hướng đến một hệ sinh thái quản trị hồ sơ cá nhân dài hạn — cho phép người dùng cập nhật, điều chỉnh theo từng giai đoạn nghề nghiệp.",
+        "listItem2": "“Phục vụ định hướng nghề nghiệp” : Không đơn thuần là viết CV để xin việc, mà là hỗ trợ người dùng nhìn rõ bản thân, định hình con đường sự nghiệp và từ đó thể hiện nó một cách chiến lược.",
+        "listItem3": "Không đơn thuần là một công cụ tạo CV, mà là một đối tác chiến lược giúp người dùng phản ánh hành trình phát triển bản thân qua hồ sơ, với mục tiêu mang tính giáo dục và khai phóng."
+      },
+      "visionCard": {
+        "title": "Tầm nhìn",
+        "description": "“Trở thành nền tảng cá nhân hóa hồ sơ nghề nghiệp hàng đầu tại Việt Nam dành cho người trẻ và người đi làm.”",
+        "listItem1": "“Nền tảng cá nhân hóa hồ sơ nghề nghiệp” : Không phải sản phẩm đại trà, mà tập trung vào việc tùy biến theo hành trình, mục tiêu, ngành nghề của từng người dùng.",
+        "listItem2": "“Hàng đầu tại Việt Nam” : Tham vọng chiếm lĩnh vị trí dẫn đầu trong thị trường ngách này – đòi hỏi không chỉ công nghệ tốt, mà còn hiểu rõ người dùng Việt.",
+        "listItem3": "“Người trẻ và người đi làm” : Định rõ nhóm mục tiêu: từ sinh viên đến người đã có kinh nghiệm – vốn có nhu cầu rất khác nhau nhưng đều cần được hỗ trợ chuyên sâu, phù hợp với xu hướng phát triển cá nhân."
+      }
+    },
+    "coreValuesSection": {
+      "title": "Giá trị cốt lõi",
+      "description": ""
+    },
+    "coreValues": {
+      "expertise": {
+        "title": "Chuyên môn",
+        "description": "Đội ngũ chuyên gia giàu kinh nghiệm trong tuyển dụng và phát triển nghề nghiệp, mang lại góc nhìn thực tiễn và định hướng rõ ràng cho khách hàng."
+      },
+      "quality": {
+        "title": "Chất lượng",
+        "description": "Cam kết mang đến dịch vụ có chất lượng cao, được cá nhân hóa và tối ưu hóa theo mục tiêu nghề nghiệp của từng người dùng."
+      },
+      "empathy": {
+        "title": "Đồng cảm",
+        "description": "Thấu hiểu những khó khăn trong hành trình nghề nghiệp và đồng hành với khách hàng qua các lời khuyên thiết thực, chân thành."
+      },
+      "results": {
+        "title": "Kết quả",
+        "description": "Lấy kết quả làm trung tâm, Pathway tập trung vào mục tiêu cụ thể, giúp khách hàng đạt được thành tựu rõ ràng và bền vững trong sự nghiệp."
+      }
+    },
+    "milestonesSection": {
+      "title": "Hành trình phát triển",
+      "description": ""
+    },
+    "timelineItems": {
+      "stage1": {
+        "label": "2018 – 2019",
+        "title": "Xây dựng nền móng & phát triển dịch vụ lõi",
+        "description": ""
+      },
+      "stage2": {
+        "label": "2020 – 2021",
+        "title": "Chuyển đổi số & mở rộng thị trường địa lý",
+        "description": ""
+      },
+      "stage3": {
+        "label": "2022 – 2023",
+        "title": "Khẳng định vị thế bằng quy mô & nâng tầm giá trị thông qua đào tạo",
+        "description": ""
+      }
+    },
+    "statsSection": {
+      "clients": { "title": "Khách hàng" },
+      "experts": { "title": "Chuyên gia" },
+      "satisfaction": { "title": "Tỷ lệ hài lòng" },
+      "partners": { "title": "Đối tác doanh nghiệp" }
+    },
+    "teamSection": {
+      "title": "Đội ngũ chuyên gia – Nền tảng của sự khác biệt tại PATHWAY",
+      "description": "Đội ngũ PATHWAY quy tụ những chuyên gia dày dạn kinh nghiệm, có chuyên môn sâu và sự thấu hiểu thị trường tuyển dụng cũng như hành trình phát triển nghề nghiệp của người Việt. Mỗi cá nhân đều đóng vai trò chiến lược trong hệ sinh thái dịch vụ toàn diện của PATHWAY.",
+      "social": {
+        "linkedInAria": "Hồ sơ LinkedIn",
+        "emailAria": "Gửi email"
+      }
+    },
+    "teamMembers": {
+      "member1": {
+        "name": "Nguyễn Thị Minh",
+        "position": "Founder & CEO",
+        "bio": "Với hơn 15 năm kinh nghiệm trong lĩnh vực tuyển dụng và đào tạo nhân lực, chị Minh là người sáng lập và điều hành chính, người truyền cảm hứng, xây dựng văn hóa doanh nghiệp nhân bản, thực tế và định hướng kết quả, bảo chứng cho tầm nhìn dài hạn và chất lượng dịch vụ."
+      },
+      "member2": {
+        "name": "Trần Đức Anh",
+        "position": "Trưởng nhóm tư vấn nghề nghiệp",
+        "bio": "Từng là Advisor tại các công ty đa quốc gia, anh Đức Anh mang đến góc nhìn hiện đại, logic trong xây dựng lộ trình sự nghiệp, áp dụng phương pháp coaching giúp khách hàng hiểu sâu về bản thân và tự tin hơn trong định hướng dài hạn."
+      },
+      "member3": {
+        "name": "Lã Hoàng Mai",
+        "position": "Chuyên gia về CV và LinkedIn",
+        "bio": "Chị Hoàng Mai trực tiếp giúp khách hàng nâng cấp hồ sơ cá nhân để chinh phục nhà tuyển dụng. Kỹ năng tinh chỉnh nội dung sắc sảo của chị đã giúp tăng gấp đôi tỷ lệ phản hồi phỏng vấn của khách hàng."
+      },
+      "member4": {
+        "name": "Phạm Văn Tuấn",
+        "position": "Huấn luyện viên phỏng vấn",
+        "bio": "Từng đảm nhận vị trí quản lý tuyển dụng tại các tập đoàn Fortune 500, anh Tuấn huấn luyện khách hàng một cách trực diện và thực tiễn với góc nhìn từ phía nhà tuyển dụng, giúp họ vượt qua những vòng tuyển chọn khó khăn với sự chuẩn bị vững vàng và tâm thế tự tin."
+      }
+    },
+    "ourPartnersSection": {
+      "title": "Đối tác của chúng tôi",
+      "description": "Một trong những minh chứng rõ ràng nhất cho uy tín và năng lực của PATHWAY chính là hệ thống đối tác mà tổ chức này hợp tác, bao gồm các “ông lớn” công nghệ toàn cầu.",
+      "partnerLogos": [
+        { "alt": "Logo Google" },
+        { "alt": "Logo Apple" },
+        { "alt": "Logo Microsoft" },
+        { "alt": "Logo Amazon" },
+        { "alt": "Logo Netflix" },
+        { "alt": "Logo Facebook" },
+        { "alt": "Logo LinkedIn" }
+      ]
+    },
+    "achievementsSection": {
+      "title": "Thành tựu",
+      "description": "",
+      "achievement1": {
+        "title": "Top 10 đơn vị tư vấn nghề nghiệp 2022",
+        "description": "Được bình chọn bởi Hiệp hội Doanh nghiệp TP.HCM, minh chứng cho chất lượng dịch vụ, uy tín thị trường và hiệu quả thực tế trong việc hỗ trợ định hướng nghề nghiệp cho người trẻ."
+      },
+      "achievement2": {
+        "title": "Startup tiêu biểu 2021 – Giải thưởng Startup Việt",
+        "description": "Giải thưởng từ VnExpress khẳng định PATHWAY không chỉ giỏi chuyên môn mà còn sở hữu tư duy khởi nghiệp đổi mới sáng tạo, với mô hình kinh doanh có giá trị xã hội và tiềm năng mở rộng."
+      },
+      "achievement3": {
+        "title": "Doanh nghiệp vì cộng đồng 2023",
+        "description": "Danh hiệu này nhấn mạnh trách nhiệm xã hội của PATHWAY qua việc tổ chức đào tạo miễn phí cho sinh viên, thể hiện tầm nhìn phát triển bền vững."
+      }
+    },
+    "communityProgramsSection": {
+      "title": "Chương trình cộng đồng",
+      "description": "",
+      "program1": {
+        "imageAlt": "Hình ảnh workshop cho sinh viên",
+        "title": "Workshop cho sinh viên",
+        "description": "Tổ chức hơn 50 buổi workshop miễn phí tại các trường đại học trên toàn quốc, phổ cập kiến thức nghề nghiệp, chuẩn bị kỹ năng mềm và tư duy cần thiết cho sinh viên trước khi bước ra thị trường lao động."
+      },
+      "program2": {
+        "imageAlt": "Hình ảnh chương trình học bổng PATHWAY",
+        "title": "Học bổng PATHWAY",
+        "description": "Trao 20 suất học bổng mỗi năm cho sinh viên có hoàn cảnh khó khăn, bao gồm khóa đào tạo và cơ hội thực tập tại đơn vị đối tác, mở ra cánh cửa nghề nghiệp."
+      },
+      "program3": {
+        "imageAlt": "Hình ảnh chương trình hướng nghiệp vùng xa",
+        "title": "Hướng nghiệp vùng xa",
+        "description": "Tư vấn hướng nghiệp miễn phí cho học sinh tại các vùng sâu, vùng xa, thể hiện tinh thần khai sáng và công bằng cơ hội, đảm bảo không ai bị bỏ lại phía sau trong hành trình khám phá và xây dựng tương lai."
+      }
+    },
+    "ctaSection": {
+      "title": "Tham gia cùng PATHWAY",
+      "description": "Cho dù bạn đang tìm kiếm hướng đi mới cho sự nghiệp hay muốn nâng cao vị thế chuyên môn, đội ngũ PATHWAY luôn sẵn sàng đồng hành và hỗ trợ bạn.",
+      "primaryButton": "Đặt lịch tư vấn",
+      "secondaryButton": "Liên hệ chúng tôi"
+    }
   }
 }

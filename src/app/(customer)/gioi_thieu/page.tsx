@@ -19,6 +19,7 @@ const { Title, Paragraph } = Typography;
 
 function AboutPage() {
   const t = useTranslations("Gioi_thieu");
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -29,56 +30,52 @@ function AboutPage() {
   const coreValues = [
     {
       icon: <TeamOutlined />,
-      title: "Chuyên môn",
-      description:
-        "Đội ngũ chuyên gia với kinh nghiệm sâu rộng về tuyển dụng và phát triển nghề nghiệp.",
+      title: t("coreValues.expertise.title"),
+      description: t("coreValues.expertise.description"),
     },
     {
       icon: <TrophyOutlined />,
-      title: "Chất lượng",
-      description:
-        "Cam kết cung cấp dịch vụ chất lượng cao và giải pháp tối ưu cho từng khách hàng.",
+      title: t("coreValues.quality.title"),
+      description: t("coreValues.quality.description"),
     },
     {
       icon: <HeartOutlined />,
-      title: "Đồng cảm",
-      description:
-        "Hiểu sâu về thách thức nghề nghiệp và đưa ra lời khuyên tâm huyết, thực tế.",
+      title: t("coreValues.empathy.title"),
+      description: t("coreValues.empathy.description"),
     },
     {
       icon: <AimOutlined />,
-      title: "Kết quả",
-      description:
-        "Tập trung vào mục tiêu và kết quả cụ thể, giúp khách hàng đạt được thành công.",
+      title: t("coreValues.results.title"),
+      description: t("coreValues.results.description"),
     },
   ];
 
   const teamMembers = [
     {
-      name: "Nguyễn Thị Minh",
-      position: "Founder & CEO",
-      bio: "Với hơn 15 năm kinh nghiệm trong lĩnh vực HR và tuyển dụng tại các tập đoàn đa quốc gia, chị Minh sáng lập PATHWAY với sứ mệnh giúp người Việt Nam phát triển sự nghiệp bền vững.",
+      name: t("teamMembers.member1.name"),
+      position: t("teamMembers.member1.position"),
+      bio: t("teamMembers.member1.bio"),
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop",
     },
     {
-      name: "Trần Đức Anh",
-      position: "Career Advisor Lead",
-      bio: "Đức Anh từng là Giám đốc Nhân sự tại nhiều công ty công nghệ lớn, hiện dẫn dắt đội ngũ tư vấn viên tại PATHWAY với phương pháp coaching hiệu quả.",
+      name: t("teamMembers.member2.name"),
+      position: t("teamMembers.member2.position"),
+      bio: t("teamMembers.member2.bio"),
       image:
         "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop",
     },
     {
-      name: "Lê Hoàng Mai",
-      position: "CV & LinkedIn Expert",
-      bio: "Chuyên gia về xây dựng thương hiệu cá nhân và CV, Mai đã giúp hơn 2000 ứng viên nâng cao tỷ lệ phỏng vấn thành công từ 15% lên 85%.",
+      name: t("teamMembers.member3.name"),
+      position: t("teamMembers.member3.position"),
+      bio: t("teamMembers.member3.bio"),
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
     },
     {
-      name: "Phạm Văn Tuấn",
-      position: "Interview Coach",
-      bio: "Với kinh nghiệm phỏng vấn hàng nghìn ứng viên khi làm việc tại các công ty Fortune 500, Tuấn giúp học viên tự tin chinh phục nhà tuyển dụng khó tính nhất.",
+      name: t("teamMembers.member4.name"),
+      position: t("teamMembers.member4.position"),
+      bio: t("teamMembers.member4.bio"),
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
     },
@@ -86,83 +83,50 @@ function AboutPage() {
 
   const timelineItems = [
     {
-      label: "2018",
+      label: t("timelineItems.stage1.label"),
       children: (
         <div className="timeline-content">
-          <Title level={4}>Thành lập PATHWAY</Title>
-          <Paragraph>
-            Văn phòng đầu tiên được mở tại Quận 1, TP.HCM với đội ngũ 5 thành
-            viên.
-          </Paragraph>
+          <Title level={4}>{t("timelineItems.stage1.title")}</Title>
+          {t("timelineItems.stage1.description") && <Paragraph>{t("timelineItems.stage1.description")}</Paragraph>}
         </div>
       ),
     },
     {
-      label: "2019",
+      label: t("timelineItems.stage2.label"),
       children: (
         <div className="timeline-content">
-          <Title level={4}>Mở rộng dịch vụ</Title>
-          <Paragraph>
-            Phát triển đa dạng các dịch vụ từ đánh giá CV đến tư vấn phỏng vấn
-            và định hướng nghề nghiệp.
-          </Paragraph>
+          <Title level={4}>{t("timelineItems.stage2.title")}</Title>
+          {t("timelineItems.stage2.description") && <Paragraph>{t("timelineItems.stage2.description")}</Paragraph>}
         </div>
       ),
     },
     {
-      label: "2020",
+      label: t("timelineItems.stage3.label"),
       children: (
         <div className="timeline-content">
-          <Title level={4}>Ra mắt nền tảng trực tuyến</Title>
-          <Paragraph>
-            Chuyển đổi số thành công và cung cấp dịch vụ tư vấn trực tuyến trong
-            bối cảnh đại dịch.
-          </Paragraph>
-        </div>
-      ),
-    },
-    {
-      label: "2021",
-      children: (
-        <div className="timeline-content">
-          <Title level={4}>Mở văn phòng tại Hà Nội</Title>
-          <Paragraph>
-            Mở rộng thị trường phía Bắc với văn phòng thứ hai tại Hà Nội.
-          </Paragraph>
-        </div>
-      ),
-    },
-    {
-      label: "2022",
-      children: (
-        <div className="timeline-content">
-          <Title level={4}>Đạt mốc 5000 khách hàng</Title>
-          <Paragraph>
-            Kỷ niệm cột mốc quan trọng với 5000 khách hàng đã được tư vấn thành
-            công.
-          </Paragraph>
-        </div>
-      ),
-    },
-    {
-      label: "2023",
-      children: (
-        <div className="timeline-content">
-          <Title level={4}>Ra mắt Học viện PATHWAY</Title>
-          <Paragraph>
-            Thành lập trung tâm đào tạo kỹ năng mềm và phát triển sự nghiệp với
-            các khóa học chuyên sâu.
-          </Paragraph>
+          <Title level={4}>{t("timelineItems.stage3.title")}</Title>
+          {t("timelineItems.stage3.description") && <Paragraph>{t("timelineItems.stage3.description")}</Paragraph>}
         </div>
       ),
     },
   ];
 
+  const partnerLogoUrls = [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/600px-Facebook_Logo_2023.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png",
+  ];
+
+
   return (
     <div className="about-page">
       <PageBanner
-        title="Giới thiệu"
-        subtitle="Đồng hành cùng bạn trên hành trình sự nghiệp"
+        title={t("pageBanner.title")}
+        subtitle={t("pageBanner.subtitle")}
       />
 
       <section className="story-section">
@@ -189,7 +153,7 @@ function AboutPage() {
               <div className="story-image">
                 <Image
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
-                  alt="PATHWAY Story"
+                  alt={t("storySection.imageAlt")}
                   width={600}
                   height={450}
                   className="rounded-image"
@@ -204,60 +168,50 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Sứ mệnh và tầm nhìn
+              {t("missionVisionSection.title")}
             </Title>
-            <Paragraph className="section-description">
-              Định hướng hoạt động của PATHWAY dựa trên các giá trị cốt lõi
-            </Paragraph>
+            {t("missionVisionSection.description") && (
+                <Paragraph className="section-description">
+                    {t("missionVisionSection.description")}
+                </Paragraph>
+            )}
           </div>
 
           <Row gutter={[32, 32]} className="mission-content">
             <Col xs={24} md={12} data-aos="fade-right">
               <div className="mission-card">
-                <Title level={3}>Sứ mệnh</Title>
+                <Title level={3}>{t("missionVisionSection.missionCard.title")}</Title>
                 <Paragraph>
-                  Trao quyền cho người lao động Việt Nam phát triển sự nghiệp
-                  bền vững thông qua việc cung cấp các giải pháp tư vấn chuyên
-                  nghiệp, công cụ hiệu quả và kiến thức thực tiễn về thị trường
-                  lao động.
+                  {t("missionVisionSection.missionCard.description")}
                 </Paragraph>
                 <ul className="mission-list">
                   <li>
-                    <CheckCircleOutlined /> Nâng cao năng lực cạnh tranh nghề
-                    nghiệp
+                    <CheckCircleOutlined /> {t("missionVisionSection.missionCard.listItem1")}
                   </li>
                   <li>
-                    <CheckCircleOutlined /> Xây dựng cộng đồng hỗ trợ phát triển
-                    sự nghiệp
+                    <CheckCircleOutlined /> {t("missionVisionSection.missionCard.listItem2")}
                   </li>
                   <li>
-                    <CheckCircleOutlined /> Chia sẻ kiến thức thực tiễn từ các
-                    chuyên gia
+                    <CheckCircleOutlined /> {t("missionVisionSection.missionCard.listItem3")}
                   </li>
                 </ul>
               </div>
             </Col>
             <Col xs={24} md={12} data-aos="fade-left">
               <div className="vision-card">
-                <Title level={3}>Tầm nhìn</Title>
+                <Title level={3}>{t("missionVisionSection.visionCard.title")}</Title>
                 <Paragraph>
-                  Trở thành đơn vị hàng đầu trong lĩnh vực tư vấn phát triển sự
-                  nghiệp tại Việt Nam, tạo tác động tích cực đến 1 triệu người
-                  lao động và góp phần nâng cao chất lượng nguồn nhân lực Việt
-                  Nam trên thị trường lao động toàn cầu.
+                  {t("missionVisionSection.visionCard.description")}
                 </Paragraph>
                 <ul className="vision-list">
                   <li>
-                    <CheckCircleOutlined /> Mở rộng dịch vụ đến mọi tỉnh thành
-                    trong nước
+                    <CheckCircleOutlined /> {t("missionVisionSection.visionCard.listItem1")}
                   </li>
                   <li>
-                    <CheckCircleOutlined /> Phát triển nền tảng công nghệ hỗ trợ
-                    phát triển sự nghiệp
+                    <CheckCircleOutlined /> {t("missionVisionSection.visionCard.listItem2")}
                   </li>
                   <li>
-                    <CheckCircleOutlined /> Xây dựng mạng lưới đối tác doanh
-                    nghiệp rộng khắp
+                    <CheckCircleOutlined /> {t("missionVisionSection.visionCard.listItem3")}
                   </li>
                 </ul>
               </div>
@@ -270,11 +224,13 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Giá trị cốt lõi
+              {t("coreValuesSection.title")}
             </Title>
-            <Paragraph className="section-description">
-              Những giá trị định hình văn hóa và tiêu chuẩn dịch vụ của PATHWAY
-            </Paragraph>
+            {t("coreValuesSection.description") && (
+                <Paragraph className="section-description">
+                    {t("coreValuesSection.description")}
+                </Paragraph>
+            )}
           </div>
 
           <div className="values-grid">
@@ -302,11 +258,13 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Hành trình phát triển
+              {t("milestonesSection.title")}
             </Title>
-            <Paragraph className="section-description">
-              Những cột mốc quan trọng trong quá trình phát triển của PATHWAY
-            </Paragraph>
+            {t("milestonesSection.description") && (
+                <Paragraph className="section-description">
+                    {t("milestonesSection.description")}
+                </Paragraph>
+            )}
           </div>
 
           <div
@@ -324,22 +282,22 @@ function AboutPage() {
           <Row gutter={[32, 32]} className="stats-grid">
             <Col xs={24} sm={12} md={6} data-aos="fade-up" data-aos-delay="100">
               <div className="stat-card">
-                <Statistic title="Khách hàng" value={5000} suffix="+" />
+                <Statistic title={t("statsSection.clients.title")} value={5000} suffix="+" />
               </div>
             </Col>
             <Col xs={24} sm={12} md={6} data-aos="fade-up" data-aos-delay="200">
               <div className="stat-card">
-                <Statistic title="Chuyên gia" value={20} suffix="+" />
+                <Statistic title={t("statsSection.experts.title")} value={20} suffix="+" />
               </div>
             </Col>
             <Col xs={24} sm={12} md={6} data-aos="fade-up" data-aos-delay="300">
               <div className="stat-card">
-                <Statistic title="Tỷ lệ hài lòng" value={95} suffix="%" />
+                <Statistic title={t("statsSection.satisfaction.title")} value={95} suffix="%" />
               </div>
             </Col>
             <Col xs={24} sm={12} md={6} data-aos="fade-up" data-aos-delay="400">
               <div className="stat-card">
-                <Statistic title="Đối tác doanh nghiệp" value={50} suffix="+" />
+                <Statistic title={t("statsSection.partners.title")} value={50} suffix="+" />
               </div>
             </Col>
           </Row>
@@ -350,10 +308,10 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Đội ngũ của chúng tôi
+              {t("teamSection.title")}
             </Title>
             <Paragraph className="section-description">
-              Những chuyên gia đam mê và tận tâm đằng sau thành công của PATHWAY
+              {t("teamSection.description")}
             </Paragraph>
           </div>
 
@@ -379,10 +337,10 @@ function AboutPage() {
                   <div className="member-position">{member.position}</div>
                   <Paragraph className="member-bio">{member.bio}</Paragraph>
                   <div className="member-social">
-                    <a href="#" aria-label="LinkedIn">
+                    <a href="#" aria-label={t("teamSection.social.linkedInAria")}>
                       <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" aria-label="Email">
+                    <a href="#" aria-label={t("teamSection.social.emailAria")}>
                       <i className="fas fa-envelope"></i>
                     </a>
                   </div>
@@ -397,11 +355,10 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Đối tác của chúng tôi
+              {t("ourPartnersSection.title")}
             </Title>
             <Paragraph className="section-description">
-              PATHWAY hợp tác với các tổ chức hàng đầu để mang đến cơ hội nghề
-              nghiệp tốt nhất
+              {t("ourPartnersSection.description")}
             </Paragraph>
           </div>
 
@@ -410,21 +367,11 @@ function AboutPage() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            {/* Partner logos */}
-            {[
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/600px-Facebook_Logo_2023.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Intel_logo_%282006%29.svg/1005px-Intel_logo_%282006%29.svg.png",
-            ].map((logoUrl, index) => (
+            {partnerLogoUrls.map((logoUrl, index) => (
               <div key={index} className="partner-logo">
                 <Image
                   src={logoUrl}
-                  alt={`Partner ${index + 1}`}
+                  alt={t(`ourPartnersSection.partnerLogos.${index}.alt`, { defaultValue: `Partner ${index + 1}` })}
                   width={150}
                   height={80}
                 />
@@ -438,11 +385,13 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Thành tựu
+              {t("achievementsSection.title")}
             </Title>
-            <Paragraph className="section-description">
-              Những dấu ấn và công nhận trong hành trình phát triển của PATHWAY
-            </Paragraph>
+            {t("achievementsSection.description") && (
+                <Paragraph className="section-description">
+                    {t("achievementsSection.description")}
+                </Paragraph>
+            )}
           </div>
 
           <Row gutter={[32, 32]} className="achievements-grid">
@@ -451,9 +400,9 @@ function AboutPage() {
                 <div className="achievement-icon">
                   <TrophyOutlined />
                 </div>
-                <Title level={4}>Top 10 đơn vị tư vấn nghề nghiệp 2022</Title>
+                <Title level={4}>{t("achievementsSection.achievement1.title")}</Title>
                 <Paragraph>
-                  Được bình chọn bởi Hiệp hội Doanh nghiệp TP.HCM
+                  {t("achievementsSection.achievement1.description")}
                 </Paragraph>
               </Card>
             </Col>
@@ -462,9 +411,9 @@ function AboutPage() {
                 <div className="achievement-icon">
                   <TrophyOutlined />
                 </div>
-                <Title level={4}>Startup tiêu biểu 2021</Title>
+                <Title level={4}>{t("achievementsSection.achievement2.title")}</Title>
                 <Paragraph>
-                  Giải thưởng Startup Việt do VnExpress tổ chức
+                  {t("achievementsSection.achievement2.description")}
                 </Paragraph>
               </Card>
             </Col>
@@ -473,10 +422,9 @@ function AboutPage() {
                 <div className="achievement-icon">
                   <TrophyOutlined />
                 </div>
-                <Title level={4}>Doanh nghiệp vì cộng đồng 2023</Title>
+                <Title level={4}>{t("achievementsSection.achievement3.title")}</Title>
                 <Paragraph>
-                  Ghi nhận đóng góp trong các hoạt động đào tạo miễn phí cho
-                  sinh viên
+                  {t("achievementsSection.achievement3.description")}
                 </Paragraph>
               </Card>
             </Col>
@@ -488,12 +436,13 @@ function AboutPage() {
         <div className="container">
           <div className="section-header text-center" data-aos="fade-up">
             <Title level={2} className="section-title">
-              Chương trình cộng đồng
+              {t("communityProgramsSection.title")}
             </Title>
-            <Paragraph className="section-description">
-              PATHWAY luôn nỗ lực đóng góp cho cộng đồng qua nhiều hoạt động ý
-              nghĩa
-            </Paragraph>
+            {t("communityProgramsSection.description") && (
+                <Paragraph className="section-description">
+                    {t("communityProgramsSection.description")}
+                </Paragraph>
+            )}
           </div>
 
           <Row gutter={[32, 32]} className="programs-grid">
@@ -502,17 +451,15 @@ function AboutPage() {
                 <div className="program-image">
                   <Image
                     src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
-                    alt="Workshop cho sinh viên"
+                    alt={t("communityProgramsSection.program1.imageAlt")}
                     width={350}
                     height={250}
                     className="rounded-image"
                   />
                 </div>
-                <Title level={4}>Workshop cho sinh viên</Title>
+                <Title level={4}>{t("communityProgramsSection.program1.title")}</Title>
                 <Paragraph>
-                  Tổ chức hơn 50 buổi workshop miễn phí tại các trường đại học
-                  trên toàn quốc, chia sẻ kiến thức và kỹ năng cho sinh viên sắp
-                  ra trường.
+                  {t("communityProgramsSection.program1.description")}
                 </Paragraph>
               </div>
             </Col>
@@ -521,17 +468,15 @@ function AboutPage() {
                 <div className="program-image">
                   <Image
                     src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
-                    alt="Học bổng PATHWAY"
+                    alt={t("communityProgramsSection.program2.imageAlt")}
                     width={350}
                     height={250}
                     className="rounded-image"
                   />
                 </div>
-                <Title level={4}>Học bổng PATHWAY</Title>
+                <Title level={4}>{t("communityProgramsSection.program2.title")}</Title>
                 <Paragraph>
-                  Trao tặng 20 suất học bổng mỗi năm cho sinh viên có hoàn cảnh
-                  khó khăn, bao gồm khóa đào tạo và cơ hội thực tập tại các đơn
-                  vị đối tác.
+                  {t("communityProgramsSection.program2.description")}
                 </Paragraph>
               </div>
             </Col>
@@ -540,17 +485,15 @@ function AboutPage() {
                 <div className="program-image">
                   <Image
                     src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?q=80&w=2070&auto=format&fit=crop"
-                    alt="Hướng nghiệp vùng xa"
+                    alt={t("communityProgramsSection.program3.imageAlt")}
                     width={350}
                     height={250}
                     className="rounded-image"
                   />
                 </div>
-                <Title level={4}>Hướng nghiệp vùng xa</Title>
+                <Title level={4}>{t("communityProgramsSection.program3.title")}</Title>
                 <Paragraph>
-                  Chương trình tư vấn hướng nghiệp miễn phí cho học sinh tại các
-                  vùng sâu, vùng xa, giúp các em có định hướng nghề nghiệp rõ
-                  ràng.
+                  {t("communityProgramsSection.program3.description")}
                 </Paragraph>
               </div>
             </Col>
@@ -561,18 +504,16 @@ function AboutPage() {
       <section className="cta-section" data-aos="fade-up">
         <div className="container">
           <div className="cta-content">
-            <Title level={2}>Tham gia cùng PATHWAY</Title>
+            <Title level={2}>{t("ctaSection.title")}</Title>
             <Paragraph className="custom-paragraph">
-              Cho dù bạn đang tìm kiếm hướng đi mới cho sự nghiệp hay muốn nâng
-              cao vị thế chuyên môn, đội ngũ PATHWAY luôn sẵn sàng đồng hành và
-              hỗ trợ bạn.
+              {t("ctaSection.description")}
             </Paragraph>
             <div className="cta-buttons">
               <Button type="primary" size="large" className="cta-primary-btn">
-                Đặt lịch tư vấn
+                {t("ctaSection.primaryButton")}
               </Button>
               <Button size="large" className="cta-secondary-btn">
-                Liên hệ chúng tôi
+                {t("ctaSection.secondaryButton")}
               </Button>
             </div>
           </div>
