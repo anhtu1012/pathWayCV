@@ -166,5 +166,166 @@
       "primaryButton": "Đặt lịch tư vấn",
       "secondaryButton": "Liên hệ chúng tôi"
     }
+  },
+   "ServicePage": {
+    "pageBanner": {
+      "title": "Dịch vụ",
+      "subtitle": "Các giải pháp tư vấn chuyên nghiệp giúp bạn phát triển sự nghiệp"
+    },
+    "overview": {
+      "title": "Giải pháp toàn diện cho sự nghiệp của bạn",
+      "description": "PATHWAY cung cấp các dịch vụ tư vấn sự nghiệp chuyên nghiệp được thiết kế riêng cho từng giai đoạn phát triển. Từ sinh viên mới ra trường đến chuyên gia cấp cao, chúng tôi đồng hành cùng bạn trên con đường sự nghiệp.",
+      "stat1_value": "95%",
+      "stat1_label": "Khách hàng hài lòng",
+      "stat2_value": "85%",
+      "stat2_label": "Tỷ lệ thành công",
+      "stat3_value": "5000+",
+      "stat3_label": "Khách hàng",
+      "ctaButton": "Đặt lịch tư vấn miễn phí",
+      "imageAlt": "Dịch vụ của PATHWAY"
+    },
+    "serviceList": {
+      "title": "Dịch vụ của chúng tôi",
+      "description": "Khám phá các dịch vụ chuyên nghiệp được thiết kế để giúp bạn đạt được mục tiêu nghề nghiệp",
+      "learnMoreButton": "Tìm hiểu thêm"
+    },
+    "services": {
+      "service1": {
+        "title": "Đánh giá CV chuyên sâu",
+        "description": "Đánh giá và chỉnh sửa CV của bạn bởi chuyên gia tuyển dụng để tối ưu hóa cơ hội được mời phỏng vấn.",
+        "feature1": "Phân tích chi tiết điểm mạnh, điểm yếu",
+        "feature2": "Tư vấn cấu trúc và nội dung",
+        "feature3": "Gợi ý từ khóa ngành nghề phù hợp",
+        "feature4": "Báo cáo đánh giá chi tiết"
+      },
+      "service2": {
+        "title": "Tư vấn phỏng vấn & định hướng",
+        "description": "Chuẩn bị kỹ năng và chiến lược phỏng vấn hiệu quả, tăng tỷ lệ thành công với nhà tuyển dụng.",
+        "feature1": "Phỏng vấn thử với feedback chi tiết",
+        "feature2": "Kỹ thuật trả lời câu hỏi khó",
+        "feature3": "Luyện tập kỹ năng thuyết trình",
+        "feature4": "Định hướng phát triển sự nghiệp"
+      },
+      "service3": {
+        "title": "Định vị thương hiệu cá nhân",
+        "description": "Xây dựng hình ảnh chuyên nghiệp và nổi bật trên thị trường lao động và các nền tảng trực tuyến.",
+        "feature1": "Tối ưu hồ sơ LinkedIn",
+        "feature2": "Chiến lược xây dựng thương hiệu",
+        "feature3": "Tạo portfolio chuyên nghiệp",
+        "feature4": "Kế hoạch phát triển mạng lưới"
+      },
+      "service4": {
+        "title": "Đào tạo kỹ năng mềm",
+        "description": "Phát triển các kỹ năng thiết yếu giúp bạn vượt trội trong môi trường làm việc hiện đại.",
+        "feature1": "Kỹ năng giao tiếp chuyên nghiệp",
+        "feature2": "Làm việc nhóm & lãnh đạo",
+        "feature3": "Quản lý thời gian & stress",
+        "feature4": "Tư duy phản biện & giải quyết vấn đề"
+      }
+    },
+    "process": {
+      "title": "Quy trình làm việc",
+      "description": "Chúng tôi tuân theo quy trình chuyên nghiệp để đảm bảo hiệu quả tối đa",
+      "step1": {
+        "title": "Tư vấn ban đầu",
+        "description": "Phân tích nhu cầu và mục tiêu nghề nghiệp của bạn để đề xuất giải pháp phù hợp nhất"
+      },
+      "step2": {
+        "title": "Xây dựng kế hoạch",
+        "description": "Thiết kế lộ trình và kế hoạch hành động chi tiết dựa trên tình hình cụ thể"
+      },
+      "step3": {
+        "title": "Thực hiện dịch vụ",
+        "description": "Triển khai các hoạt động tư vấn, đào tạo và hỗ trợ theo kế hoạch đã thống nhất"
+      },
+      "step4": {
+        "title": "Theo dõi & đánh giá",
+        "description": "Đo lường kết quả và điều chỉnh chiến lược để đảm bảo đạt được mục tiêu đề ra"
+      }
+    },
+    "testimonials": {
+      "title": "Khách hàng nói gì về chúng tôi",
+      "testimonial1": {
+        "name": "Nguyễn Thanh Hà",
+        "position": "Marketing Manager tại Tech Corp",
+        "content": "Dịch vụ đánh giá CV của PATHWAY đã giúp tôi cải thiện hồ sơ một cách đáng kể. Chỉ sau 2 tuần tôi đã nhận được nhiều lời mời phỏng vấn từ các công ty hàng đầu."
+      },
+      "testimonial2": {
+        "name": "Trần Minh Đức",
+        "position": "Software Developer tại FinTech Solutions",
+        "content": "Buổi tư vấn phỏng vấn thử đã giúp tôi tự tin hơn rất nhiều. Cách coach phân tích điểm mạnh, điểm yếu và đưa ra lời khuyên rất thực tế và hiệu quả."
+      },
+      "testimonial3": {
+        "name": "Lê Thị Phương",
+        "position": "HR Specialist tại Global Group",
+        "content": "Tôi đã tham gia khóa định vị thương hiệu cá nhân và thấy sự thay đổi rõ rệt trong cách nhà tuyển dụng nhìn nhận profile của mình. Xứng đáng với từng đồng bỏ ra!"
+      }
+    },
+    "pricing": {
+      "title": "Bảng giá dịch vụ",
+      "description": "Chúng tôi cung cấp các gói dịch vụ linh hoạt phù hợp với mọi nhu cầu và ngân sách",
+      "currency": "VNĐ",
+      "signUpButton": "Đăng ký ngay",
+      "contactForQuoteMessage": "Vui lòng liên hệ để nhận báo giá chi tiết",
+      "contactButton": "Liên hệ tư vấn",
+      "tab1_title": "Đánh giá CV",
+      "package1": {
+        "tag": "Phổ biến",
+        "title": "Gói Cơ bản",
+        "price": "499.000",
+        "feature1": "Đánh giá CV toàn diện",
+        "feature2": "Báo cáo chi tiết",
+        "feature3": "Gợi ý cải thiện",
+        "feature4_disabled": "Chỉnh sửa CV",
+        "feature5_disabled": "Tư vấn 1-1 với chuyên gia"
+      },
+      "package2": {
+        "tag": "Khuyến nghị",
+        "title": "Gói Nâng cao",
+        "price": "899.000",
+        "feature1": "Đánh giá CV toàn diện",
+        "feature2": "Báo cáo chi tiết",
+        "feature3": "Gợi ý cải thiện",
+        "feature4": "Chỉnh sửa CV",
+        "feature5_disabled": "Tư vấn 1-1 với chuyên gia"
+      },
+      "package3": {
+        "tag": "Cao cấp",
+        "title": "Gói VIP",
+        "price": "1.499.000",
+        "feature1": "Đánh giá CV toàn diện",
+        "feature2": "Báo cáo chi tiết",
+        "feature3": "Gợi ý cải thiện",
+        "feature4": "Chỉnh sửa CV",
+        "feature5": "Tư vấn 1-1 với chuyên gia (60 phút)"
+      },
+      "tab2_title": "Tư vấn phỏng vấn",
+      "tab3_title": "Định vị thương hiệu cá nhân"
+    },
+    "cta": {
+      "title": "Sẵn sàng nâng cao sự nghiệp của bạn?",
+      "description": "Đặt lịch tư vấn miễn phí 15 phút với chuyên gia PATHWAY ngay hôm nay để nhận giải pháp phù hợp nhất cho mục tiêu nghề nghiệp của bạn.",
+      "button1_text": "Đặt lịch ngay",
+      "button2_text": "Tìm hiểu thêm"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "item1": {
+        "question": "Tôi nhận được gì từ dịch vụ đánh giá CV?",
+        "answer": "Bạn sẽ nhận được báo cáo đánh giá chi tiết về điểm mạnh, điểm yếu của CV hiện tại, cùng với các gợi ý cụ thể để cải thiện nội dung, cấu trúc và định dạng. Tùy theo gói dịch vụ, bạn còn có thể nhận được CV được chỉnh sửa bởi chuyên gia và buổi tư vấn 1-1."
+      },
+      "item2": {
+        "question": "Buổi tư vấn phỏng vấn thử diễn ra như thế nào?",
+        "answer": "Buổi tư vấn phỏng vấn thử bao gồm phần phỏng vấn mô phỏng dựa trên vị trí bạn đang ứng tuyển, sau đó chuyên gia sẽ đánh giá và đưa ra phản hồi chi tiết về câu trả lời, ngôn ngữ cơ thể, kỹ năng giao tiếp và các gợi ý cải thiện cụ thể."
+      },
+      "item3": {
+        "question": "Dịch vụ định vị thương hiệu cá nhân phù hợp với ai?",
+        "answer": "Dịch vụ này phù hợp cho cả người mới đi làm muốn xây dựng hình ảnh chuyên nghiệp và chuyên gia cấp cao muốn nâng cao vị thế trong ngành. Chúng tôi sẽ tùy chỉnh chiến lược phù hợp với mức độ kinh nghiệm và mục tiêu cụ thể của bạn."
+      },
+      "item4": {
+        "question": "Tôi có thể yêu cầu tư vấn cho ngành nghề đặc thù không?",
+        "answer": "Có, đội ngũ tư vấn của PATHWAY có kinh nghiệm trong nhiều lĩnh vực khác nhau như IT, tài chính, marketing, kỹ thuật, v.v. Chúng tôi sẽ kết nối bạn với chuyên gia có kinh nghiệm trong ngành nghề của bạn để đảm bảo lời khuyên phù hợp và thiết thực."
+      }
+    }
   }
 }
