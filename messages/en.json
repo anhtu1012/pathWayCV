@@ -410,5 +410,136 @@
         "answer": "Yes, PATHWAY's consulting team has experience in various fields such as IT, finance, marketing, engineering, etc. We will connect you with an expert experienced in your industry to ensure relevant and practical advice."
       }
     }
+  },
+  "FeaturedProjectsPage": {
+    "pageBanner": {
+      "title": "Featured Projects",
+      "subtitle": "Discover outstanding projects that have helped our clients achieve their career goals"
+    },
+    "categoryTabs": {
+      "all": "All Projects",
+      "corporate": "Corporate",
+      "executive": "Executive Level",
+      "education": "Education",
+      "tools": "Tools & Methodologies"
+    },
+    "projectDetails": {
+      "clientLabel": "Client:",
+      "resultsTitle": "Achieved Results",
+      "detailsButton": "View Details"
+    },
+    "projects": {
+      "project1": {
+        "title": "Successful Career Transition for 200 Bank Employees",
+        "description": "Consulting and coaching project for career transition of bank employees after restructuring. 89% found new jobs within 3 months.",
+        "client": "Orient Commercial Joint Stock Bank",
+        "date": "June - December, 2022",
+        "tag1": "Career Transition",
+        "tag2": "Job Coaching",
+        "tag3": "CV Development",
+        "result1": "89% of participants found new jobs within 3 months",
+        "result2": "95% reported satisfaction with the program",
+        "result3": "78% experienced an increase in salary compared to their previous positions"
+      },
+      "project2": {
+        "title": "Building Personal Branding Strategy for Leadership Team",
+        "description": "Consulting project to build personal brands for 25 senior leaders of a multinational corporation, helping them enhance their LinkedIn presence and become thought leaders in the industry.",
+        "client": "Samsung Vietnam Corporation",
+        "date": "March - August, 2022",
+        "tag1": "Personal Branding",
+        "tag2": "LinkedIn",
+        "tag3": "Thought Leadership",
+        "result1": "Average 217% increase in LinkedIn connections after 6 months",
+        "result2": "15 leaders invited as speakers at industry events",
+        "result3": "320% increase in engagement on posts"
+      },
+      "project3": {
+        "title": "Interview Skills Training Program for Graduating Students",
+        "description": "Collaborative project with a university to organize a series of workshops on interview skills, CV preparation, and career orientation for 500 final-year students.",
+        "client": "Ho Chi Minh City University of Technology",
+        "date": "April - May, 2023",
+        "tag1": "Student Training",
+        "tag2": "Interview Skills",
+        "tag3": "CV Preparation",
+        "result1": "500+ students trained through 10 workshops",
+        "result2": "72% of students found employment within 2 months of graduation",
+        "result3": "Average satisfaction score of 4.8/5"
+      },
+      "project4": {
+        "title": "HR Department Restructuring and Recruitment Process Optimization",
+        "description": "Consulting project to support HR department restructuring, build new recruitment processes, and train the recruitment team according to international standards.",
+        "client": "FPT Corporation",
+        "date": "January - May, 2022",
+        "tag1": "HR Restructuring",
+        "tag2": "Recruitment Process",
+        "tag3": "HR Training",
+        "result1": "35% reduction in recruitment time",
+        "result2": "28% increase in employee retention after 1 year",
+        "result3": "42% increase in candidate satisfaction index"
+      },
+      "project5": {
+        "title": "Development of Competency Assessment Toolkit for the Tech Industry",
+        "description": "Developed a comprehensive competency assessment toolkit for IT positions, including technical tests, behavioral interviews, and cultural fit assessments.",
+        "client": "VNG Corporation",
+        "date": "September, 2022 - February, 2023",
+        "tag1": "Competency Assessment",
+        "tag2": "Information Technology",
+        "tag3": "Recruitment",
+        "result1": "47% reduction in hiring mismatches",
+        "result2": "23% increase in the quality of candidates reaching the final interview stage",
+        "result3": "30% savings in recruitment costs"
+      },
+      "project6": {
+        "title": "Young Talent Leadership Coaching Program",
+        "description": "A 6-month program to develop 30 young talented leaders through 1-on-1 coaching, seminars, and practical projects, preparing them for higher management positions.",
+        "client": "Unilever Vietnam",
+        "date": "July, 2022 - January, 2023",
+        "tag1": "Leadership Development",
+        "tag2": "Coaching",
+        "tag3": "Talent Management",
+        "result1": "87% of participants promoted within 12 months",
+        "result2": "42% increase in the engagement index of the talent group",
+        "result3": "35% reduction in turnover rate among high-potential employees"
+      }
+    },
+    "noProjects": {
+      "title": "No projects found in this category.",
+      "button": "View All Projects"
+    },
+    "statsSection": {
+      "stat1_number": "100+",
+      "stat1_title": "Projects Completed",
+      "stat1_desc": "Consulting and training projects for corporate and individual partners",
+      "stat2_number": "87%",
+      "stat2_title": "Returning Clients",
+      "stat2_desc": "Percentage of clients who continue to use our services for subsequent projects",
+      "stat3_number": "20+",
+      "stat3_title": "Industries Served",
+      "stat3_desc": "Diverse work experience across various sectors from technology to finance and manufacturing"
+    },
+    "testimonialSection": {
+      "title": "What Our Clients Say About Us",
+      "testimonial1": {
+        "quote": "PATHWAY helped our HR team build a more effective recruitment process. We reduced the time to find suitable candidates by 40% and increased hiring quality.",
+        "authorName": "Tran Thi Minh",
+        "authorTitle": "HR Director, FPT Software"
+      },
+      "testimonial2": {
+        "quote": "PATHWAY's coaching program helped me clarify my development direction and build an effective personal brand. As a result, I secured my desired position at a multinational company.",
+        "authorName": "Nguyen Van Hung",
+        "authorTitle": "Marketing Director, Unilever"
+      },
+      "testimonial3": {
+        "quote": "I was very impressed with PATHWAY's professional working method. The interview skills workshops provided practical value to our students, helping them become more confident when entering the job market.",
+        "authorName": "Le Thi Huong",
+        "authorTitle": "Head of Student Support, University of Technology"
+      }
+    },
+    "cta": {
+      "title": "Tell us about your project",
+      "description": "We are ready to listen and propose solutions tailored to the specific needs of your business or individual goals.",
+      "button1_text": "Contact Us Now",
+      "button2_text": "View More Services"
+    }
   }
 }

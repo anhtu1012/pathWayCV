@@ -327,5 +327,136 @@
         "answer": "Có, đội ngũ tư vấn của PATHWAY có kinh nghiệm trong nhiều lĩnh vực khác nhau như IT, tài chính, marketing, kỹ thuật, v.v. Chúng tôi sẽ kết nối bạn với chuyên gia có kinh nghiệm trong ngành nghề của bạn để đảm bảo lời khuyên phù hợp và thiết thực."
       }
     }
+  },
+  "FeaturedProjectsPage": {
+    "pageBanner": {
+      "title": "Dự Án Nổi Bật",
+      "subtitle": "Khám phá những dự án tiêu biểu đã giúp khách hàng của chúng tôi đạt được mục tiêu nghề nghiệp"
+    },
+    "categoryTabs": {
+      "all": "Tất cả dự án",
+      "corporate": "Doanh nghiệp",
+      "executive": "Lãnh đạo cấp cao",
+      "education": "Giáo dục",
+      "tools": "Công cụ & Phương pháp"
+    },
+    "projectDetails": {
+      "clientLabel": "Khách hàng:",
+      "resultsTitle": "Kết quả đạt được",
+      "detailsButton": "Xem chi tiết"
+    },
+    "projects": {
+      "project1": {
+        "title": "Chuyển đổi nghề nghiệp thành công cho 200 nhân viên ngân hàng",
+        "description": "Dự án tư vấn và huấn luyện chuyển đổi nghề nghiệp cho các nhân viên của một ngân hàng sau tái cấu trúc. Tỷ lệ tìm được việc làm mới trong vòng 3 tháng đạt 89%.",
+        "client": "Ngân hàng TMCP Phương Đông",
+        "date": "Tháng 6 - Tháng 12, 2022",
+        "tag1": "Chuyển đổi nghề nghiệp",
+        "tag2": "Huấn luyện việc làm",
+        "tag3": "Phát triển CV",
+        "result1": "89% học viên tìm được việc làm mới trong vòng 3 tháng",
+        "result2": "95% báo cáo hài lòng với chương trình",
+        "result3": "78% tăng mức lương so với vị trí cũ"
+      },
+      "project2": {
+        "title": "Xây dựng chiến lược thương hiệu cá nhân cho đội ngũ lãnh đạo",
+        "description": "Dự án tư vấn và xây dựng thương hiệu cá nhân cho 25 lãnh đạo cấp cao của một tập đoàn đa quốc gia, giúp họ tăng cường hiện diện trên LinkedIn và trở thành thought leaders trong ngành.",
+        "client": "Tập đoàn Samsung Việt Nam",
+        "date": "Tháng 3 - Tháng 8, 2022",
+        "tag1": "Thương hiệu cá nhân",
+        "tag2": "LinkedIn",
+        "tag3": "Lãnh đạo tư tưởng",
+        "result1": "Tăng kết nối LinkedIn trung bình 217% sau 6 tháng",
+        "result2": "15 lãnh đạo được mời làm diễn giả tại các sự kiện ngành",
+        "result3": "Tăng 320% lượng engagement trên các bài đăng"
+      },
+      "project3": {
+        "title": "Chương trình đào tạo kỹ năng phỏng vấn cho sinh viên sắp tốt nghiệp",
+        "description": "Dự án hợp tác với trường đại học tổ chức chuỗi workshop về kỹ năng phỏng vấn, chuẩn bị CV và định hướng nghề nghiệp cho 500 sinh viên năm cuối.",
+        "client": "Đại học Bách Khoa TP.HCM",
+        "date": "Tháng 4 - Tháng 5, 2023",
+        "tag1": "Đào tạo sinh viên",
+        "tag2": "Kỹ năng phỏng vấn",
+        "tag3": "Chuẩn bị CV",
+        "result1": "500+ sinh viên được đào tạo qua 10 workshop",
+        "result2": "72% sinh viên tìm được việc làm trong vòng 2 tháng sau tốt nghiệp",
+        "result3": "Điểm hài lòng trung bình 4.8/5"
+      },
+      "project4": {
+        "title": "Tái cấu trúc bộ phận HR và quy trình tuyển dụng",
+        "description": "Dự án tư vấn và hỗ trợ tái cấu trúc bộ phận nhân sự, xây dựng quy trình tuyển dụng mới và đào tạo đội ngũ tuyển dụng theo các tiêu chuẩn quốc tế.",
+        "client": "Công ty Cổ phần FPT",
+        "date": "Tháng 1 - Tháng 5, 2022",
+        "tag1": "Tái cấu trúc HR",
+        "tag2": "Quy trình tuyển dụng",
+        "tag3": "Đào tạo nhân sự",
+        "result1": "Giảm 35% thời gian tuyển dụng",
+        "result2": "Tăng 28% tỷ lệ giữ chân nhân viên sau 1 năm",
+        "result3": "Chỉ số hài lòng của ứng viên tăng 42%"
+      },
+      "project5": {
+        "title": "Xây dựng bộ công cụ đánh giá năng lực cho ngành công nghệ",
+        "description": "Phát triển bộ công cụ đánh giá năng lực toàn diện cho các vị trí công nghệ thông tin, bao gồm các bài test kỹ thuật, phỏng vấn hành vi và đánh giá văn hóa phù hợp.",
+        "client": "Tập đoàn VNG",
+        "date": "Tháng 9, 2022 - Tháng 2, 2023",
+        "tag1": "Đánh giá năng lực",
+        "tag2": "Công nghệ thông tin",
+        "tag3": "Tuyển dụng",
+        "result1": "Giảm 47% tỷ lệ tuyển dụng sai người",
+        "result2": "Tăng 23% chất lượng ứng viên vào vòng phỏng vấn cuối",
+        "result3": "Tiết kiệm 30% chi phí tuyển dụng"
+      },
+      "project6": {
+        "title": "Chương trình huấn luyện lãnh đạo tài năng trẻ",
+        "description": "Chương trình 6 tháng nhằm phát triển 30 lãnh đạo tài năng trẻ thông qua coaching 1-1, seminar và dự án thực tế, giúp họ chuẩn bị cho các vị trí quản lý cao hơn.",
+        "client": "Unilever Việt Nam",
+        "date": "Tháng 7, 2022 - Tháng 1, 2023",
+        "tag1": "Phát triển lãnh đạo",
+        "tag2": "Coaching",
+        "tag3": "Quản lý tài năng",
+        "result1": "87% học viên được thăng chức trong vòng 12 tháng",
+        "result2": "Tăng 42% chỉ số engagement của nhóm tài năng",
+        "result3": "Giảm 35% tỷ lệ nghỉ việc ở nhóm high potential"
+      }
+    },
+    "noProjects": {
+      "title": "Không có dự án nào trong danh mục này.",
+      "button": "Xem tất cả dự án"
+    },
+    "statsSection": {
+      "stat1_number": "100+",
+      "stat1_title": "Dự án đã hoàn thành",
+      "stat1_desc": "Dự án tư vấn và đào tạo cho các đối tác doanh nghiệp và cá nhân",
+      "stat2_number": "87%",
+      "stat2_title": "Khách hàng quay lại",
+      "stat2_desc": "Tỷ lệ khách hàng tiếp tục sử dụng dịch vụ của chúng tôi cho các dự án tiếp theo",
+      "stat3_number": "20+",
+      "stat3_title": "Ngành nghề đã phục vụ",
+      "stat3_desc": "Kinh nghiệm làm việc đa dạng với nhiều lĩnh vực từ công nghệ đến tài chính, sản xuất"
+    },
+    "testimonialSection": {
+      "title": "Khách hàng nói gì về chúng tôi",
+      "testimonial1": {
+        "quote": "PATHWAY đã giúp đội ngũ HR của chúng tôi xây dựng quy trình tuyển dụng hiệu quả hơn. Chúng tôi đã giảm 40% thời gian tìm kiếm ứng viên phù hợp và tăng chất lượng tuyển dụng.",
+        "authorName": "Trần Thị Minh",
+        "authorTitle": "Giám đốc Nhân sự, FPT Software"
+      },
+      "testimonial2": {
+        "quote": "Chương trình coaching của PATHWAY đã giúp tôi rõ ràng hơn về định hướng phát triển và xây dựng thương hiệu cá nhân hiệu quả. Nhờ đó, tôi đã nhận được vị trí mong muốn tại một công ty đa quốc gia.",
+        "authorName": "Nguyễn Văn Hưng",
+        "authorTitle": "Marketing Director, Unilever"
+      },
+      "testimonial3": {
+        "quote": "Tôi rất ấn tượng với phương pháp làm việc chuyên nghiệp của PATHWAY. Các workshop về kỹ năng phỏng vấn đã mang lại giá trị thiết thực cho sinh viên của chúng tôi, giúp họ tự tin hơn khi bước vào thị trường lao động.",
+        "authorName": "Lê Thị Hương",
+        "authorTitle": "Trưởng phòng Hỗ trợ SV, ĐH Bách Khoa"
+      }
+    },
+    "cta": {
+      "title": "Hãy cho chúng tôi biết về dự án của bạn",
+      "description": "Chúng tôi sẵn sàng lắng nghe và đề xuất giải pháp phù hợp với nhu cầu cụ thể của doanh nghiệp hoặc cá nhân",
+      "button1_text": "Liên hệ ngay",
+      "button2_text": "Xem thêm dịch vụ"
+    }
   }
 }
