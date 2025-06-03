@@ -748,6 +748,72 @@
         "answer": "Bạn có thể xem thông tin báo giá cơ bản tại trang Báo giá của chúng tôi. Để nhận báo giá chi tiết và phù hợp với nhu cầu cụ thể, vui lòng liên hệ trực tiếp với chúng tôi."
       }
     }
+  },
+  "Header": {
+    "logoAlt": "Logo Pathway",
+    "menu": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "services": "Dịch vụ",
+      "projects": "Dự án",
+      "pricing": "Báo giá",
+      "blog": "Blog",
+      "contact": "Liên hệ"
+    }
+  },
+  "Footer": {
+    "logoAlt": "Logo PATHWAY",
+    "aboutText": "PATHWAY là đơn vị dẫn đầu trong lĩnh vực tư vấn nghề nghiệp, giúp các chuyên gia phát triển sự nghiệp bền vững thông qua các dịch vụ đánh giá CV, tư vấn phỏng vấn và định hướng nghề nghiệp.",
+    "socialLabels": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "youtube": "YouTube",
+      "zalo": "Zalo",
+      "callNow": "Gọi ngay"
+    },
+    "linksServicesTitle": "Dịch vụ",
+    "serviceLinks": {
+      "cvReview": "Đánh giá CV",
+      "interviewCoaching": "Luyện phỏng vấn",
+      "careerConsulting": "Tư vấn nghề nghiệp",
+      "linkedinOptimization": "Tối ưu LinkedIn",
+      "softSkillsTraining": "Đào tạo kỹ năng mềm"
+    },
+    "linksInformationTitle": "Thông tin",
+    "informationLinks": {
+      "aboutUs": "Về chúng tôi",
+      "contact": "Liên hệ",
+      "blog": "Blog",
+      "faq": "Câu hỏi thường gặp",
+      "privacyPolicy": "Chính sách bảo mật"
+    },
+    "contactInfoTitle": "Liên hệ",
+    "contactDetails": {
+      "mainOfficeLabel": "Văn phòng chính:",
+      "mainOfficeAddress": "28 Nguyễn Trãi, Quận 1, TP.HCM",
+      "hotlineLabel": "Hotline:",
+      "hotlineNumber": "0909 123 456",
+      "emailLabel": "Email:",
+      "emailAddress": "contact@pathway.vn"
+    },
+    "newsletter": {
+      "title": "Đăng ký nhận thông tin",
+      "description": "Nhận các tin tức mới nhất về nghề nghiệp và cơ hội việc làm",
+      "emailPlaceholder": "Email của bạn",
+      "subscribeButton": "Đăng ký",
+      "submitSuccess": "Yêu cầu của bạn đã được gửi thành công!",
+      "validation": {
+         "emailRequired": "Vui lòng nhập email",
+         "emailInvalid": "Email không hợp lệ"
+      }
+    },
+    "bottom": {
+      "copyright": "© {currentYear} PATHWAY. Tất cả quyền được bảo lưu.",
+      "terms": "Điều khoản sử dụng",
+      "privacy": "Chính sách bảo mật",
+      "cookies": "Cookies"
+    }
   }
   
 }

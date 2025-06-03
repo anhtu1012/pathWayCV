@@ -750,5 +750,72 @@
         "answer": "You can view basic pricing information on our Pricing page. To receive a detailed quote tailored to your specific needs, please contact us directly."
       }
     }
+  },
+  "Header": {
+    "logoAlt": "Pathway Logo",
+    "menu": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "projects": "Projects",
+      "pricing": "Pricing",
+      "blog": "Blog",
+      "contact": "Contact"
+    }
+  },
+
+  "Footer": {
+    "logoAlt": "PATHWAY Logo",
+    "aboutText": "PATHWAY is a leader in career consulting, helping professionals develop sustainable careers through CV review, interview coaching, and career orientation services.",
+    "socialLabels": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "youtube": "YouTube",
+      "zalo": "Zalo",
+      "callNow": "Call Now"
+    },
+    "linksServicesTitle": "Services",
+    "serviceLinks": {
+      "cvReview": "CV Review",
+      "interviewCoaching": "Interview Coaching",
+      "careerConsulting": "Career Consulting",
+      "linkedinOptimization": "LinkedIn Optimization",
+      "softSkillsTraining": "Soft Skills Training"
+    },
+    "linksInformationTitle": "Information",
+    "informationLinks": {
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "contactInfoTitle": "Contact",
+    "contactDetails": {
+      "mainOfficeLabel": "Main Office:",
+      "mainOfficeAddress": "28 Nguyen Trai, District 1, HCMC",
+      "hotlineLabel": "Hotline:",
+      "hotlineNumber": "0909 123 456",
+      "emailLabel": "Email:",
+      "emailAddress": "contact@pathway.vn"
+    },
+    "newsletter": {
+      "title": "Subscribe to Newsletter",
+      "description": "Get the latest career news and job opportunities",
+      "emailPlaceholder": "Your Email",
+      "subscribeButton": "Subscribe",
+      "submitSuccess": "Your request has been sent successfully!",
+      "validation": {
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Invalid email address"
+      }
+    },
+    "bottom": {
+      "copyright": "© {currentYear} PATHWAY. All rights reserved.",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookies"
+    }
   }
 }
