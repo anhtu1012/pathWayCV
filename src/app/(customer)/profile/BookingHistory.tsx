@@ -1,16 +1,25 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
-import { Table, Tag, Button, Empty, Typography, Tooltip, Space } from "antd";
+import {
+  Table,
+  Tag,
+  Button,
+  Empty,
+  Typography,
+  Tooltip,
+  Space,
+  Grid,
+} from "antd";
 import {
   EyeOutlined,
   CheckCircleOutlined,
   ClockCircleOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
+import "./BookingHistory.scss";
 
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
-// Mock booking history data
 const mockBookings = [
   {
     id: 1,
@@ -53,9 +62,9 @@ const mockBookings = [
 const BookingHistory: React.FC = () => {
   const [bookings, setBookings] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const screens = useBreakpoint();
 
   useEffect(() => {
-    // Simulate API call
     setTimeout(() => {
       setBookings(mockBookings);
       setLoading(false);
@@ -87,7 +96,7 @@ const BookingHistory: React.FC = () => {
     }
   };
 
-  const columns = [
+  const desktopColumns = [
     {
       title: "Dịch vụ",
       dataIndex: "service",
@@ -97,10 +106,7 @@ const BookingHistory: React.FC = () => {
       title: "Ngày",
       dataIndex: "date",
       key: "date",
-      render: (date: string) => {
-        const formattedDate = new Date(date).toLocaleDateString("vi-VN");
-        return formattedDate;
-      },
+      render: (date: string) => new Date(date).toLocaleDateString("vi-VN"),
     },
     {
       title: "Giờ",
@@ -127,7 +133,7 @@ const BookingHistory: React.FC = () => {
     {
       title: "Hành động",
       key: "action",
-      render: (text: string, record: any) => (
+      render: (_: any, record: any) => (
         <Space size="small">
           <Tooltip title="Xem chi tiết">
             <Button
@@ -147,13 +153,57 @@ const BookingHistory: React.FC = () => {
     },
   ];
 
+  const mobileColumns = [
+    {
+      title: "Thông tin",
+      key: "summary",
+      render: (record: any) => (
+        <div style={{ fontSize: 14 }}>
+          <p>
+            <strong>Dịch vụ:</strong> {record.service}
+          </p>
+          <p>
+            <strong>Ngày:</strong>{" "}
+            {new Date(record.date).toLocaleDateString("vi-VN")} -{" "}
+            <strong>Giờ:</strong> {record.time}
+          </p>
+          <p>
+            <strong>Chuyên viên:</strong> {record.coach}
+          </p>
+          <p>
+            <strong>Trạng thái:</strong> {getStatusTag(record.status)}
+          </p>
+          <p>
+            <strong>Số tiền:</strong> {record.amount.toLocaleString()}đ
+          </p>
+          <div style={{ marginTop: 8 }}>
+            <Space size="small">
+              <Tooltip title="Xem chi tiết">
+                <Button
+                  type="primary"
+                  shape="circle"
+                  icon={<EyeOutlined />}
+                  size="small"
+                />
+              </Tooltip>
+              {record.status === "upcoming" && (
+                <Button type="default" danger size="small">
+                  Hủy lịch
+                </Button>
+              )}
+            </Space>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="booking-history-section">
       <Title level={4}>Lịch sử đặt lịch</Title>
-
       {bookings.length > 0 ? (
         <Table
-          columns={columns}
+          columns={screens.md ? desktopColumns : mobileColumns}
           dataSource={bookings}
           rowKey="id"
           loading={loading}
