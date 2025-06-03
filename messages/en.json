@@ -613,5 +613,77 @@
       "description": "Contact a PATHWAY consultant to get help choosing the most suitable service package.",
       "button": "Contact Us Now"
     }
+  },
+  "BlogPage": {
+    "pageBanner": {
+      "title": "Blog",
+      "subtitle": "Knowledge, insights, and career development guidance from PATHWAY's team of experts"
+    },
+    "filters": {
+      "searchPlaceholder": "Search articles...",
+      "allTopics": "All Topics",
+      "career": "Career",
+      "cv": "CV & Resume",
+      "interview": "Interview",
+      "personalBranding": "Personal Branding",
+      "salary": "Salary Negotiation",
+      "careerChange": "Career Change"
+    },
+    "blogPosts": {
+      "post1": {
+        "title": "10 Essential Skills for a Career in the Digital Age",
+        "excerpt": "Discover the crucial skills employers are looking for in today's digital technology era.",
+        "author": "Nguyen Van A",
+        "tag1": "soft skills",
+        "tag2": "technology",
+        "tag3": "lifelong learning"
+      },
+      "post2": {
+        "title": "How to Get Your CV Past ATS Software?",
+        "excerpt": "A detailed guide to help your CV pass through employers' automated resume screening and filtering software.",
+        "author": "Tran Thi B",
+        "tag1": "ATS",
+        "tag2": "CV",
+        "tag3": "recruitment"
+      },
+      "post3": {
+        "title": "5 Common Mistakes in Job Interviews",
+        "excerpt": "Common errors that can cost you job opportunities and effective ways to overcome them.",
+        "author": "Le Van C",
+        "tag1": "interview",
+        "tag2": "communication skills",
+        "tag3": "preparation"
+      },
+      "post4": {
+        "title": "Building Your Personal Brand on LinkedIn",
+        "excerpt": "A comprehensive strategy to create and develop a professional image on the leading job networking site.",
+        "author": "Pham Thi D",
+        "tag1": "LinkedIn",
+        "tag2": "social media",
+        "tag3": "personal branding"
+      },
+      "post5": {
+        "title": "How to Negotiate Salary Effectively",
+        "excerpt": "Strategies and techniques to help you confidently negotiate a salary worthy of your abilities.",
+        "author": "Vu Hoang E",
+        "tag1": "negotiation",
+        "tag2": "salary",
+        "tag3": "self-worth"
+      },
+      "post6": {
+        "title": "Career Change at 30+: It's Never Too Late",
+        "excerpt": "A guide for those looking to change careers in adulthood.",
+        "author": "Nguyen Thi F",
+        "tag1": "career change",
+        "tag2": "new skills",
+        "tag3": "orientation"
+      }
+    },
+    "subscribeSection": {
+      "title": "Subscribe to Our Newsletter",
+      "description": "Receive the latest articles and advice from PATHWAY experts weekly",
+      "emailPlaceholder": "Your Email",
+      "subscribeButton": "Subscribe"
+    }
   }
 }

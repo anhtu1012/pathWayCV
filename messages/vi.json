@@ -612,6 +612,78 @@
       "description": "Liên hệ với chuyên viên tư vấn của PATHWAY để được hỗ trợ lựa chọn gói dịch vụ phù hợp nhất",
       "button": "Liên hệ ngay"
     }
+  },
+  "BlogPage": {
+    "pageBanner": {
+      "title": "Blog",
+      "subtitle": "Kiến thức, chia sẻ và hướng dẫn phát triển sự nghiệp từ đội ngũ chuyên gia của PATHWAY"
+    },
+    "filters": {
+      "searchPlaceholder": "Tìm kiếm bài viết...",
+      "allTopics": "Tất cả chủ đề",
+      "career": "Sự nghiệp",
+      "cv": "CV & Hồ sơ",
+      "interview": "Phỏng vấn",
+      "personalBranding": "Thương hiệu cá nhân",
+      "salary": "Đàm phán lương",
+      "careerChange": "Chuyển đổi nghề nghiệp"
+    },
+    "blogPosts": {
+      "post1": {
+        "title": "10 kỹ năng cần thiết cho sự nghiệp trong thời đại số",
+        "excerpt": "Khám phá những kỹ năng quan trọng mà nhà tuyển dụng đang tìm kiếm trong thời đại công nghệ số hiện nay.",
+        "author": "Nguyễn Văn A",
+        "tag1": "kỹ năng mềm",
+        "tag2": "công nghệ",
+        "tag3": "học tập suốt đời"
+      },
+      "post2": {
+        "title": "Làm thế nào để CV của bạn vượt qua phần mềm ATS?",
+        "excerpt": "Hướng dẫn chi tiết giúp CV của bạn vượt qua các phần mềm quét và lọc hồ sơ tự động của nhà tuyển dụng.",
+        "author": "Trần Thị B",
+        "tag1": "ATS",
+        "tag2": "CV",
+        "tag3": "tuyển dụng"
+      },
+      "post3": {
+        "title": "5 sai lầm phổ biến trong phỏng vấn xin việc",
+        "excerpt": "Những lỗi thường gặp có thể khiến bạn mất cơ hội việc làm và cách khắc phục hiệu quả.",
+        "author": "Lê Văn C",
+        "tag1": "phỏng vấn",
+        "tag2": "kỹ năng giao tiếp",
+        "tag3": "chuẩn bị"
+      },
+      "post4": {
+        "title": "Xây dựng thương hiệu cá nhân trên LinkedIn",
+        "excerpt": "Chiến lược toàn diện để tạo dựng và phát triển hình ảnh chuyên nghiệp trên mạng xã hội việc làm hàng đầu.",
+        "author": "Phạm Thị D",
+        "tag1": "LinkedIn",
+        "tag2": "mạng xã hội",
+        "tag3": "thương hiệu cá nhân"
+      },
+      "post5": {
+        "title": "Cách đàm phán lương hiệu quả",
+        "excerpt": "Những chiến lược và kỹ thuật giúp bạn tự tin đàm phán mức lương xứng đáng với năng lực của mình.",
+        "author": "Vũ Hoàng E",
+        "tag1": "đàm phán",
+        "tag2": "lương",
+        "tag3": "giá trị bản thân"
+      },
+      "post6": {
+        "title": "Chuyển đổi nghề nghiệp ở tuổi 30+: Không bao giờ là quá muộn",
+        "excerpt": "Cẩm nang hướng dẫn cho những người muốn thay đổi sự nghiệp khi đã ở độ tuổi trưởng thành.",
+        "author": "Nguyễn Thị F",
+        "tag1": "chuyển nghề",
+        "tag2": "học kỹ năng mới",
+        "tag3": "định hướng"
+      }
+    },
+    "subscribeSection": {
+      "title": "Đăng ký nhận bản tin",
+      "description": "Nhận các bài viết mới nhất và lời khuyên từ chuyên gia PATHWAY hàng tuần",
+      "emailPlaceholder": "Email của bạn",
+      "subscribeButton": "Đăng ký"
+    }
   }
   
 }
