@@ -554,8 +554,8 @@
     "plans": {
       "plan1": {
         "title": "BASIC PACKAGE",
-        "price": "499,000 VND", 
-        "originalPrice": "799,000 VNĐ", 
+        "price": "499,000 VND",
+        "originalPrice": "799,000 VNĐ",
         "description": "Suitable for: Beginners who want to know the current status of their CV and what needs adjustment.",
         "feature1": "Comprehensive CV evaluation",
         "feature2": "Detailed report on strengths and weaknesses",
@@ -684,6 +684,71 @@
       "description": "Receive the latest articles and advice from PATHWAY experts weekly",
       "emailPlaceholder": "Your Email",
       "subscribeButton": "Subscribe"
+    }
+  },
+
+  "ContactPage": {
+    "pageBanner": {
+      "title": "Contact Us",
+      "subtitle": "Connect with us for support and advice on your career"
+    },
+    "formSection": {
+      "title": "Send Us a Message",
+      "description": "Have questions or need advice? Fill out the form below, and the PATHWAY team will respond as soon as possible.",
+      "labels": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Enter your full name",
+        "email": "Enter your email address",
+        "subject": "Enter message subject",
+        "message": "Your message content..."
+      },
+      "validation": {
+        "fullNameRequired": "Please enter your full name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Invalid email address",
+        "subjectRequired": "Please enter the subject",
+        "messageRequired": "Please enter your message"
+      },
+      "submitButton": "Send Message",
+      "submitSuccess": "Your message has been sent successfully!",
+      "submitError": "An error occurred. Please try again later!"
+    },
+    "infoSection": {
+      "title": "Contact Information",
+      "description": "Contact us directly through the following methods:",
+      "addressTitle": "Address",
+      "addressContent": "28 Nguyen Trai, District 1, Ho Chi Minh City",
+      "phoneTitle": "Phone",
+      "phoneContent": "(+84) 28 1234 5678",
+      "emailTitle": "Email",
+      "emailContent": "info@pathway.vn",
+      "hoursTitle": "Working Hours",
+      "hoursContent": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "followUsTitle": "Follow Us"
+    },
+    "faqSection": {
+      "title": "Frequently Asked Questions",
+      "item1": {
+        "question": "How can I schedule a consultation?",
+        "answer": "You can schedule a consultation through the contact form on our website, by calling us directly, or by sending us an email. The PATHWAY team will contact you within 24 hours to confirm the appointment."
+      },
+      "item2": {
+        "question": "Can I visit the office without a prior appointment?",
+        "answer": "To ensure the best quality of consultation, we encourage scheduling an appointment in advance. However, you can visit our office during working hours to learn more about our services."
+      },
+      "item3": {
+        "question": "Does PATHWAY offer online consultation services?",
+        "answer": "Yes, we offer online consultation services via Zoom, Google Meet, or other platforms according to the client's needs."
+      },
+      "item4": {
+        "question": "How can I get a detailed service quote?",
+        "answer": "You can view basic pricing information on our Pricing page. To receive a detailed quote tailored to your specific needs, please contact us directly."
+      }
     }
   }
 }

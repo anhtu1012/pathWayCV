@@ -684,6 +684,70 @@
       "emailPlaceholder": "Email của bạn",
       "subscribeButton": "Đăng ký"
     }
+  },
+  "ContactPage": {
+    "pageBanner": {
+      "title": "Liên hệ",
+      "subtitle": "Kết nối với chúng tôi để nhận hỗ trợ và tư vấn cho sự nghiệp của bạn"
+    },
+    "formSection": {
+      "title": "Gửi tin nhắn cho chúng tôi",
+      "description": "Bạn có câu hỏi hoặc cần tư vấn? Hãy điền thông tin vào form dưới đây và đội ngũ PATHWAY sẽ phản hồi trong thời gian sớm nhất.",
+      "labels": {
+        "fullName": "Họ và tên",
+        "email": "Email",
+        "subject": "Tiêu đề",
+        "message": "Nội dung"
+      },
+      "placeholders": {
+        "fullName": "Nhập họ và tên của bạn",
+        "email": "Nhập địa chỉ email của bạn",
+        "subject": "Nhập tiêu đề tin nhắn",
+        "message": "Nội dung tin nhắn của bạn..."
+      },
+      "validation": {
+        "fullNameRequired": "Vui lòng nhập họ và tên",
+        "emailRequired": "Vui lòng nhập email",
+        "emailInvalid": "Email không hợp lệ",
+        "subjectRequired": "Vui lòng nhập tiêu đề",
+        "messageRequired": "Vui lòng nhập nội dung"
+      },
+      "submitButton": "Gửi tin nhắn",
+      "submitSuccess": "Tin nhắn của bạn đã được gửi thành công!",
+      "submitError": "Có lỗi xảy ra. Vui lòng thử lại sau!"
+    },
+    "infoSection": {
+      "title": "Thông tin liên hệ",
+      "description": "Liên hệ trực tiếp với chúng tôi qua các phương thức sau:",
+      "addressTitle": "Địa chỉ",
+      "addressContent": "28 Nguyễn Trãi, Quận 1, TP.HCM",
+      "phoneTitle": "Điện thoại",
+      "phoneContent": "(+84) 28 1234 5678",
+      "emailTitle": "Email",
+      "emailContent": "info@pathway.vn",
+      "hoursTitle": "Giờ làm việc",
+      "hoursContent": "Thứ 2 - Thứ 6: 9:00 - 18:00",
+      "followUsTitle": "Theo dõi chúng tôi"
+    },
+    "faqSection": {
+      "title": "Câu hỏi thường gặp",
+      "item1": {
+        "question": "Làm thế nào để đặt lịch tư vấn?",
+        "answer": "Bạn có thể đặt lịch tư vấn qua form liên hệ trên trang web, gọi điện trực tiếp hoặc gửi email cho chúng tôi. Đội ngũ PATHWAY sẽ liên hệ lại trong vòng 24 giờ để xác nhận lịch hẹn."
+      },
+      "item2": {
+        "question": "Tôi có thể đến văn phòng không cần đặt lịch trước?",
+        "answer": "Để đảm bảo chất lượng tư vấn tốt nhất, chúng tôi khuyến khích đặt lịch hẹn trước. Tuy nhiên, bạn có thể ghé văn phòng trong giờ làm việc để tìm hiểu thêm về dịch vụ."
+      },
+      "item3": {
+        "question": "PATHWAY có cung cấp dịch vụ tư vấn trực tuyến không?",
+        "answer": "Có, chúng tôi cung cấp dịch vụ tư vấn trực tuyến qua Zoom, Google Meet hoặc các nền tảng khác theo nhu cầu của khách hàng."
+      },
+      "item4": {
+        "question": "Làm thế nào để nhận báo giá dịch vụ chi tiết?",
+        "answer": "Bạn có thể xem thông tin báo giá cơ bản tại trang Báo giá của chúng tôi. Để nhận báo giá chi tiết và phù hợp với nhu cầu cụ thể, vui lòng liên hệ trực tiếp với chúng tôi."
+      }
+    }
   }
   
 }
