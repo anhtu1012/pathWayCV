@@ -541,5 +541,77 @@
       "button1_text": "Contact Us Now",
       "button2_text": "View More Services"
     }
+  },
+  "PricingPage": {
+    "pageBanner": {
+      "title": "Service Pricing",
+      "subtitle": "Choose the service package that best suits your needs and budget"
+    },
+    "intro": {
+      "title": "Invest in Your Career",
+      "description": "PATHWAY offers a range of services tailored to different career stages. Whether you're a fresh graduate or a senior manager, we have the right solution for you."
+    },
+    "plans": {
+      "plan1": {
+        "title": "BASIC PACKAGE",
+        "price": "499,000 VND", 
+        "originalPrice": "799,000 VNĐ", 
+        "description": "Suitable for: Beginners who want to know the current status of their CV and what needs adjustment.",
+        "feature1": "Comprehensive CV evaluation",
+        "feature2": "Detailed report on strengths and weaknesses",
+        "feature3": "Specific improvement suggestions",
+        "feature4": "Response time: 3 days",
+        "feature5": "Email support"
+      },
+      "plan2": {
+        "title": "ADVANCED PACKAGE",
+        "price": "899,000 VND",
+        "originalPrice": "1,499,000 VNĐ",
+        "description": "Suitable for: Those who need to strengthen their CV to apply for positions quickly.",
+        "feature1": "All benefits of the Basic Package",
+        "feature2": "CV editing based on feedback",
+        "feature3": "Response time: 2 days",
+        "feature4": "1-month support",
+        "feature5": "Email support"
+      },
+      "plan3": {
+        "title": "VIP PACKAGE",
+        "price": "1,499,000 VND",
+        "originalPrice": "2,990,000 VNĐ",
+        "description": "Suitable for: Individuals aiming for high-level positions who need maximum personalization and direct guidance.",
+        "feature1": "All benefits of the Advanced Package",
+        "feature2": "1-on-1 consultation with an expert (60 minutes)",
+        "feature3": "Career direction analysis, CV adjustments according to specific goals, and Q&A",
+        "feature4": "Response time: 24 hours",
+        "feature5": "3-month support",
+        "feature6": "Money-back guarantee if not satisfied"
+      },
+      "popularTag": "Most Popular",
+      "selectButton": "Select This Plan"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "item1": {
+        "question": "How long will it take to receive the service after payment?",
+        "answer": "After payment confirmation, we will contact you within 24 hours to start the process. Detailed response time depends on the service package you choose."
+      },
+      "item2": {
+        "question": "Can I upgrade my service package after purchase?",
+        "answer": "Yes, you can upgrade your service package at any time. You only need to pay the difference between your current package and the one you wish to upgrade to."
+      },
+      "item3": {
+        "question": "What is PATHWAY's refund policy?",
+        "answer": "PATHWAY commits to a 100% refund if you are not satisfied with our service within the first 7 days (applies to the VIP Package)."
+      },
+      "item4": {
+        "question": "Are there other payment methods besides bank transfer?",
+        "answer": "Currently, we support payment via bank transfer, Momo, ZaloPay, and VNPAY. Please contact us if you require other payment methods."
+      }
+    },
+    "cta": {
+      "title": "Need More Advice?",
+      "description": "Contact a PATHWAY consultant to get help choosing the most suitable service package.",
+      "button": "Contact Us Now"
+    }
   }
 }

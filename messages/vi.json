@@ -167,6 +167,88 @@
       "secondaryButton": "Liên hệ chúng tôi"
     }
   },
+  "HomePage": {
+    "hero": {
+      "mainTitle": "PATHWAY",
+      "subTitle": "Đánh giá CV, Chiến lược tìm việc, Tư vấn nghề nghiệp",
+      "tagline": "Hơn 1000+ Chuyên gia đã thăng tiến trong sự nghiệp nhờ sự hỗ trợ của chúng tôi",
+      "button1_text": "Đặt lịch tư vấn",
+      "button2_text": "Xem câu chuyện thành công"
+    },
+    "introduction": {
+      "title": "Hành trình sự nghiệp của bạn bắt đầu từ đây",
+      "paragraph": "<strong>PATHWAY</strong> là đơn vị hàng đầu chuyên cung cấp dịch vụ <strong>tối ưu hóa CV và chiến lược tìm việc</strong>. Chúng tôi tự hào mang đến sự hỗ trợ toàn diện cho các chuyên gia ở <strong>mọi giai đoạn nghề nghiệp</strong>. Đội ngũ của chúng tôi bao gồm các chuyên gia tư vấn nghề nghiệp, chuyên viên nhân sự, và người trong ngành kết hợp chuyên môn sâu về <strong>viết hồ sơ xin việc</strong> với tư duy sáng tạo trong <strong>xây dựng thương hiệu cá nhân</strong>.",
+      "card1_alt": "Sứ mệnh Pathway",
+      "card1_title": "Sứ mệnh",
+      "card1_description": "Trao quyền cho các chuyên gia với công cụ, chiến lược và sự tự tin cần thiết để nổi bật trong thị trường việc làm cạnh tranh và đạt được mục tiêu nghề nghiệp của họ.",
+      "card2_alt": "Tầm nhìn Pathway",
+      "card2_title": "Tầm nhìn",
+      "card2_description": "Trở thành đơn vị dịch vụ nghề nghiệp hàng đầu, thay đổi cách mọi người tiếp cận tìm kiếm việc làm, tạo ra một thế giới nơi mọi người đều có thể phát huy hết tiềm năng nghề nghiệp của mình.",
+      "card3_alt": "Phương pháp Pathway",
+      "card3_title": "Phương pháp",
+      "card3_description": "Chúng tôi tin vào các giải pháp tùy chỉnh nhấn mạnh giá trị độc đáo của mỗi cá nhân. Chiến lược dựa trên dữ liệu và tư vấn cá nhân hóa tạo ra những bước đột phá sự nghiệp có ý nghĩa."
+    },
+    "ourDistinctMissionSection": {
+      "title": "SỨ MỆNH CỦA CHÚNG TÔI",
+      "item1_alt": "Lan tỏa giá trị",
+      "item1_text": "Lan tỏa giá trị thương hiệu của các Tổ chức, doanh nghiệp tới cộng đồng.",
+      "item2_alt": "Tăng cao nhận biết",
+      "item2_text": "Tăng cao mức độ nhận biết, tin tưởng, yêu thích của Khách hàng dành cho Sản phẩm/ Dịch vụ.",
+      "item3_alt": "Định hướng thị trường",
+      "item3_text": "Định hướng thị trường những xu thế quảng cáo theo tiêu chuẩn Quốc tế."
+    },
+    "whyChooseUs": {
+      "title": "Tại sao chọn chúng tôi?",
+      "image_alt": "Đội ngũ tư vấn nghề nghiệp PATHWAY",
+      "paragraph1": "<strong>PATHWAY</strong> kết hợp chuyên môn về <strong>viết CV, huấn luyện phỏng vấn và chiến lược nghề nghiệp</strong>. Chúng tôi cam kết mang đến sự hỗ trợ cá nhân hóa cho các chuyên gia ở mọi cấp độ.",
+      "paragraph2": "Với hơn 15 năm kinh nghiệm, đội ngũ của chúng tôi đã giúp các chuyên gia đạt được vị trí tại những công ty hàng đầu như Google, Microsoft, Amazon, Meta, Goldman Sachs, McKinsey, Deloitte và nhiều tổ chức Fortune 500 khác trong mọi ngành nghề và vị trí.",
+      "stat1_value": "15+",
+      "stat1_label": "Năm kinh nghiệm",
+      "stat2_value": "1000+",
+      "stat2_label": "Câu chuyện thành công",
+      "stat3_value": "93%",
+      "stat3_label": "Tỷ lệ phỏng vấn"
+    },
+    "servicesSection": {
+      "title": "Dịch vụ của chúng tôi",
+      "service1_title": "Đánh giá CV",
+      "service1_description": "Nhận xét chi tiết và đề xuất chỉnh sửa để làm nổi bật CV của bạn.",
+      "service2_title": "Tối ưu LinkedIn",
+      "service2_description": "Cải thiện hồ sơ LinkedIn để thu hút nhà tuyển dụng và cơ hội công việc.",
+      "service3_title": "Phỏng vấn thử",
+      "service3_description": "Luyện tập phỏng vấn với chuyên gia để tự tin ứng tuyển vị trí mơ ước.",
+      "learnMoreButton": "Tìm hiểu thêm"
+    },
+    "projectsSection": {
+      "title": "Dự án tiêu biểu",
+      "video_tvc_quang_cao": "TVC Quảng Cáo",
+      "video_phim_doanh_nghiep": "Phim Doanh Nghiệp",
+      "video_phim_viral": "Phim Viral",
+      "video_phim_thuong_hieu": "Phim Thương Hiệu",
+      "video_tvc_san_pham": "TVC Sản Phẩm",
+      "video_phim_du_an": "Phim Dự Án"
+    },
+    "testimonialSection": {
+      "title": "KHÁCH HÀNG NÓI GÌ VỀ PATHWAY?",
+      "arrow_left": "<<",
+      "arrow_right": ">>",
+      "card1_avatar_alt": "Ảnh đại diện khách hàng",
+      "card1_quote": "“Với sự hỗ trợ chuyên nghiệp từ PATHWAY, CV của tôi đã được cải thiện đáng kể. Các chuyên gia đã giúp tôi xác định điểm mạnh và trình bày thông tin một cách hiệu quả. Nhờ đó, tôi đã nhận được nhiều lời mời phỏng vấn hơn và cuối cùng là vị trí mơ ước tại một công ty hàng đầu.”",
+      "card1_author": "Anh Nguyễn Minh Tuấn",
+      "card1_role": "Senior Developer - TechVision Corporation"
+    },
+    "clientLogosSection": {
+      "title": "Khách hàng của chúng tôi",
+      "logo_google_alt": "Logo Google",
+      "logo_apple_alt": "Logo Apple",
+      "logo_microsoft_alt": "Logo Microsoft",
+      "logo_amazon_alt": "Logo Amazon",
+      "logo_netflix_alt": "Logo Netflix",
+      "logo_linkedin_alt": "Logo LinkedIn",
+      "logo_tcs_alt": "Logo TCS",
+      "logo_accenture_alt": "Logo Accenture"
+    }
+  },
    "ServicePage": {
     "pageBanner": {
       "title": "Dịch vụ",
@@ -458,5 +540,78 @@
       "button1_text": "Liên hệ ngay",
       "button2_text": "Xem thêm dịch vụ"
     }
+  },
+  "PricingPage": {
+    "pageBanner": {
+      "title": "Báo Giá Dịch Vụ",
+      "subtitle": "Lựa chọn gói dịch vụ phù hợp với nhu cầu và ngân sách của bạn"
+    },
+    "intro": {
+      "title": "Đầu tư cho sự nghiệp của bạn",
+      "description": "PATHWAY cung cấp các gói dịch vụ đa dạng phù hợp với từng giai đoạn sự nghiệp. Từ sinh viên mới ra trường đến các vị trí quản lý cấp cao, chúng tôi đều có giải pháp phù hợp."
+    },
+    "plans": {
+      "plan1": {
+        "title": "GÓI CƠ BẢN",
+        "price": "499,000 VNĐ",
+        "originalPrice": "", 
+        "description": "Phù hợp với: Người mới bắt đầu, muốn biết CV đang ở mức nào và cần điều chỉnh gì.",
+        "feature1": "Đánh giá CV toàn diện",
+        "feature2": "Báo cáo chi tiết điểm mạnh – điểm yếu",
+        "feature3": "Gợi ý cải thiện cụ thể",
+        "feature4": "Thời gian phản hồi: 3 ngày",
+        "feature5": "Hỗ trợ qua email"
+      },
+      "plan2": {
+        "title": "GÓI NÂNG CAO",
+        "price": "899,000 VNĐ",
+        "originalPrice": "",
+        "description": "Phù hợp với: Người cần cải thiện chất lượng CV mạnh mẽ để ứng tuyển ngay trong thời gian ngắn.",
+        "feature1": "Tất cả quyền lợi của Gói Cơ Bản",
+        "feature2": "Chỉnh sửa CV theo góp ý",
+        "feature3": "Thời gian phản hồi: 2 ngày",
+        "feature4": "Hỗ trợ trong 1 tháng",
+        "feature5": "Hỗ trợ qua email"
+      },
+      "plan3": {
+        "title": "GÓI VIP",
+        "price": "1,499,000 VNĐ",
+        "originalPrice": "",
+        "description": "Phù hợp với: Người đang nhắm đến các vị trí quan trọng, cần cá nhân hóa tối đa và hướng dẫn trực tiếp.",
+        "feature1": "Tất cả quyền lợi của Gói Nâng Cao",
+        "feature2": "1 buổi tư vấn 1-1 với chuyên gia (60 phút)",
+        "feature3": "Phân tích định hướng nghề nghiệp, chỉnh sửa CV theo mục tiêu cụ thể và giải đáp mọi thắc mắc",
+        "feature4": "Thời gian phản hồi: 24 giờ",
+        "feature5": "Hỗ trợ trong 3 tháng",
+        "feature6": "Cam kết hoàn tiền nếu không hài lòng"
+      },
+      "popularTag": "Phổ biến nhất",
+      "selectButton": "Chọn Gói Này"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "item1": { 
+        "question": "Sau khi thanh toán, tôi sẽ nhận được dịch vụ trong bao lâu?",
+        "answer": "Sau khi xác nhận thanh toán, chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ để bắt đầu quy trình. Thời gian phản hồi chi tiết phụ thuộc vào gói dịch vụ bạn lựa chọn."
+      },
+      "item2": {
+        "question": "Tôi có thể nâng cấp gói dịch vụ sau khi đã mua không?",
+        "answer": "Có, bạn có thể nâng cấp gói dịch vụ bất kỳ lúc nào. Bạn chỉ cần thanh toán phần chênh lệch giữa gói hiện tại và gói bạn muốn nâng cấp."
+      },
+      "item3": {
+        "question": "Chính sách hoàn tiền của PATHWAY như thế nào?",
+        "answer": "PATHWAY cam kết hoàn tiền 100% nếu bạn không hài lòng với dịch vụ của chúng tôi trong vòng 7 ngày đầu tiên (áp dụng cho Gói VIP)."
+      },
+      "item4": {
+        "question": "Có phương thức thanh toán nào khác ngoài chuyển khoản ngân hàng?",
+        "answer": "Hiện tại, chúng tôi hỗ trợ thanh toán qua chuyển khoản ngân hàng, Momo, ZaloPay và VNPAY. Vui lòng liên hệ với chúng tôi nếu bạn cần các phương thức thanh toán khác."
+      }
+    },
+    "cta": {
+      "title": "Bạn cần tư vấn thêm?",
+      "description": "Liên hệ với chuyên viên tư vấn của PATHWAY để được hỗ trợ lựa chọn gói dịch vụ phù hợp nhất",
+      "button": "Liên hệ ngay"
+    }
   }
+  
 }
