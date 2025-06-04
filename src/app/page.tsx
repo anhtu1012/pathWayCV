@@ -13,13 +13,12 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import "./page.scss";
-import { useTranslations } from "next-intl"; // Đảm bảo import
+import { useTranslations } from "next-intl"; 
 
 const { Title, Text, Paragraph } = Typography;
 
 const HomePage = () => {
-  const t = useTranslations("HomePage"); // Sử dụng namespace "HomePage"
-  console.log("Translations:", t); // Kiểm tra xem translations có hoạt động không
+  const t = useTranslations("HomePage"); 
   
   const [activeVideo, setActiveVideo] = useState(0);
   const bookingSectionRef = useRef<HTMLElement>(null);
@@ -50,7 +49,7 @@ const HomePage = () => {
 
   const services = [
     {
-      key: "service1", // Thêm key để lấy title và description
+      key: "service1", 
       image:
         "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop",
       delay: 0,
