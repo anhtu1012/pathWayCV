@@ -1,8 +1,20 @@
-import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
-import { Card, Col, Empty, Row, Table, Tag, Typography } from "antd";
+import {
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+} from "@ant-design/icons";
+import {
+  Card,
+  Col,
+  Empty,
+  Row,
+  Table,
+  Tag,
+  Typography,
+  Grid,
+} from "antd";
 import React, { useState } from "react";
+import "./WalletSection.scss";
 
-// Define interface for transaction item
 interface TransactionItem {
   id: string;
   date: string;
@@ -19,7 +31,9 @@ interface WalletSectionProps {
 }
 
 const WalletSection: React.FC<WalletSectionProps> = ({ transactions = [] }) => {
-  // Mock transaction data if none provided
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
+
   const [transactionHistory] = useState<TransactionItem[]>(
     transactions.length > 0
       ? transactions
@@ -59,8 +73,39 @@ const WalletSection: React.FC<WalletSectionProps> = ({ transactions = [] }) => {
         ]
   );
 
-  // Transaction history columns
-  const columns = [
+  const renderTypeTag = (type: string) => {
+    switch (type) {
+      case "topup":
+        return (
+          <Tag color="green" icon={<ArrowDownOutlined />}>Nạp tiền</Tag>
+        );
+      case "purchase":
+        return (
+          <Tag color="orange" icon={<ArrowUpOutlined />}>Thanh toán</Tag>
+        );
+      case "refund":
+        return (
+          <Tag color="cyan" icon={<ArrowDownOutlined />}>Hoàn tiền</Tag>
+        );
+      default:
+        return <Tag color="blue">Giao dịch</Tag>;
+    }
+  };
+
+  const renderStatusTag = (status: string) => {
+    switch (status) {
+      case "completed":
+        return <Tag color="green">Hoàn thành</Tag>;
+      case "pending":
+        return <Tag color="gold">Đang xử lý</Tag>;
+      case "failed":
+        return <Tag color="red">Thất bại</Tag>;
+      default:
+        return <Tag color="default">Không xác định</Tag>;
+    }
+  };
+
+  const desktopColumns = [
     {
       title: "Ngày",
       dataIndex: "date",
@@ -70,31 +115,7 @@ const WalletSection: React.FC<WalletSectionProps> = ({ transactions = [] }) => {
       title: "Loại giao dịch",
       dataIndex: "type",
       key: "type",
-      render: (type: string) => {
-        let text = "Giao dịch";
-        let color = "blue";
-        let icon = null;
-
-        if (type === "topup") {
-          text = "Nạp tiền";
-          color = "green";
-          icon = <ArrowDownOutlined />;
-        } else if (type === "purchase") {
-          text = "Thanh toán";
-          color = "orange";
-          icon = <ArrowUpOutlined />;
-        } else if (type === "refund") {
-          text = "Hoàn tiền";
-          color = "cyan";
-          icon = <ArrowDownOutlined />;
-        }
-
-        return (
-          <Tag color={color} icon={icon}>
-            {text}
-          </Tag>
-        );
-      },
+      render: (type: string) => renderTypeTag(type),
     },
     {
       title: "Số tiền",
@@ -118,44 +139,56 @@ const WalletSection: React.FC<WalletSectionProps> = ({ transactions = [] }) => {
       title: "Trạng thái",
       dataIndex: "status",
       key: "status",
-      render: (status: string) => {
-        let color = "blue";
-        let text = "Không xác định";
+      render: (status: string) => renderStatusTag(status),
+    },
+  ];
 
-        if (status === "completed") {
-          color = "green";
-          text = "Hoàn thành";
-        } else if (status === "pending") {
-          color = "gold";
-          text = "Đang xử lý";
-        } else if (status === "failed") {
-          color = "red";
-          text = "Thất bại";
-        }
-
-        return <Tag color={color}>{text}</Tag>;
-      },
+  const mobileColumns = [
+    {
+      title: "Giao dịch",
+      key: "summary",
+      render: (record: TransactionItem) => (
+        <div style={{ fontSize: 14 }}>
+          <p>
+            <strong>Ngày:</strong> {record.date}
+          </p>
+          <p>
+            <strong>Loại:</strong> {renderTypeTag(record.type)}
+          </p>
+          <p>
+            <strong>Số tiền:</strong>{" "}
+            <span style={{ color: record.amount >= 0 ? "green" : "red", fontWeight: "bold" }}>
+              {record.amount.toLocaleString("vi-VN")} đ
+            </span>
+          </p>
+          <p>
+            <strong>Mô tả:</strong> {record.description}
+          </p>
+          <p>
+            <strong>Trạng thái:</strong> {renderStatusTag(record.status)}
+          </p>
+        </div>
+      ),
     },
   ];
 
   return (
     <div className="wallet-section">
       <Row gutter={[24, 24]}>
-        {/* Transaction History Section */}
         <Col xs={24}>
           <Card
-            title={
-              <Typography.Title level={4}>Lịch sử giao dịch</Typography.Title>
-            }
+            title={<Typography.Title level={4}>Lịch sử giao dịch</Typography.Title>}
             className="transaction-history-card"
           >
             {transactionHistory.length > 0 ? (
-              <Table
-                dataSource={transactionHistory}
-                columns={columns}
-                rowKey="id"
-                pagination={{ pageSize: 5 }}
-              />
+              <div className="table-wrapper">
+                <Table
+                  dataSource={transactionHistory}
+                  columns={screens.md ? desktopColumns : mobileColumns}
+                  rowKey="id"
+                  pagination={{ pageSize: 5 }}
+                />
+              </div>
             ) : (
               <Empty
                 description="Không có giao dịch nào"

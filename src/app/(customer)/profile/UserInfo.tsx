@@ -76,19 +76,19 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
                 label="Họ và tên"
                 rules={[{ required: true, message: "Vui lòng nhập họ tên" }]}
               >
-                <Input prefix={<UserOutlined />} placeholder="Họ và tên" />
+                <Input prefix={<UserOutlined />} placeholder="Họ và tên " />
               </Form.Item>
             </Col>
             <Col xs={24} md={12}>
               <Form.Item
                 name="email"
-                label="Email"
+                label="Email "
                 rules={[
                   { required: true, message: "Vui lòng nhập email" },
                   { type: "email", message: "Email không hợp lệ" },
                 ]}
               >
-                <Input prefix={<MailOutlined />} placeholder="Email" disabled />
+                <Input prefix={<MailOutlined />} placeholder="Email " disabled />
               </Form.Item>
             </Col>
             <Col xs={24} md={12}>
@@ -125,13 +125,13 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
           <Row gutter={[16, 16]}>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Họ và tên:</span>
+                <span className="info-label">Họ và tên: </span>
                 <span className="info-value">{user.fullName}</span>
               </div>
             </Col>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Email:</span>
+                <span className="info-label">Email: </span>
                 <span className="info-value">
                   {user.primaryEmailAddress?.emailAddress}
                 </span>
@@ -139,7 +139,7 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
             </Col>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Số điện thoại:</span>
+                <span className="info-label">Số điện thoại: </span>
                 <span className="info-value">
                   {user.phoneNumbers?.[0]?.phoneNumber || "Chưa cập nhật"}
                 </span>
@@ -147,7 +147,7 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
             </Col>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Địa chỉ:</span>
+                <span className="info-label">Địa chỉ: </span>
                 <span className="info-value">
                   {user.unsafeMetadata?.address || "Chưa cập nhật"}
                 </span>
