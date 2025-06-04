@@ -153,7 +153,7 @@ const WalletSection: React.FC<WalletSectionProps> = ({ transactions = [] }) => {
     {
       title: t("table.transactionSummary"),
       key: "summary",
-      render: (_: any, record: TransactionItem) => ( // Thêm _ để bỏ qua tham số đầu tiên không dùng đến
+      render: ( record: TransactionItem) => ( 
         <div style={{ fontSize: 14 }}>
           <p>
             <strong>{t("mobileLabels.date")}</strong> {record.date}

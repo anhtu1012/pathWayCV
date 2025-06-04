@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
 import {
   Table,
@@ -158,7 +159,7 @@ const BookingHistory: React.FC = () => {
     {
       title: t("table.summary"),
       key: "summary",
-      render: (record: any) => (
+      render: (record:any) => (
         <div style={{ fontSize: 14 }}>
           <p>
             <strong>{t("table.service")}:</strong> {record.service}
