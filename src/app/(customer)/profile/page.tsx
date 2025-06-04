@@ -1,5 +1,6 @@
 "use client";
 
+
 import UserInfo from "@/app/(customer)/profile/UserInfo";
 import WalletTopupModal from "@/components/WalletTopupModalProps/WalletTopupModal";
 import {
@@ -15,18 +16,18 @@ import BookingHistory from "./BookingHistory";
 import "./profile.scss";
 import WalletSection from "./WalletSection";
 import DepositServices from "@/services/profile/deposit.service";
+import { useTranslations } from "next-intl";
 
 const { Title, Text } = Typography;
 
 export default function ProfilePage() {
+  const t = useTranslations();
   const { user, isLoaded } = useUser();
   const [activeTab, setActiveTab] = useState("1");
   const [balance, setBalance] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const handleModalCancel = () => {
-    setIsModalVisible(false);
-  };
+  const handleModalCancel = () => setIsModalVisible(false);
 
   const handleTopUp = async (value: number) => {
     setIsModalVisible(false);
@@ -38,50 +39,34 @@ export default function ProfilePage() {
     const res = await DepositServices.deposit(data);
     if (res) {
       setBalance((prevBalance) => prevBalance + value);
-      window.location.href = res.data.paymentUrl; // Redirect to payment gateway
+      window.location.href = res.data.paymentUrl;
     } else {
-      // Handle error case
       console.error("Deposit failed");
     }
   };
 
   useEffect(() => {
-    // Mock API call to fetch wallet balance
-    // Use AbortController to handle cleanup
     const controller = new AbortController();
     const signal = controller.signal;
-
     const fetchBalance = async () => {
       try {
-        // Simulating API call with fetch and AbortController
         await new Promise((resolve) => setTimeout(resolve, 500));
-        if (!signal.aborted) {
-          setBalance(500000);
-        }
+        if (!signal.aborted) setBalance(500000);
       } catch (error) {
-        if (!signal.aborted) {
-          console.error("Error fetching balance:", error);
-        }
+        if (!signal.aborted) console.error("Error fetching balance:", error);
       }
     };
-
     fetchBalance();
-
-    // Cleanup function
-    return () => {
-      controller.abort();
-    };
+    return () => controller.abort();
   }, []);
 
-  // Memoize tab items to prevent unnecessary re-renders
   const tabItems = useMemo(
     () => [
       {
         key: "1",
         label: (
           <span>
-            <UserOutlined />
-            Thông tin cá nhân
+            <UserOutlined /> {t("ProfilePage.tabs.info")}
           </span>
         ),
         children: user ? <UserInfo user={user} /> : null,
@@ -90,8 +75,7 @@ export default function ProfilePage() {
         key: "2",
         label: (
           <span>
-            <HistoryOutlined />
-            Lịch sử đặt lịch
+            <HistoryOutlined /> {t("ProfilePage.tabs.history")}
           </span>
         ),
         children: <BookingHistory />,
@@ -100,21 +84,20 @@ export default function ProfilePage() {
         key: "3",
         label: (
           <span>
-            <WalletOutlined />
-            Ví tiền
+            <WalletOutlined /> {t("ProfilePage.tabs.wallet")}
           </span>
         ),
         children: <WalletSection />,
       },
     ],
-    [user, balance, handleTopUp]
+    [user, balance, t]
   );
 
   if (!isLoaded) {
     return (
       <div className="profile-loading">
         <div className="loading-spinner" />
-        <Text>Đang tải thông tin...</Text>
+        <Text>{t("ProfilePage.loading")}</Text>
       </div>
     );
   }
@@ -122,9 +105,9 @@ export default function ProfilePage() {
   if (!user) {
     return (
       <Card className="profile-error-card">
-        <Title level={3}>Bạn cần đăng nhập để xem trang này</Title>
+        <Title level={3}>{t("ProfilePage.notLoggedIn.title")}</Title>
         <Button type="primary" href="/sign-in">
-          Đăng nhập
+          {t("ProfilePage.notLoggedIn.loginButton")}
         </Button>
       </Card>
     );
@@ -132,7 +115,7 @@ export default function ProfilePage() {
 
   return (
     <div className="profile-container">
-      <Title className="profile-title">Thông tin cá nhân</Title>
+      <Title className="profile-title">{t("ProfilePage.title")}</Title>
 
       <Row gutter={[24, 24]} className="profile-header">
         <Col xs={24} md={6} className="profile-avatar-section">
@@ -150,7 +133,7 @@ export default function ProfilePage() {
           <div className="profile-balance">
             <WalletOutlined className="balance-icon" />
             <div className="balance-info">
-              <Text type="secondary">Số dư tài khoản</Text>
+              <Text type="secondary">{t("ProfilePage.wallet.balanceLabel")}</Text>
               <Text strong className="balance-amount">
                 {balance.toLocaleString()}đ
               </Text>
@@ -162,7 +145,7 @@ export default function ProfilePage() {
             onClick={() => setIsModalVisible(true)}
             className="topup-button"
           >
-            Nạp tiền
+            {t("ProfilePage.wallet.topUp")}
           </Button>
         </Col>
 
@@ -175,7 +158,7 @@ export default function ProfilePage() {
           />
         </Col>
       </Row>
-      {/* Topup Modal */}
+
       <WalletTopupModal
         visible={isModalVisible}
         onCancel={handleModalCancel}

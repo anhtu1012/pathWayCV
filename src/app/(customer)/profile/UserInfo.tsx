@@ -17,6 +17,8 @@ import {
   EditOutlined,
   SaveOutlined,
 } from "@ant-design/icons";
+import { useTranslations } from "next-intl";
+
 
 const { Title } = Typography;
 
@@ -25,6 +27,7 @@ interface UserInfoProps {
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
+  const  t  = useTranslations();
   const [form] = Form.useForm();
   const [isEditing, setIsEditing] = useState(false);
 
@@ -41,22 +44,21 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
   };
 
   const handleSubmit = (values: any) => {
-    // Here you would update the user's information via your API
     console.log("Updated user info:", values);
-    message.success("Cập nhật thông tin thành công!");
+    message.success(t("UserInfo.success"));
     setIsEditing(false);
   };
 
   return (
     <div className="user-info-section">
       <div className="section-header">
-        <Title level={4}>Thông tin cá nhân</Title>
+        <Title level={4}>{t("UserInfo.title")}</Title>
         <Button
           type={isEditing ? "primary" : "default"}
           icon={isEditing ? <SaveOutlined /> : <EditOutlined />}
           onClick={toggleEdit}
         >
-          {isEditing ? "Lưu thông tin" : "Chỉnh sửa"}
+          {isEditing ? t("UserInfo.save") : t("UserInfo.edit")}
         </Button>
       </div>
 
@@ -73,50 +75,48 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
             <Col xs={24} md={12}>
               <Form.Item
                 name="fullName"
-                label="Họ và tên"
-                rules={[{ required: true, message: "Vui lòng nhập họ tên" }]}
+                label={t("UserInfo.fullName")}
+                rules={[{ required: true, message: t("UserInfo.requiredFullName") }]}
               >
-                <Input prefix={<UserOutlined />} placeholder="Họ và tên " />
+                <Input prefix={<UserOutlined />} placeholder={t("UserInfo.fullName")} />
               </Form.Item>
             </Col>
             <Col xs={24} md={12}>
               <Form.Item
                 name="email"
-                label="Email "
+                label={t("UserInfo.email")}
                 rules={[
-                  { required: true, message: "Vui lòng nhập email" },
-                  { type: "email", message: "Email không hợp lệ" },
+                  { required: true, message: t("UserInfo.requiredEmail") },
+                  { type: "email", message: t("UserInfo.invalidEmail") },
                 ]}
               >
-                <Input prefix={<MailOutlined />} placeholder="Email " disabled />
+                <Input prefix={<MailOutlined />} placeholder={t("UserInfo.email")} disabled />
               </Form.Item>
             </Col>
             <Col xs={24} md={12}>
               <Form.Item
                 name="phone"
-                label="Số điện thoại"
-                rules={[
-                  { required: true, message: "Vui lòng nhập số điện thoại" },
-                ]}
+                label={t("UserInfo.phone")}
+                rules={[{ required: true, message: t("UserInfo.requiredPhone") }]}
               >
-                <Input prefix={<PhoneOutlined />} placeholder="Số điện thoại" />
+                <Input prefix={<PhoneOutlined />} placeholder={t("UserInfo.phone")} />
               </Form.Item>
             </Col>
             <Col xs={24} md={12}>
-              <Form.Item name="address" label="Địa chỉ">
-                <Input placeholder="Địa chỉ" />
+              <Form.Item name="address" label={t("UserInfo.address")}>
+                <Input placeholder={t("UserInfo.address")} />
               </Form.Item>
             </Col>
           </Row>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Lưu thay đổi
+              {t("UserInfo.submit")}
             </Button>
             <Button
               style={{ marginLeft: 8 }}
               onClick={() => setIsEditing(false)}
             >
-              Hủy
+              {t("UserInfo.cancel")}
             </Button>
           </Form.Item>
         </Form>
@@ -125,13 +125,13 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
           <Row gutter={[16, 16]}>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Họ và tên: </span>
+                <span className="info-label">{t("UserInfo.fullName")}: </span>
                 <span className="info-value">{user.fullName}</span>
               </div>
             </Col>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Email: </span>
+                <span className="info-label">{t("UserInfo.email")}: </span>
                 <span className="info-value">
                   {user.primaryEmailAddress?.emailAddress}
                 </span>
@@ -139,17 +139,17 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
             </Col>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Số điện thoại: </span>
+                <span className="info-label">{t("UserInfo.phone")}: </span>
                 <span className="info-value">
-                  {user.phoneNumbers?.[0]?.phoneNumber || "Chưa cập nhật"}
+                  {user.phoneNumbers?.[0]?.phoneNumber || t("UserInfo.notUpdated")}
                 </span>
               </div>
             </Col>
             <Col xs={24} md={12}>
               <div className="info-item">
-                <span className="info-label">Địa chỉ: </span>
+                <span className="info-label">{t("UserInfo.address")}: </span>
                 <span className="info-value">
-                  {user.unsafeMetadata?.address || "Chưa cập nhật"}
+                  {user.unsafeMetadata?.address || t("UserInfo.notUpdated")}
                 </span>
               </div>
             </Col>

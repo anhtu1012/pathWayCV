@@ -817,5 +817,108 @@
       "privacy": "Privacy Policy",
       "cookies": "Cookies"
     }
+  },
+  "BookingHistory": {
+    "title": "Booking History",
+    "empty": "You have no bookings yet",
+    "status": {
+      "completed": "Completed",
+      "upcoming": "Upcoming",
+      "cancelled": "Cancelled",
+      "unknown": "Unknown"
+    },
+    "table": {
+      "service": "Service",
+      "date": "Date",
+      "time": "Time",
+      "coach": "Coach",
+      "status": "Status",
+      "amount": "Amount",
+      "action": "Action",
+      "summary": "Details"
+    },
+    "action": {
+      "view": "View details",
+      "cancel": "Cancel Booking"
+    }
+  },
+   "ProfilePage": {
+    "title": "Profile Information",
+    "loading": "Loading user information...",
+    "notLoggedIn": {
+      "title": "You need to sign in to view this page",
+      "loginButton": "Sign In"
+    },
+    "tabs": {
+      "info": "Personal Info",
+      "history": "Booking History",
+      "wallet": "Wallet"
+    },
+    "wallet": {
+      "balanceLabel": "Account Balance",
+      "topUp": "Top Up"
+    }
+  },
+  "UserInfo": {
+  "title": "Personal Information",
+  "edit": "Edit",
+  "save": "Save Information",
+  "submit": "Save Changes",
+  "cancel": "Cancel",
+  "success": "Information updated successfully!",
+  "fullName": "Full Name",
+  "email": "Email",
+  "phone": "Phone Number",
+  "address": "Address",
+  "requiredFullName": "Please enter your full name",
+  "requiredEmail": "Please enter your email",
+  "invalidEmail": "Invalid email format",
+  "requiredPhone": "Please enter your phone number",
+  "notUpdated": "Not updated"
+},
+"WalletSection": {
+    "transactionHistoryTitle": "Transaction History",
+    "table": {
+      "date": "Date",
+      "type": "Type",
+      "amount": "Amount",
+      "description": "Description",
+      "status": "Status",
+      "transactionSummary": "Transaction"
+    },
+    "transactionTypes": {
+      "topup": "Top-up",
+      "purchase": "Purchase",
+      "refund": "Refund",
+      "default": "Transaction"
+    },
+    "transactionStatuses": {
+      "completed": "Completed",
+      "pending": "Pending",
+      "failed": "Failed",
+      "unknown": "Unknown"
+    },
+    "emptyDescription": "No transactions found",
+    "sampleTransactions": {
+      "sample1": {
+        "description": "Top-up via Momo"
+      },
+      "sample2": {
+        "description": "Service payment"
+      },
+      "sample3": {
+        "description": "Service refund"
+      },
+      "sample4": {
+        "description": "Top-up via bank transfer"
+      }
+    },
+     "mobileLabels":{
+        "date": "Date:",
+        "type": "Type:",
+        "amount": "Amount:",
+        "description": "Description:",
+        "status": "Status:"
+    }
   }
 }

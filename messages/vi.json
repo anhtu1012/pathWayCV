@@ -249,7 +249,7 @@
       "logo_accenture_alt": "Logo Accenture"
     }
   },
-   "ServicePage": {
+  "ServicePage": {
     "pageBanner": {
       "title": "Dịch vụ",
       "subtitle": "Các giải pháp tư vấn chuyên nghiệp giúp bạn phát triển sự nghiệp"
@@ -554,7 +554,7 @@
       "plan1": {
         "title": "GÓI CƠ BẢN",
         "price": "499,000 VNĐ",
-        "originalPrice": "", 
+        "originalPrice": "",
         "description": "Phù hợp với: Người mới bắt đầu, muốn biết CV đang ở mức nào và cần điều chỉnh gì.",
         "feature1": "Đánh giá CV toàn diện",
         "feature2": "Báo cáo chi tiết điểm mạnh – điểm yếu",
@@ -590,7 +590,7 @@
     },
     "faq": {
       "title": "Câu hỏi thường gặp",
-      "item1": { 
+      "item1": {
         "question": "Sau khi thanh toán, tôi sẽ nhận được dịch vụ trong bao lâu?",
         "answer": "Sau khi xác nhận thanh toán, chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ để bắt đầu quy trình. Thời gian phản hồi chi tiết phụ thuộc vào gói dịch vụ bạn lựa chọn."
       },
@@ -804,8 +804,8 @@
       "subscribeButton": "Đăng ký",
       "submitSuccess": "Yêu cầu của bạn đã được gửi thành công!",
       "validation": {
-         "emailRequired": "Vui lòng nhập email",
-         "emailInvalid": "Email không hợp lệ"
+        "emailRequired": "Vui lòng nhập email",
+        "emailInvalid": "Email không hợp lệ"
       }
     },
     "bottom": {
@@ -814,6 +814,108 @@
       "privacy": "Chính sách bảo mật",
       "cookies": "Cookies"
     }
+  },
+  "BookingHistory": {
+    "title": "Lịch sử đặt lịch",
+    "empty": "Bạn chưa có lịch đặt nào",
+    "status": {
+      "completed": "Đã hoàn thành",
+      "upcoming": "Sắp tới",
+      "cancelled": "Đã hủy",
+      "unknown": "Không xác định"
+    },
+    "table": {
+      "service": "Dịch vụ",
+      "date": "Ngày",
+      "time": "Giờ",
+      "coach": "Chuyên gia",
+      "status": "Trạng thái",
+      "amount": "Số tiền",
+      "action": "Hành động",
+      "summary": "Chi tiết"
+    },
+    "action": {
+      "view": "Xem chi tiết",
+      "cancel": "Hủy đặt lịch"
+    }
+  },
+  "ProfilePage": {
+    "title": "Thông tin cá nhân",
+    "loading": "Đang tải thông tin...",
+    "notLoggedIn": {
+      "title": "Bạn cần đăng nhập để xem trang này",
+      "loginButton": "Đăng nhập"
+    },
+    "tabs": {
+      "info": "Thông tin cá nhân",
+      "history": "Lịch sử đặt lịch",
+      "wallet": "Ví tiền"
+    },
+    "wallet": {
+      "balanceLabel": "Số dư tài khoản",
+      "topUp": "Nạp tiền"
+    }
+  },
+  "UserInfo": {
+  "title": "Thông tin cá nhân",
+  "edit": "Chỉnh sửa",
+  "save": "Lưu thông tin",
+  "submit": "Lưu thay đổi",
+  "cancel": "Hủy",
+  "success": "Cập nhật thông tin thành công!",
+  "fullName": "Họ và tên",
+  "email": "Email",
+  "phone": "Số điện thoại",
+  "address": "Địa chỉ",
+  "requiredFullName": "Vui lòng nhập họ tên",
+  "requiredEmail": "Vui lòng nhập email",
+  "invalidEmail": "Email không hợp lệ",
+  "requiredPhone": "Vui lòng nhập số điện thoại",
+  "notUpdated": "Chưa cập nhật"
+},
+"WalletSection": {
+    "transactionHistoryTitle": "Lịch sử giao dịch",
+    "table": {
+      "date": "Ngày",
+      "type": "Loại giao dịch",
+      "amount": "Số tiền",
+      "description": "Mô tả",
+      "status": "Trạng thái",
+      "transactionSummary": "Giao dịch" 
+    },
+    "transactionTypes": {
+      "topup": "Nạp tiền",
+      "purchase": "Thanh toán",
+      "refund": "Hoàn tiền",
+      "default": "Giao dịch"
+    },
+    "transactionStatuses": {
+      "completed": "Hoàn thành",
+      "pending": "Đang xử lý",
+      "failed": "Thất bại",
+      "unknown": "Không xác định"
+    },
+    "emptyDescription": "Không có giao dịch nào",
+    "sampleTransactions": {
+      "sample1": {
+        "description": "Nạp tiền qua Momo"
+      },
+      "sample2": {
+        "description": "Thanh toán dịch vụ"
+      },
+      "sample3": {
+        "description": "Hoàn tiền dịch vụ"
+      },
+      "sample4": {
+        "description": "Nạp tiền qua ngân hàng"
+      }
+    },
+    "mobileLabels":{
+        "date": "Ngày:",
+        "type": "Loại:",
+        "amount": "Số tiền:",
+        "description": "Mô tả:",
+        "status": "Trạng thái:"
+    }
   }
-  
 }
