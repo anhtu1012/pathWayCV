@@ -1,15 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Button, Input, Typography, Form, message } from "antd";
 import React, { useEffect, useState } from "react";
+import {
+  Typography,
+  Form,
+  Input,
+  Button,
+  message,
+} from "antd";
 import Image from "next/image";
 import AOS from "aos";
+import { useTranslations } from "next-intl";
+// import "./BookingReviewSection.scss"; // Ensure this SCSS file exists if uncommented
 
 const { Title, Paragraph } = Typography;
 const { TextArea } = Input;
 
 const BookingReviewSection = () => {
+  const t = useTranslations("BookingReviewSection");
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -21,18 +30,15 @@ const BookingReviewSection = () => {
   const handleSubmit = async (values: any) => {
     setLoading(true);
     try {
-      // Here you would typically send the form data to your API
       console.log("Form submitted:", values);
-
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      message.success("Yêu cầu của bạn đã được gửi thành công!");
+      message.success(t("toast.submitSuccess"));
       form.resetFields();
       setSubmitted(true);
     } catch (error) {
       console.error("Submission error:", error);
-      message.error("Có lỗi xảy ra. Vui lòng thử lại sau.");
+      message.error(t("toast.submitError"));
     } finally {
       setLoading(false);
     }
@@ -44,7 +50,7 @@ const BookingReviewSection = () => {
         <div className="booking-logo" data-aos="fade-up" data-aos-delay="100">
           <Image
             src="/assets/image/logo.png"
-            alt="PATHWAY Logo"
+            alt={t("logoAlt")}
             width={150}
             height={60}
           />
@@ -55,28 +61,25 @@ const BookingReviewSection = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Đặt lịch đánh giá CV & Tư vấn tìm việc
+          {t("title")}
         </Title>
         <Paragraph
           className="booking-description"
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          Bạn đã sẵn sàng nâng cao sự nghiệp của mình? Gửi CV để nhận đánh giá
-          chuyên gia hoặc đặt lịch tư vấn cá nhân với các chuyên gia tư vấn nghề
-          nghiệp của PATHWAY. Chúng tôi sẽ giúp bạn nổi bật giữa đám đông và
-          giành được công việc mơ ước.
+          {t("description")}
         </Paragraph>
 
         <div className="booking-form" data-aos="fade-up" data-aos-delay="400">
           {submitted ? (
             <div className="success-message" data-aos="fade-in">
-              <Title level={4}>Cảm ơn bạn đã liên hệ!</Title>
+              <Title level={4}>{t("successMessage.title")}</Title>
               <Paragraph>
-                Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.
+                {t("successMessage.paragraph")}
               </Paragraph>
               <Button type="primary" onClick={() => setSubmitted(false)}>
-                Gửi yêu cầu khác
+                {t("successMessage.button")}
               </Button>
             </div>
           ) : (
@@ -85,49 +88,49 @@ const BookingReviewSection = () => {
                 <Form.Item
                   name="fullName"
                   rules={[
-                    { required: true, message: "Vui lòng nhập họ và tên" },
+                    { required: true, message: t("form.validation.fullNameRequired") },
                   ]}
                 >
-                  <Input className="form-input" placeholder="Họ và tên" />
+                  <Input className="form-input" placeholder={t("form.placeholders.fullName")} />
                 </Form.Item>
                 <Form.Item
                   name="email"
                   rules={[
-                    { required: true, message: "Vui lòng nhập email" },
-                    { type: "email", message: "Email không hợp lệ" },
+                    { required: true, message: t("form.validation.emailRequired") },
+                    { type: "email", message: t("form.validation.emailInvalid") },
                   ]}
                 >
-                  <Input className="form-input" placeholder="Email" />
+                  <Input className="form-input" placeholder={t("form.placeholders.email")} />
                 </Form.Item>
               </div>
               <div className="form-row">
                 <Form.Item
                   name="phone"
                   rules={[
-                    { required: true, message: "Vui lòng nhập số điện thoại" },
+                    { required: true, message: t("form.validation.phoneRequired") },
                   ]}
                 >
-                  <Input className="form-input" placeholder="Số điện thoại" />
+                  <Input className="form-input" placeholder={t("form.placeholders.phone")} />
                 </Form.Item>
                 <Form.Item
                   name="position"
                   rules={[
                     {
                       required: true,
-                      message: "Vui lòng nhập vị trí hiện tại",
+                      message: t("form.validation.positionRequired"),
                     },
                   ]}
                 >
-                  <Input className="form-input" placeholder="Vị trí hiện tại" />
+                  <Input className="form-input" placeholder={t("form.placeholders.position")} />
                 </Form.Item>
               </div>
               <Form.Item
                 name="description"
-                rules={[{ required: true, message: "Vui lòng nhập mô tả" }]}
+                rules={[{ required: true, message: t("form.validation.descriptionRequired") }]}
               >
                 <TextArea
                   className="form-input ant-input-textarea"
-                  placeholder="Mô tả ngắn gọn về mục tiêu nghề nghiệp và cách chúng tôi có thể giúp đỡ"
+                  placeholder={t("form.placeholders.description")}
                   rows={4}
                 />
               </Form.Item>
@@ -138,7 +141,7 @@ const BookingReviewSection = () => {
                   className="submit-btn"
                   loading={loading}
                 >
-                  {loading ? "Đang gửi..." : "Gửi yêu cầu"}
+                  {loading ? t("form.submittingButton") : t("form.submitButton")}
                 </Button>
               </Form.Item>
             </Form>

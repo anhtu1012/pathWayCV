@@ -920,5 +920,38 @@
         "description": "Description:",
         "status": "Status:"
     }
+  },
+  "BookingReviewSection": {
+    "logoAlt": "PATHWAY Logo",
+    "title": "Schedule CV Review & Job Consultation",
+    "description": "Ready to elevate your career? Submit your CV for expert review or schedule a personal consultation with PATHWAY's career advisors. We'll help you stand out from the crowd and land your dream job.",
+    "successMessage": {
+      "title": "Thank you for contacting us!",
+      "paragraph": "We will respond within 24 working hours.",
+      "button": "Submit another request"
+    },
+    "form": {
+      "placeholders": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "position": "Current Position",
+        "description": "Briefly describe your career goals and how we can help"
+      },
+      "validation": {
+        "fullNameRequired": "Please enter your full name",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Invalid email address",
+        "phoneRequired": "Please enter your phone number",
+        "positionRequired": "Please enter your current position",
+        "descriptionRequired": "Please enter a description"
+      },
+      "submitButton": "Send Request",
+      "submittingButton": "Sending..."
+    },
+    "toast": {
+      "submitSuccess": "Your request has been sent successfully!",
+      "submitError": "An error occurred. Please try again later."
+    }
   }
 }

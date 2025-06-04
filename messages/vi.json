@@ -917,5 +917,38 @@
         "description": "Mô tả:",
         "status": "Trạng thái:"
     }
+  },
+  "BookingReviewSection": {
+    "logoAlt": "Logo PATHWAY",
+    "title": "Đặt lịch đánh giá CV & Tư vấn tìm việc",
+    "description": "Bạn đã sẵn sàng nâng cao sự nghiệp của mình? Gửi CV để nhận đánh giá chuyên gia hoặc đặt lịch tư vấn cá nhân với các chuyên gia tư vấn nghề nghiệp của PATHWAY. Chúng tôi sẽ giúp bạn nổi bật giữa đám đông và giành được công việc mơ ước.",
+    "successMessage": {
+      "title": "Cảm ơn bạn đã liên hệ!",
+      "paragraph": "Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.",
+      "button": "Gửi yêu cầu khác"
+    },
+    "form": {
+      "placeholders": {
+        "fullName": "Họ và tên",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "position": "Vị trí hiện tại",
+        "description": "Mô tả ngắn gọn về mục tiêu nghề nghiệp và cách chúng tôi có thể giúp đỡ"
+      },
+      "validation": {
+        "fullNameRequired": "Vui lòng nhập họ và tên",
+        "emailRequired": "Vui lòng nhập email",
+        "emailInvalid": "Email không hợp lệ",
+        "phoneRequired": "Vui lòng nhập số điện thoại",
+        "positionRequired": "Vui lòng nhập vị trí hiện tại",
+        "descriptionRequired": "Vui lòng nhập mô tả"
+      },
+      "submitButton": "Gửi yêu cầu",
+      "submittingButton": "Đang gửi..."
+    },
+    "toast": {
+      "submitSuccess": "Yêu cầu của bạn đã được gửi thành công!",
+      "submitError": "Có lỗi xảy ra. Vui lòng thử lại sau."
+    }
   }
 }
