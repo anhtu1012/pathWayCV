@@ -22,11 +22,13 @@ import {
 import PageBanner from "@/components/common/PageBanner";
 import AOS from "aos";
 import "./lien_he.scss";
+import { useTranslations } from "next-intl";
 
 const { Title, Paragraph } = Typography;
 const { TextArea } = Input;
 
 function ContactPage() {
+  const t = useTranslations("ContactPage");
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
 
@@ -40,52 +42,54 @@ function ContactPage() {
   const handleSubmit = async (value: any) => {
     setLoading(true);
     try {
-      // Simulating API call
       console.log(value);
-
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      message.success("Tin nhắn của bạn đã được gửi thành công!");
+      message.success(t("formSection.submitSuccess"));
       form.resetFields();
     } catch (error) {
       console.error(error);
-      message.error("Có lỗi xảy ra. Vui lòng thử lại sau!");
+      message.error(t("formSection.submitError"));
     } finally {
       setLoading(false);
     }
   };
 
-  const contactInfo = [
+  // Giữ nguyên contactInfo gốc, chỉ dịch title và content khi render
+  const contactInfoStructure = [
     {
+      infoKey: "address", // Key để nối với JSON
       icon: <EnvironmentOutlined />,
-      title: "Địa chỉ",
-      content: "28 Nguyễn Trãi, Quận 1, TP.HCM",
+      contentOriginal: "28 Nguyễn Trãi, Quận 1, TP.HCM", // Giữ lại nếu cần hoặc bỏ đi
       delay: 100,
     },
     {
+      infoKey: "phone",
       icon: <PhoneOutlined />,
-      title: "Điện thoại",
-      content: "(+84) 28 1234 5678",
+      contentOriginal: "(+84) 28 1234 5678",
       delay: 200,
     },
     {
+      infoKey: "email",
       icon: <MailOutlined />,
-      title: "Email",
-      content: "info@pathway.vn",
+      contentOriginal: "info@pathway.vn",
       delay: 300,
     },
     {
+      infoKey: "hours",
       icon: <ClockCircleOutlined />,
-      title: "Giờ làm việc",
-      content: "Thứ 2 - Thứ 6: 9:00 - 18:00",
+      contentOriginal: "Thứ 2 - Thứ 6: 9:00 - 18:00",
       delay: 400,
     },
   ];
 
+  const faqItemKeys = ["item1", "item2", "item3", "item4"];
+
+
   return (
     <div className="contact-page">
       <PageBanner
-        title="Liên hệ"
-        subtitle="Kết nối với chúng tôi để nhận hỗ trợ và tư vấn cho sự nghiệp của bạn"
+        title={t("pageBanner.title")}
+        subtitle={t("pageBanner.subtitle")}
       />
 
       <section className="contact-section">
@@ -93,11 +97,10 @@ function ContactPage() {
           <Row gutter={[48, 48]}>
             <Col xs={24} lg={14} data-aos="fade-right">
               <Title level={2} className="section-title">
-                Gửi tin nhắn cho chúng tôi
+                {t("formSection.title")}
               </Title>
               <Paragraph className="section-description">
-                Bạn có câu hỏi hoặc cần tư vấn? Hãy điền thông tin vào form dưới
-                đây và đội ngũ PATHWAY sẽ phản hồi trong thời gian sớm nhất.
+                {t("formSection.description")}
               </Paragraph>
 
               <div className="contact-form">
@@ -111,32 +114,32 @@ function ContactPage() {
                     <Col xs={24} md={12}>
                       <Form.Item
                         name="fullName"
-                        label="Họ và tên"
+                        label={t("formSection.labels.fullName")}
                         rules={[
                           {
                             required: true,
-                            message: "Vui lòng nhập họ và tên",
+                            message: t("formSection.validation.fullNameRequired"),
                           },
                         ]}
                       >
                         <Input
                           size="large"
-                          placeholder="Nhập họ và tên của bạn"
+                          placeholder={t("formSection.placeholders.fullName")}
                         />
                       </Form.Item>
                     </Col>
                     <Col xs={24} md={12}>
                       <Form.Item
                         name="email"
-                        label="Email"
+                        label={t("formSection.labels.email")}
                         rules={[
-                          { required: true, message: "Vui lòng nhập email" },
-                          { type: "email", message: "Email không hợp lệ" },
+                          { required: true, message: t("formSection.validation.emailRequired") },
+                          { type: "email", message: t("formSection.validation.emailInvalid") },
                         ]}
                       >
                         <Input
                           size="large"
-                          placeholder="Nhập địa chỉ email của bạn"
+                          placeholder={t("formSection.placeholders.email")}
                         />
                       </Form.Item>
                     </Col>
@@ -144,24 +147,24 @@ function ContactPage() {
 
                   <Form.Item
                     name="subject"
-                    label="Tiêu đề"
+                    label={t("formSection.labels.subject")}
                     rules={[
-                      { required: true, message: "Vui lòng nhập tiêu đề" },
+                      { required: true, message: t("formSection.validation.subjectRequired") },
                     ]}
                   >
-                    <Input size="large" placeholder="Nhập tiêu đề tin nhắn" />
+                    <Input size="large" placeholder={t("formSection.placeholders.subject")} />
                   </Form.Item>
 
                   <Form.Item
                     name="message"
-                    label="Nội dung"
+                    label={t("formSection.labels.message")}
                     rules={[
-                      { required: true, message: "Vui lòng nhập nội dung" },
+                      { required: true, message: t("formSection.validation.messageRequired") },
                     ]}
                   >
                     <TextArea
                       rows={6}
-                      placeholder="Nội dung tin nhắn của bạn..."
+                      placeholder={t("formSection.placeholders.message")}
                     />
                   </Form.Item>
 
@@ -173,7 +176,7 @@ function ContactPage() {
                       loading={loading}
                       className="submit-button"
                     >
-                      Gửi tin nhắn
+                      {t("formSection.submitButton")}
                     </Button>
                   </Form.Item>
                 </Form>
@@ -183,14 +186,14 @@ function ContactPage() {
             <Col xs={24} lg={10} className="contact-info-col">
               <div className="contact-info-wrapper" data-aos="fade-left">
                 <div className="info-header">
-                  <Title level={3}>Thông tin liên hệ</Title>
+                  <Title level={3}>{t("infoSection.title")}</Title>
                   <Paragraph>
-                    Liên hệ trực tiếp với chúng tôi qua các phương thức sau:
+                    {t("infoSection.description")}
                   </Paragraph>
                 </div>
 
                 <div className="info-cards">
-                  {contactInfo.map((item, index) => (
+                  {contactInfoStructure.map((item, index) => (
                     <Card
                       key={index}
                       className="info-card"
@@ -200,8 +203,8 @@ function ContactPage() {
                       <Space align="start">
                         <div className="info-icon">{item.icon}</div>
                         <div className="info-content">
-                          <Title level={5}>{item.title}</Title>
-                          <Paragraph>{item.content}</Paragraph>
+                          <Title level={5}>{t(`infoSection.${item.infoKey}Title`)}</Title>
+                          <Paragraph>{t(`infoSection.${item.infoKey}Content`)}</Paragraph>
                         </div>
                       </Space>
                     </Card>
@@ -209,18 +212,19 @@ function ContactPage() {
                 </div>
 
                 <div className="social-links">
-                  <Title level={5}>Theo dõi chúng tôi</Title>
+                  <Title level={5}>{t("infoSection.followUsTitle")}</Title>
                   <div className="social-icons">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    {/* Giữ nguyên link mạng xã hội, có thể thêm aria-label được dịch nếu muốn */}
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                       <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                       <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                       <i className="fab fa-youtube"></i>
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                       <i className="fab fa-instagram"></i>
                     </a>
                   </div>
@@ -234,7 +238,7 @@ function ContactPage() {
       <section className="map-section" data-aos="fade-up">
         <div className="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.395130672439!2d106.69257187480508!3d10.780376989318893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f36694ffcb5%3A0x99c29da95bd91b7c!2zMjggTmd1eeG7hW4gVHLDo2ksIFBoxrDhu51uZyBQaOG6oW0gTmfFqSBMw6NvLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1654678901234!5m2!1svi!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.395130672439!2d106.69257187480508!3d10.780376989318893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f36694ffcb5%3A0x99c29da95bd91b7c!2zMjggTmd1eeG7hW4gVHLDo2ksIFBoxrDhu51uZyBQaOG6oW0gTmfFqSBMw6NvLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1654678901234!5m2!1svi!2s" // Bạn nên thay thế bằng link Google Maps thực tế của bạn
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -252,59 +256,18 @@ function ContactPage() {
             className="section-title text-center"
             data-aos="fade-up"
           >
-            Câu hỏi thường gặp
+            {t("faqSection.title")}
           </Title>
 
           <Row gutter={[32, 32]} className="faq-grid">
-            <Col xs={24} md={12} data-aos="fade-up" data-aos-delay="100">
-              <div className="faq-item">
-                <Title level={4}>Làm thế nào để đặt lịch tư vấn?</Title>
-                <Paragraph>
-                  Bạn có thể đặt lịch tư vấn qua form liên hệ trên trang web,
-                  gọi điện trực tiếp hoặc gửi email cho chúng tôi. Đội ngũ
-                  PATHWAY sẽ liên hệ lại trong vòng 24 giờ để xác nhận lịch hẹn.
-                </Paragraph>
-              </div>
-            </Col>
-
-            <Col xs={24} md={12} data-aos="fade-up" data-aos-delay="200">
-              <div className="faq-item">
-                <Title level={4}>
-                  Tôi có thể đến văn phòng không cần đặt lịch trước?
-                </Title>
-                <Paragraph>
-                  Để đảm bảo chất lượng tư vấn tốt nhất, chúng tôi khuyến khích
-                  đặt lịch hẹn trước. Tuy nhiên, bạn có thể ghé văn phòng trong
-                  giờ làm việc để tìm hiểu thêm về dịch vụ.
-                </Paragraph>
-              </div>
-            </Col>
-
-            <Col xs={24} md={12} data-aos="fade-up" data-aos-delay="300">
-              <div className="faq-item">
-                <Title level={4}>
-                  PATHWAY có cung cấp dịch vụ tư vấn trực tuyến không?
-                </Title>
-                <Paragraph>
-                  Có, chúng tôi cung cấp dịch vụ tư vấn trực tuyến qua Zoom,
-                  Google Meet hoặc các nền tảng khác theo nhu cầu của khách
-                  hàng.
-                </Paragraph>
-              </div>
-            </Col>
-
-            <Col xs={24} md={12} data-aos="fade-up" data-aos-delay="400">
-              <div className="faq-item">
-                <Title level={4}>
-                  Làm thế nào để nhận báo giá dịch vụ chi tiết?
-                </Title>
-                <Paragraph>
-                  Bạn có thể xem thông tin báo giá cơ bản tại trang Báo giá của
-                  chúng tôi. Để nhận báo giá chi tiết và phù hợp với nhu cầu cụ
-                  thể, vui lòng liên hệ trực tiếp với chúng tôi.
-                </Paragraph>
-              </div>
-            </Col>
+            {faqItemKeys.map((faqKey, index) => (
+              <Col xs={24} md={12} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} data-aos-delay={100 * (index + 1)} key={faqKey}>
+                <div className="faq-item">
+                  <Title level={4}>{t(`faqSection.${faqKey}.question`)}</Title>
+                  <Paragraph>{t(`faqSection.${faqKey}.answer`)}</Paragraph>
+                </div>
+              </Col>
+            ))}
           </Row>
         </div>
       </section>

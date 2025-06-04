@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 import AuthButtons from "../auth/AuthButtons";
 import LocaleSwitcher from "../changeLanguage";
 import "./index.scss";
+import { useTranslations } from "next-intl";
 
 const { Header } = Layout;
 
@@ -26,18 +27,18 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const pathname = usePathname();
   const { isSignedIn } = useAuth();
-
+  const t = useTranslations("Header");
   const menuItems = [
-    { key: "home", label: <Link href="/">Trang chủ</Link> },
-    { key: "about", label: <Link href="/gioi_thieu  ">Giới thiệu</Link> },
-    { key: "services", label: <Link href="/dich_vu">Dịch vụ</Link> },
+    { key: "home", label: <Link href="/">{t("menu.home")}</Link> },
+    { key: "about", label: <Link href="/gioi_thieu">{t("menu.about")}</Link> },
+    { key: "services", label: <Link href="/dich_vu">{t("menu.services")}</Link> },
     {
       key: "projects",
-      label: <Link href="/du_an_noi_bat">Dự án nổi bật</Link>,
+      label: <Link href="/du_an_noi_bat">{t("menu.projects")}</Link>,
     },
-    { key: "pricing", label: <Link href="/bao_gia">Báo giá</Link> },
-    { key: "blog", label: <Link href="/blog">Blog</Link> },
-    { key: "contact", label: <Link href="/lien_he">Liên hệ</Link> },
+    { key: "pricing", label: <Link href="/bao_gia">{t("menu.pricing")}</Link> },
+    { key: "blog", label: <Link href="/blog">{t("menu.blog")}</Link> },
+    { key: "contact", label: <Link href="/lien_he">{t("menu.contact")}</Link> },
   ];
 
   // Close mobile menu when path changes

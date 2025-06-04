@@ -1,16 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from "react";
-import { Table, Tag, Button, Empty, Typography, Tooltip, Space } from "antd";
+import {
+  Table,
+  Tag,
+  Button,
+  Empty,
+  Typography,
+  Tooltip,
+  Space,
+  Grid,
+} from "antd";
 import {
   EyeOutlined,
   CheckCircleOutlined,
   ClockCircleOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
+import "./BookingHistory.scss";
+import { useTranslations } from "next-intl";
 
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
-// Mock booking history data
 const mockBookings = [
   {
     id: 1,
@@ -53,83 +64,80 @@ const mockBookings = [
 const BookingHistory: React.FC = () => {
   const [bookings, setBookings] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
+  const screens = useBreakpoint();
+  const t = useTranslations("BookingHistory");
   useEffect(() => {
-    // Simulate API call
     setTimeout(() => {
       setBookings(mockBookings);
       setLoading(false);
     }, 1000);
   }, []);
 
-  const getStatusTag = (status: string) => {
+   const getStatusTag = (status: string) => {
     switch (status) {
       case "completed":
         return (
           <Tag icon={<CheckCircleOutlined />} color="success">
-            Đã hoàn thành
+            {t("status.completed")}
           </Tag>
         );
       case "upcoming":
         return (
           <Tag icon={<ClockCircleOutlined />} color="processing">
-            Sắp tới
+            {t("status.upcoming")}
           </Tag>
         );
       case "cancelled":
         return (
           <Tag icon={<CloseCircleOutlined />} color="error">
-            Đã hủy
+            {t("status.cancelled")}
           </Tag>
         );
       default:
-        return <Tag color="default">Không xác định</Tag>;
+        return <Tag color="default">{t("status.unknown")}</Tag>;
     }
   };
 
-  const columns = [
+  const desktopColumns = [
     {
-      title: "Dịch vụ",
+      title: t("table.service"),
       dataIndex: "service",
       key: "service",
     },
     {
-      title: "Ngày",
+      title: t("table.date"),
       dataIndex: "date",
       key: "date",
-      render: (date: string) => {
-        const formattedDate = new Date(date).toLocaleDateString("vi-VN");
-        return formattedDate;
-      },
+      render: (date: string) => new Date(date).toLocaleDateString(),
     },
     {
-      title: "Giờ",
+      title: t("table.time"),
       dataIndex: "time",
       key: "time",
     },
     {
-      title: "Chuyên viên",
+      title: t("table.coach"),
       dataIndex: "coach",
       key: "coach",
     },
     {
-      title: "Trạng thái",
+      title: t("table.status"),
       dataIndex: "status",
       key: "status",
       render: (status: string) => getStatusTag(status),
     },
     {
-      title: "Số tiền",
+      title: t("table.amount"),
       dataIndex: "amount",
       key: "amount",
       render: (amount: number) => `${amount.toLocaleString()}đ`,
     },
     {
-      title: "Hành động",
+      title: t("table.action"),
       key: "action",
-      render: (text: string, record: any) => (
+      render: (_: any, record: any) => (
         <Space size="small">
-          <Tooltip title="Xem chi tiết">
+          <Tooltip title={t("action.view")}>
             <Button
               type="primary"
               shape="circle"
@@ -139,7 +147,7 @@ const BookingHistory: React.FC = () => {
           </Tooltip>
           {record.status === "upcoming" && (
             <Button type="default" danger size="small">
-              Hủy lịch
+              {t("action.cancel")}
             </Button>
           )}
         </Space>
@@ -147,13 +155,58 @@ const BookingHistory: React.FC = () => {
     },
   ];
 
+  const mobileColumns = [
+    {
+      title: t("table.summary"),
+      key: "summary",
+      render: (record:any) => (
+        <div style={{ fontSize: 14 }}>
+          <p>
+            <strong>{t("table.service")}:</strong> {record.service}
+          </p>
+          <p>
+            <strong>{t("table.date")}:</strong>{" "}
+            {new Date(record.date).toLocaleDateString()} -{" "}
+            <strong>{t("table.time")}:</strong> {record.time}
+          </p>
+          <p>
+            <strong>{t("table.coach")}:</strong> {record.coach}
+          </p>
+          <p>
+            <strong>{t("table.status")}:</strong> {getStatusTag(record.status)}
+          </p>
+          <p>
+            <strong>{t("table.amount")}:</strong>{" "}
+            {record.amount.toLocaleString()}đ
+          </p>
+          <div style={{ marginTop: 8 }}>
+            <Space size="small">
+              <Tooltip title={t("action.view")}>
+                <Button
+                  type="primary"
+                  shape="circle"
+                  icon={<EyeOutlined />}
+                  size="small"
+                />
+              </Tooltip>
+              {record.status === "upcoming" && (
+                <Button type="default" danger size="small">
+                  {t("action.cancel")}
+                </Button>
+              )}
+            </Space>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="booking-history-section">
-      <Title level={4}>Lịch sử đặt lịch</Title>
-
+      <Title level={4}>{t("title")}</Title>
       {bookings.length > 0 ? (
         <Table
-          columns={columns}
+          columns={screens.md ? desktopColumns : mobileColumns}
           dataSource={bookings}
           rowKey="id"
           loading={loading}
@@ -162,7 +215,7 @@ const BookingHistory: React.FC = () => {
         />
       ) : (
         <Empty
-          description="Bạn chưa có lịch đặt nào"
+          description={t("empty")}
           image={Empty.PRESENTED_IMAGE_SIMPLE}
         />
       )}

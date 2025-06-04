@@ -23,12 +23,14 @@ import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
 import AOS from "aos";
 import "./blog.scss";
+import { useTranslations } from "next-intl";
 
 const { Title, Paragraph } = Typography;
 const { Search } = Input;
 const { Option } = Select;
 
 function BlogPage() {
+  const t = useTranslations("BlogPage");
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
@@ -38,94 +40,103 @@ function BlogPage() {
     });
   }, []);
 
-  const blogPosts = [
+  // Dữ liệu blog posts gốc, chúng ta sẽ lấy nội dung dịch từ JSON
+  const originalBlogPosts = [
     {
       id: 1,
-      title: "10 kỹ năng cần thiết cho sự nghiệp trong thời đại số",
-      excerpt:
-        "Khám phá những kỹ năng quan trọng mà nhà tuyển dụng đang tìm kiếm trong thời đại công nghệ số hiện nay.",
+      postKey: "post1", // Key để tham chiếu đến JSON
       image: "/assets/image/dinh-huong-nghe-nghiep-som-de-thanh-cong.jpg",
-      date: "12/05/2023",
-      author: "Nguyễn Văn A",
+      date: "12/05/2023", // Ngày tháng có thể không cần dịch, hoặc có định dạng riêng theo locale
+      // author: "Nguyễn Văn A", // Sẽ lấy từ JSON
       category: "career",
-      tags: ["kỹ năng mềm", "công nghệ", "học tập suốt đời"],
+      // tags: ["kỹ năng mềm", "công nghệ", "học tập suốt đời"], // Sẽ lấy từ JSON
       delay: 100,
     },
     {
       id: 2,
-      title: "Làm thế nào để CV của bạn vượt qua phần mềm ATS?",
-      excerpt:
-        "Hướng dẫn chi tiết giúp CV của bạn vượt qua các phần mềm quét và lọc hồ sơ tự động của nhà tuyển dụng.",
+      postKey: "post2",
       image: "/assets/image/cv.jpg",
       date: "05/04/2023",
-      author: "Trần Thị B",
       category: "cv",
-      tags: ["ATS", "CV", "tuyển dụng"],
       delay: 200,
     },
     {
       id: 3,
-      title: "5 sai lầm phổ biến trong phỏng vấn xin việc",
-      excerpt:
-        "Những lỗi thường gặp có thể khiến bạn mất cơ hội việc làm và cách khắc phục hiệu quả.",
+      postKey: "post3",
       image:
         "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?w=800",
       date: "23/03/2023",
-      author: "Lê Văn C",
       category: "interview",
-      tags: ["phỏng vấn", "kỹ năng giao tiếp", "chuẩn bị"],
       delay: 300,
     },
     {
       id: 4,
-      title: "Xây dựng thương hiệu cá nhân trên LinkedIn",
-      excerpt:
-        "Chiến lược toàn diện để tạo dựng và phát triển hình ảnh chuyên nghiệp trên mạng xã hội việc làm hàng đầu.",
+      postKey: "post4",
       image: "/assets/image/163055607_linkedin-la-gi.png",
       date: "17/02/2023",
-      author: "Phạm Thị D",
       category: "personal-branding",
-      tags: ["LinkedIn", "mạng xã hội", "thương hiệu cá nhân"],
       delay: 400,
     },
     {
       id: 5,
-      title: "Cách đàm phán lương hiệu quả",
-      excerpt:
-        "Những chiến lược và kỹ thuật giúp bạn tự tin đàm phán mức lương xứng đáng với năng lực của mình.",
+      postKey: "post5",
       image:
         "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800",
       date: "08/01/2023",
-      author: "Vũ Hoàng E",
       category: "salary",
-      tags: ["đàm phán", "lương", "giá trị bản thân"],
       delay: 500,
     },
     {
       id: 6,
-      title: "Chuyển đổi nghề nghiệp ở tuổi 30+: Không bao giờ là quá muộn",
-      excerpt:
-        "Cẩm nang hướng dẫn cho những người muốn thay đổi sự nghiệp khi đã ở độ tuổi trưởng thành.",
+      postKey: "post6",
       image:
         "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800",
       date: "29/12/2022",
-      author: "Nguyễn Thị F",
       category: "career-change",
-      tags: ["chuyển nghề", "học kỹ năng mới", "định hướng"],
       delay: 600,
     },
   ];
+
+  const blogPosts = originalBlogPosts.map(post => {
+    const translatedTitle = t(`blogPosts.${post.postKey}.title`);
+    const translatedExcerpt = t(`blogPosts.${post.postKey}.excerpt`);
+    const translatedAuthor = t(`blogPosts.${post.postKey}.author`);
+    const translatedTags = [
+        t(`blogPosts.${post.postKey}.tag1`),
+        t(`blogPosts.${post.postKey}.tag2`),
+        t(`blogPosts.${post.postKey}.tag3`),
+    ].filter(tag => tag && !tag.startsWith(`blogPosts.${post.postKey}.tag`)); // Lọc bỏ key path nếu không có bản dịch
+
+    return {
+      ...post,
+      title: translatedTitle,
+      excerpt: translatedExcerpt,
+      author: translatedAuthor,
+      tags: translatedTags,
+    };
+  });
+
 
   const filteredPosts =
     filter === "all"
       ? blogPosts
       : blogPosts.filter((post) => post.category === filter);
 
+  const filterOptions = [
+    { value: "all", labelKey: "filters.allTopics" },
+    { value: "career", labelKey: "filters.career" },
+    { value: "cv", labelKey: "filters.cv" },
+    { value: "interview", labelKey: "filters.interview" },
+    { value: "personal-branding", labelKey: "filters.personalBranding" },
+    { value: "salary", labelKey: "filters.salary" },
+    { value: "career-change", labelKey: "filters.careerChange" },
+  ];
+
   return (
     <div className="blog-page">
       <PageBanner
-        title="Blog"
-        subtitle="Kiến thức, chia sẻ và hướng dẫn phát triển sự nghiệp từ đội ngũ chuyên gia của PATHWAY"
+        title={t("pageBanner.title")}
+        subtitle={t("pageBanner.subtitle")}
       />
 
       <section className="blog-content">
@@ -133,7 +144,7 @@ function BlogPage() {
           <div className="blog-filters" data-aos="fade-up">
             <div className="search-container">
               <Search
-                placeholder="Tìm kiếm bài viết..."
+                placeholder={t("filters.searchPlaceholder")}
                 enterButton={<SearchOutlined />}
                 size="large"
               />
@@ -145,13 +156,9 @@ function BlogPage() {
                 size="large"
                 onChange={(value) => setFilter(value)}
               >
-                <Option value="all">Tất cả chủ đề</Option>
-                <Option value="career">Sự nghiệp</Option>
-                <Option value="cv">CV & Hồ sơ</Option>
-                <Option value="interview">Phỏng vấn</Option>
-                <Option value="personal-branding">Thương hiệu cá nhân</Option>
-                <Option value="salary">Đàm phán lương</Option>
-                <Option value="career-change">Chuyển đổi nghề nghiệp</Option>
+                {filterOptions.map(option => (
+                  <Option key={option.value} value={option.value}>{t(option.labelKey)}</Option>
+                ))}
               </Select>
             </div>
           </div>
@@ -166,7 +173,7 @@ function BlogPage() {
                       <div className="blog-image-container">
                         <Image
                           src={post.image}
-                          alt={post.title}
+                          alt={post.title} 
                           fill
                           style={{ objectFit: "cover" }}
                           className="blog-image"
@@ -187,7 +194,7 @@ function BlogPage() {
                     <Title level={4} className="blog-title">
                       {post.title}
                     </Title>
-                    <Paragraph className="blog-excerpt">
+                    <Paragraph className="blog-excerpt" ellipsis={{ rows: 3 }}>
                       {post.excerpt}
                     </Paragraph>
 
@@ -213,19 +220,18 @@ function BlogPage() {
       <section className="subscribe-section">
         <div className="container">
           <div className="subscribe-content" data-aos="fade-up">
-            <Title level={2}>Đăng ký nhận bản tin</Title>
+            <Title level={2}>{t("subscribeSection.title")}</Title>
             <Paragraph>
-              Nhận các bài viết mới nhất và lời khuyên từ chuyên gia PATHWAY
-              hàng tuần
+              {t("subscribeSection.description")}
             </Paragraph>
             <div className="subscribe-form">
               <Input
-                placeholder="Email của bạn"
+                placeholder={t("subscribeSection.emailPlaceholder")}
                 size="large"
                 style={{ width: "70%" }}
               />
               <Button type="primary" size="large">
-                Đăng ký
+                {t("subscribeSection.subscribeButton")}
               </Button>
             </div>
           </div>
