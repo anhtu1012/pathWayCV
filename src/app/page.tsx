@@ -19,6 +19,8 @@ const { Title, Text, Paragraph } = Typography;
 
 const HomePage = () => {
   const t = useTranslations("HomePage"); // Sử dụng namespace "HomePage"
+  console.log("Translations:", t); // Kiểm tra xem translations có hoạt động không
+  
   const [activeVideo, setActiveVideo] = useState(0);
   const bookingSectionRef = useRef<HTMLElement>(null);
   const projectSectionRef = useRef<HTMLElement>(null);
