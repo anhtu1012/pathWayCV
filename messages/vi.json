@@ -77,10 +77,18 @@
       }
     },
     "statsSection": {
-      "clients": { "title": "Khách hàng" },
-      "experts": { "title": "Chuyên gia" },
-      "satisfaction": { "title": "Tỷ lệ hài lòng" },
-      "partners": { "title": "Đối tác doanh nghiệp" }
+      "clients": {
+        "title": "Khách hàng"
+      },
+      "experts": {
+        "title": "Chuyên gia"
+      },
+      "satisfaction": {
+        "title": "Tỷ lệ hài lòng"
+      },
+      "partners": {
+        "title": "Đối tác doanh nghiệp"
+      }
     },
     "teamSection": {
       "title": "Đội ngũ chuyên gia – Nền tảng của sự khác biệt tại PATHWAY",
@@ -116,13 +124,27 @@
       "title": "Đối tác của chúng tôi",
       "description": "Một trong những minh chứng rõ ràng nhất cho uy tín và năng lực của PATHWAY chính là hệ thống đối tác mà tổ chức này hợp tác, bao gồm các “ông lớn” công nghệ toàn cầu.",
       "partnerLogos": [
-        { "alt": "Logo Google" },
-        { "alt": "Logo Apple" },
-        { "alt": "Logo Microsoft" },
-        { "alt": "Logo Amazon" },
-        { "alt": "Logo Netflix" },
-        { "alt": "Logo Facebook" },
-        { "alt": "Logo LinkedIn" }
+        {
+          "alt": "Logo Google"
+        },
+        {
+          "alt": "Logo Apple"
+        },
+        {
+          "alt": "Logo Microsoft"
+        },
+        {
+          "alt": "Logo Amazon"
+        },
+        {
+          "alt": "Logo Netflix"
+        },
+        {
+          "alt": "Logo Facebook"
+        },
+        {
+          "alt": "Logo LinkedIn"
+        }
       ]
     },
     "achievementsSection": {
@@ -820,7 +842,7 @@
     "empty": "Bạn chưa có lịch đặt nào",
     "status": {
       "completed": "Đã hoàn thành",
-      "upcoming": "Sắp tới",
+      "upcoming": "Đang phản hồi",
       "cancelled": "Đã hủy",
       "unknown": "Không xác định"
     },
@@ -857,23 +879,23 @@
     }
   },
   "UserInfo": {
-  "title": "Thông tin cá nhân",
-  "edit": "Chỉnh sửa",
-  "save": "Lưu thông tin",
-  "submit": "Lưu thay đổi",
-  "cancel": "Hủy",
-  "success": "Cập nhật thông tin thành công!",
-  "fullName": "Họ và tên",
-  "email": "Email",
-  "phone": "Số điện thoại",
-  "address": "Địa chỉ",
-  "requiredFullName": "Vui lòng nhập họ tên",
-  "requiredEmail": "Vui lòng nhập email",
-  "invalidEmail": "Email không hợp lệ",
-  "requiredPhone": "Vui lòng nhập số điện thoại",
-  "notUpdated": "Chưa cập nhật"
-},
-"WalletSection": {
+    "title": "Thông tin cá nhân",
+    "edit": "Chỉnh sửa",
+    "save": "Lưu thông tin",
+    "submit": "Lưu thay đổi",
+    "cancel": "Hủy",
+    "success": "Cập nhật thông tin thành công!",
+    "fullName": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "address": "Địa chỉ",
+    "requiredFullName": "Vui lòng nhập họ tên",
+    "requiredEmail": "Vui lòng nhập email",
+    "invalidEmail": "Email không hợp lệ",
+    "requiredPhone": "Vui lòng nhập số điện thoại",
+    "notUpdated": "Chưa cập nhật"
+  },
+  "WalletSection": {
     "transactionHistoryTitle": "Lịch sử giao dịch",
     "table": {
       "date": "Ngày",
@@ -881,7 +903,7 @@
       "amount": "Số tiền",
       "description": "Mô tả",
       "status": "Trạng thái",
-      "transactionSummary": "Giao dịch" 
+      "transactionSummary": "Giao dịch"
     },
     "transactionTypes": {
       "topup": "Nạp tiền",
@@ -910,12 +932,12 @@
         "description": "Nạp tiền qua ngân hàng"
       }
     },
-    "mobileLabels":{
-        "date": "Ngày:",
-        "type": "Loại:",
-        "amount": "Số tiền:",
-        "description": "Mô tả:",
-        "status": "Trạng thái:"
+    "mobileLabels": {
+      "date": "Ngày:",
+      "type": "Loại:",
+      "amount": "Số tiền:",
+      "description": "Mô tả:",
+      "status": "Trạng thái:"
     }
   }
 }

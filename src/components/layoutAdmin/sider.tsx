@@ -7,6 +7,7 @@ import {
   SettingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { TbBrandBooking } from "react-icons/tb";
 import { Layout, Menu } from "antd";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -80,6 +81,12 @@ const SiderComponent: React.FC<SiderProps> = ({ collapsed }) => {
       key: "/admin/quan-li-nguoi-dung",
       icon: <UserOutlined />,
       label: "Quản lý người dùng",
+      "data-index": 1,
+    },
+    {
+      key: "/admin/bokking",
+      icon: <TbBrandBooking />,
+      label: "Quản lý Booking",
       "data-index": 1,
     },
   ];

@@ -10,6 +10,7 @@ import "./index.scss";
 import { useRouter } from "next/navigation";
 import { useBroadcastChannel } from "@/hook/useBroadcastChannel";
 import { toggleDarkMode } from "@/utils/theme-utils";
+import { selectAuthLogin } from "@/lib/store/slices/loginSlice";
 
 const { Header } = Layout;
 
@@ -24,7 +25,7 @@ const HeaderComponent: React.FC<HeaderProps> = ({
 }) => {
   const { token } = theme.useToken();
   const router = useRouter();
-  const { userProfile } = useAppSelector((state) => state.auth);
+  const { data } = useAppSelector(selectAuthLogin);
   const [mounted, setMounted] = useState(false);
 
   const { sendMessage } = useBroadcastChannel<{ action: string }>(
@@ -150,7 +151,8 @@ const HeaderComponent: React.FC<HeaderProps> = ({
             <Avatar
               style={{ cursor: "pointer", backgroundColor: token.colorPrimary }}
             >
-              {userProfile?.fullName?.charAt(0) || "U"}
+              {data?.account.lastName?.charAt(0) || "U"}{" "}
+              {data?.account.firstName?.charAt(0) || "U"}
             </Avatar>
           </Dropdown>
         </Space>

@@ -18,62 +18,49 @@ import {
 } from "@ant-design/icons";
 import "./BookingHistory.scss";
 import { useTranslations } from "next-intl";
+import BookingHistoryServices from "@/services/profile/bokkinghistory.service";
+import { BookingHistoryItem } from "@/dtos/profile/profile.dto";
 
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
 
-const mockBookings = [
-  {
-    id: 1,
-    service: "Đánh giá CV",
-    date: "2023-11-20",
-    time: "10:00",
-    status: "completed",
-    amount: 500000,
-    coach: "Nguyễn Văn A",
-  },
-  {
-    id: 2,
-    service: "Tư vấn phỏng vấn",
-    date: "2023-11-25",
-    time: "15:30",
-    status: "upcoming",
-    amount: 750000,
-    coach: "Trần Thị B",
-  },
-  {
-    id: 3,
-    service: "Định vị thương hiệu cá nhân",
-    date: "2023-11-15",
-    time: "09:00",
-    status: "cancelled",
-    amount: 1200000,
-    coach: "Lê Văn C",
-  },
-  {
-    id: 4,
-    service: "Đánh giá CV",
-    date: "2023-10-28",
-    time: "14:00",
-    status: "completed",
-    amount: 500000,
-    coach: "Phạm Thị D",
-  },
-];
-
 const BookingHistory: React.FC = () => {
-  const [bookings, setBookings] = useState<any[]>([]);
+  const [bookings, setBookings] = useState<BookingHistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [pagination, setPagination] = useState({
+    current: 1,
+    pageSize: 5,
+    total: 0,
+  });
   const screens = useBreakpoint();
   const t = useTranslations("BookingHistory");
-  useEffect(() => {
-    setTimeout(() => {
-      setBookings(mockBookings);
+
+  const fetchBookingsHistory = async (page: number, limit: number) => {
+    try {
+      setLoading(true);
+      const res = await BookingHistoryServices.getBookingHistory(page, limit);
+      setBookings(res.data.items || []);
+      setPagination({
+        ...pagination,
+        current: page,
+        total: res.data.total || 0,
+      });
+    } catch (error) {
+      console.log("Error fetching booking history:", error);
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
+  };
+
+  useEffect(() => {
+    fetchBookingsHistory(pagination.current, pagination.pageSize);
   }, []);
 
-   const getStatusTag = (status: string) => {
+  const handleTableChange = (paginationData: any) => {
+    fetchBookingsHistory(paginationData.current, paginationData.pageSize);
+  };
+
+  const getStatusTag = (status: string) => {
     switch (status) {
       case "completed":
         return (
@@ -81,7 +68,7 @@ const BookingHistory: React.FC = () => {
             {t("status.completed")}
           </Tag>
         );
-      case "upcoming":
+      case "pending":
         return (
           <Tag icon={<ClockCircleOutlined />} color="processing">
             {t("status.upcoming")}
@@ -101,24 +88,19 @@ const BookingHistory: React.FC = () => {
   const desktopColumns = [
     {
       title: t("table.service"),
-      dataIndex: "service",
-      key: "service",
+      dataIndex: "planName",
+      key: "planName",
     },
     {
       title: t("table.date"),
-      dataIndex: "date",
-      key: "date",
-      render: (date: string) => new Date(date).toLocaleDateString(),
-    },
-    {
-      title: t("table.time"),
-      dataIndex: "time",
-      key: "time",
+      dataIndex: "createdAt",
+      key: "createdAt",
+      render: (createdAt: string) => new Date(createdAt).toLocaleDateString(),
     },
     {
       title: t("table.coach"),
-      dataIndex: "coach",
-      key: "coach",
+      dataIndex: "mentor",
+      key: "mentor",
     },
     {
       title: t("table.status"),
@@ -128,9 +110,9 @@ const BookingHistory: React.FC = () => {
     },
     {
       title: t("table.amount"),
-      dataIndex: "amount",
-      key: "amount",
-      render: (amount: number) => `${amount.toLocaleString()}đ`,
+      dataIndex: "totalAmount",
+      key: "totalAmount",
+      render: (totalAmount: number) => `${totalAmount.toLocaleString()}đ`,
     },
     {
       title: t("table.action"),
@@ -145,7 +127,7 @@ const BookingHistory: React.FC = () => {
               size="small"
             />
           </Tooltip>
-          {record.status === "upcoming" && (
+          {record.status === "pending" && (
             <Button type="default" danger size="small">
               {t("action.cancel")}
             </Button>
@@ -159,25 +141,24 @@ const BookingHistory: React.FC = () => {
     {
       title: t("table.summary"),
       key: "summary",
-      render: (record:any) => (
+      render: (record: BookingHistoryItem) => (
         <div style={{ fontSize: 14 }}>
           <p>
-            <strong>{t("table.service")}:</strong> {record.service}
+            <strong>{t("table.service")}:</strong> {record.planName}
           </p>
           <p>
             <strong>{t("table.date")}:</strong>{" "}
-            {new Date(record.date).toLocaleDateString()} -{" "}
-            <strong>{t("table.time")}:</strong> {record.time}
+            {new Date(record.createdAt).toLocaleDateString()} -{" "}
           </p>
           <p>
-            <strong>{t("table.coach")}:</strong> {record.coach}
+            <strong>{t("table.coach")}:</strong> {record.mentor}
           </p>
           <p>
             <strong>{t("table.status")}:</strong> {getStatusTag(record.status)}
           </p>
           <p>
             <strong>{t("table.amount")}:</strong>{" "}
-            {record.amount.toLocaleString()}đ
+            {record.totalAmount.toLocaleString()}đ
           </p>
           <div style={{ marginTop: 8 }}>
             <Space size="small">
@@ -210,14 +191,12 @@ const BookingHistory: React.FC = () => {
           dataSource={bookings}
           rowKey="id"
           loading={loading}
-          pagination={{ pageSize: 5 }}
+          pagination={pagination}
+          onChange={handleTableChange}
           className="booking-table"
         />
       ) : (
-        <Empty
-          description={t("empty")}
-          image={Empty.PRESENTED_IMAGE_SIMPLE}
-        />
+        <Empty description={t("empty")} image={Empty.PRESENTED_IMAGE_SIMPLE} />
       )}
     </div>
   );

@@ -7,3 +7,13 @@ export const DepositSchema = z.object({
   returnUrl: z.string(),
 });
 export type DepositItem = z.infer<typeof DepositSchema>;
+
+export const BookingHistorySchema = z.object({
+  id: z.string().uuid(),
+  totalAmount: z.number(),
+  planName: z.string(),
+  status: z.string(),
+  mentor: z.string(),
+  createdAt: z.string().datetime(),
+});
+export type BookingHistoryItem = z.infer<typeof BookingHistorySchema>;
