@@ -32,3 +32,11 @@ export const UserResponseRegisterSchema = z.object({
 export type UserResponseRegisterItem = z.infer<
   typeof UserResponseRegisterSchema
 >;
+
+export const UserResponseGetUserSchema = z.object({
+  success: z.boolean(),
+  message: z.string(),
+  data: UserInforSchema,
+});
+
+export type UserResponseGetUserItem = z.infer<typeof UserResponseGetUserSchema>;

@@ -40,7 +40,7 @@ export default function LocaleSwitcher() {
         value={locale}
         style={{ width: "98px" }}
         dropdownAlign={{ points: ["tr", "br"] }}
-        dropdownRender={(menu) => <div className="custom-dropdown">{menu}</div>}
+        popupRender={(menu) => <div className="custom-dropdown">{menu}</div>}
         onChange={handleChange}
         options={[
           {
@@ -96,7 +96,13 @@ export default function LocaleSwitcher() {
             ),
           },
         ]}
-        dropdownStyle={{ minWidth: 130 }}
+        styles={{
+          popup: {
+            root: {
+              minWidth: 130,
+            },
+          },
+        }}
       />
     </div>
   );

@@ -1,8 +1,9 @@
 "use client";
 
-
 import UserInfo from "@/app/(customer)/profile/UserInfo";
 import WalletTopupModal from "@/components/WalletTopupModalProps/WalletTopupModal";
+import { selectAuthLogin } from "@/lib/store/slices/loginSlice";
+import DepositServices from "@/services/profile/deposit.service";
 import {
   CreditCardOutlined,
   HistoryOutlined,
@@ -11,12 +12,12 @@ import {
 } from "@ant-design/icons";
 import { useUser } from "@clerk/nextjs";
 import { Avatar, Button, Card, Col, Row, Tabs, Typography } from "antd";
-import { useEffect, useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
+import { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 import BookingHistory from "./BookingHistory";
 import "./profile.scss";
 import WalletSection from "./WalletSection";
-import DepositServices from "@/services/profile/deposit.service";
-import { useTranslations } from "next-intl";
 
 const { Title, Text } = Typography;
 
@@ -26,6 +27,7 @@ export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("1");
   const [balance, setBalance] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const userData = useSelector(selectAuthLogin);
 
   const handleModalCancel = () => setIsModalVisible(false);
 
@@ -44,21 +46,6 @@ export default function ProfilePage() {
       console.error("Deposit failed");
     }
   };
-
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    const fetchBalance = async () => {
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        if (!signal.aborted) setBalance(500000);
-      } catch (error) {
-        if (!signal.aborted) console.error("Error fetching balance:", error);
-      }
-    };
-    fetchBalance();
-    return () => controller.abort();
-  }, []);
 
   const tabItems = useMemo(
     () => [
@@ -133,9 +120,11 @@ export default function ProfilePage() {
           <div className="profile-balance">
             <WalletOutlined className="balance-icon" />
             <div className="balance-info">
-              <Text type="secondary">{t("ProfilePage.wallet.balanceLabel")}</Text>
+              <Text type="secondary">
+                {t("ProfilePage.wallet.balanceLabel")}
+              </Text>
               <Text strong className="balance-amount">
-                {balance.toLocaleString()}đ
+                {userData?.data.balance.toLocaleString()}đ
               </Text>
             </div>
           </div>

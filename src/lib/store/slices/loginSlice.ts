@@ -1,78 +1,29 @@
 // redux/authSlice.js
+import { UserInfor } from "@/dtos/auth/auth.dto";
 import { RootState } from "@/lib/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  accessToken: "",
-  refreshToken: "",
-  expiresIn: 300,
-  refreshExpiresIn: 1800,
-  tokenType: "Bearer",
-  sessionState: "",
-  scope: "profile email",
-  permissions: [],
-  listModule: [],
-  userProfile: {
-    userName: "",
-    fullName: "",
-    email: "",
-    phone: "",
-    group: [],
-    birthDay: "",
-  },
+  data: {} as UserInfor,
 };
 
 const authSlice = createSlice({
-  name: "auth",
+  name: "userInfo",
   initialState,
   reducers: {
     setAuthData: (state, action) => {
-      const {
-        accessToken,
-        refreshToken,
-        expiresIn,
-        refreshExpiresIn,
-        tokenType,
-        sessionState,
-        scope,
-        permissions,
-        listModule,
-        userProfile,
-      } = action.payload;
-      state.accessToken = accessToken;
-      state.refreshToken = refreshToken;
-      state.expiresIn = expiresIn;
-      state.refreshExpiresIn = refreshExpiresIn;
-      state.tokenType = tokenType;
-      state.sessionState = sessionState;
-      state.scope = scope;
-      state.permissions = permissions;
-      state.listModule = listModule;
-      state.userProfile = userProfile;
+      state.data = action.payload;
     },
     clearAuthData: (state) => {
-      state.accessToken = "";
-      state.refreshToken = "";
-      state.expiresIn = 0;
-      state.refreshExpiresIn = 0;
-      state.tokenType = "";
-      state.sessionState = "";
-      state.scope = "";
-      state.permissions = [];
-      state.listModule = [];
-      state.userProfile = {
-        userName: "",
-        fullName: "",
-        email: "",
-        phone: "",
-        group: [],
-        birthDay: "",
-      };
+      state.data = {} as UserInfor;
     },
   },
 });
 
 export const { setAuthData, clearAuthData } = authSlice.actions;
-export const selectAuthLogin = (state: RootState) => state.auth;
+// Fix the selector to match the slice name in the store
+export const selectAuthLogin = (state: RootState) => state.userInfo;
+// Add a direct selector for the data property
+export const selectUserData = (state: RootState) => state.userInfo.data;
 
 export default authSlice.reducer;

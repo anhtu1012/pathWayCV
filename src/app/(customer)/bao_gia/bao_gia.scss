@@ -189,4 +189,203 @@
       }
     }
   }
+
+  .payment-modal {
+    .ant-modal-content {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .ant-modal-header {
+      background-color: white;
+      padding: 16px 24px;
+      border-bottom: 1px solid #f0f0f0;
+      margin-bottom: 0;
+    }
+
+    .ant-modal-body {
+      padding: 24px;
+    }
+
+    .ant-modal-footer {
+      border-top: 1px solid #f0f0f0;
+      padding: 16px 24px;
+    }
+
+    .payment-details {
+      padding: 0;
+
+      .payment-plan-header {
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+      }
+
+      .payment-summary {
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        .payment-row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          align-items: center;
+
+          &.total {
+            font-size: 16px;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .payment-warning {
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .payment-success {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .payment-note {
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        a {
+          color: vars.$primary-color;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &.receipt-modal {
+      .ant-modal-content {
+        overflow: visible;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: -6px;
+          width: 100%;
+          height: 6px;
+          background-image: linear-gradient(
+            to right,
+            #1890ff 0%,
+            #52c41a 50%,
+            #f5222d 100%
+          );
+          border-radius: 6px 6px 0 0;
+        }
+      }
+
+      .ant-modal-body {
+        padding: 0;
+        position: relative;
+      }
+
+      // Receipt paper texture
+      .ant-modal-body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.01) 0px,
+          rgba(0, 0, 0, 0.01) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      // Receipt edge styling
+      &::after {
+        content: "";
+        position: absolute;
+        left: 10%;
+        bottom: -5px;
+        width: 80%;
+        height: 20px;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
+        border-radius: 0 0 50% 50%;
+        z-index: -1;
+      }
+    }
+
+    // Additional animation for the confirmation button
+    .confirm-payment-btn {
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-25deg);
+        transition: all 0.5s;
+      }
+
+      &:hover::after {
+        animation: shine 1.5s ease-in-out;
+      }
+
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 200%;
+        }
+      }
+    }
+  }
 }

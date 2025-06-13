@@ -1,19 +1,22 @@
 "use client";
 
 import { Role } from "@/dtos/auth/auth.dto";
+import { clearAuthData, setAuthData } from "@/lib/store/slices/loginSlice";
+import AuthServices from "@/services/auth/api.service";
 import "@/styles/clerk-buttons.scss";
 import { setCookie } from "@/utils/client/getCookie";
 import { MenuOutlined } from "@ant-design/icons";
 import { SignedIn, SignedOut, useAuth, UserButton } from "@clerk/nextjs";
 import { Button, Layout, Menu } from "antd";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import AuthButtons from "../auth/AuthButtons";
 import LocaleSwitcher from "../changeLanguage";
 import "./index.scss";
-import { useTranslations } from "next-intl";
 
 const { Header } = Layout;
 
@@ -28,10 +31,28 @@ const HeaderComponent: React.FC<HeaderProps> = () => {
   const pathname = usePathname();
   const { isSignedIn } = useAuth();
   const t = useTranslations("Header");
+  const dispatch = useDispatch();
+  const fetchUserMe = async () => {
+    try {
+      const res = await AuthServices.getUser();
+      dispatch(clearAuthData());
+      dispatch(setAuthData(res.data));
+    } catch (error) {
+      console.log("Error fetching user data:", error);
+    }
+  };
+  useEffect(() => {
+    if (isSignedIn) {
+      fetchUserMe();
+    }
+  }, [isSignedIn, dispatch]);
   const menuItems = [
     { key: "home", label: <Link href="/">{t("menu.home")}</Link> },
     { key: "about", label: <Link href="/gioi_thieu">{t("menu.about")}</Link> },
-    { key: "services", label: <Link href="/dich_vu">{t("menu.services")}</Link> },
+    {
+      key: "services",
+      label: <Link href="/dich_vu">{t("menu.services")}</Link>,
+    },
     {
       key: "projects",
       label: <Link href="/du_an_noi_bat">{t("menu.projects")}</Link>,
