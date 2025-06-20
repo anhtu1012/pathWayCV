@@ -25,6 +25,7 @@ type SelectedPlan = {
 function PricingPage() {
   const t = useTranslations("PricingPage");
   const userData = useSelector(selectAuthLogin);
+  
   console.log("User Balance:", userData);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [remaining, setRemaining] = useState(0);
@@ -39,6 +40,7 @@ function PricingPage() {
 
   // Handle payment logic
   const handlePayment = (planId: string, price: number) => {
+    // const userBalance = userData?.data?.balance || 0;
     const userBalance = userData?.data?.balance || 0;
     const remaining = price - userBalance;
     setRemaining(remaining);

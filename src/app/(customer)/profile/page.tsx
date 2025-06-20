@@ -29,6 +29,8 @@ export default function ProfilePage() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const userData = useSelector(selectAuthLogin);
 
+
+
   const handleModalCancel = () => setIsModalVisible(false);
 
   const handleTopUp = async (value: number) => {
@@ -124,7 +126,7 @@ export default function ProfilePage() {
                 {t("ProfilePage.wallet.balanceLabel")}
               </Text>
               <Text strong className="balance-amount">
-                {userData?.data.balance.toLocaleString()}đ
+                {(userData?.data?.balance??0).toLocaleString("vi-VN")} đ
               </Text>
             </div>
           </div>

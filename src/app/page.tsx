@@ -88,7 +88,7 @@ const HomePage = () => {
     },
     {
       id: VIDEO_LINKS.PHIM_DOANH_NGHIEP,
-      thumbnail: "/assets/video/video.mp4",
+      thumbnail: "/assets/video/interviewSkill.mp4",
       titleKey: "projectsSection.video_phim_doanh_nghiep",
     },
     {
@@ -452,10 +452,10 @@ const HomePage = () => {
                     <iframe
                       width="100%"
                       height="100%"
-                      src={`https://www.youtube.com/embed/${videos[activeVideo].id}?autoplay=0&rel=0&modestbranding=1&showinfo=0`}
+                      src= {`assets/video/interviewSkill.mp4`}
                       title="YouTube video player"
                       frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   </div>

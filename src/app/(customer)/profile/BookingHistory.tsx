@@ -20,13 +20,16 @@ import "./BookingHistory.scss";
 import { useTranslations } from "next-intl";
 import BookingHistoryServices from "@/services/profile/bokkinghistory.service";
 import { BookingHistoryItem } from "@/dtos/profile/profile.dto";
-
+import BookingDetailModal from "./BookingDetailModal";
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
 
 const BookingHistory: React.FC = () => {
   const [bookings, setBookings] = useState<BookingHistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedBooking, setSelectedBooking] =
+    useState<BookingHistoryItem | null>(null);
+  const [detailVisible, setDetailVisible] = useState(false);
   const [pagination, setPagination] = useState({
     current: 1,
     pageSize: 5,
@@ -125,6 +128,10 @@ const BookingHistory: React.FC = () => {
               shape="circle"
               icon={<EyeOutlined />}
               size="small"
+              onClick={() => {
+                setSelectedBooking(record);
+                setDetailVisible(true);
+              }}
             />
           </Tooltip>
           {record.status === "pending" && (
@@ -151,7 +158,7 @@ const BookingHistory: React.FC = () => {
             {new Date(record.createdAt).toLocaleDateString()} -{" "}
           </p>
           <p>
-            <strong>{t("table.coach")}:</strong> {record.mentor}
+            <strong>{t("table.coach")}:</strong> {record?.mentor?.name}
           </p>
           <p>
             <strong>{t("table.status")}:</strong> {getStatusTag(record.status)}
@@ -198,6 +205,14 @@ const BookingHistory: React.FC = () => {
       ) : (
         <Empty description={t("empty")} image={Empty.PRESENTED_IMAGE_SIMPLE} />
       )}
+      <BookingDetailModal
+        visible={detailVisible}
+        booking={selectedBooking}
+        onClose={() => {
+          setDetailVisible(false);
+          setSelectedBooking(null);
+        }}
+      />
     </div>
   );
 };
